@@ -1,18 +1,30 @@
 @charset 'UTF-8';
 @import 'mixins';
 
+$green: #5CC773;
+$green-shade: #50B265;
+$green-active: #3E9C53;
+$gray: #28272D;
+$light-gray: #535257;
+$light-gray-shade: #413F46;
+$process: #C4C4C4;
+$process-shade: #EBEBEB;
+$roboto: 'Roboto', sans-serif;
 $trans: all 0.2s ease-in-out;
 
-// @include font-face('fontName', '../fonts/fontPath/fontName', normal);
+.green {
+    color: $green;
+    fill: $green;
+}
 
 ::selection {
-    // background: cyan;
+    background: $green;
 }
 
 body {
-    font-family: sans-serif;
-    font-size: 14px;
-    color: #000;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    color: $light-gray;
 }
 
 * {
@@ -31,6 +43,60 @@ h3,
 p,
 ul {
     margin-top: 0;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 46px;
+    color: #000;
+}
+
+h2 {
+    font-weight: 800;
+    font-size: 28px;
+    color: #000;
+}
+
+h3 {
+    font-weight: 800;
+    font-size: 20px;
+    color: #000;
+}
+
+h4 {
+    font-size: 16px;
+    color: #000;
+}
+
+button {
+    background: transparent;
+    border: 0;
+}
+
+input {
+    border: 0;
+    border-bottom: 1px solid #bdbdbd;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    transition: $trans;
+    font-weight: 700;
+
+    &:hover {
+        border-color: $light-gray-shade;
+    }
+
+    &:focus {
+        border-color: $green;
+        color: $gray;
+
+        & + button path {
+            fill: $green !important;
+        }
+    }
+
+    &::placeholder {
+        color: #bdbdbd;
+    }
 }
 
 .btn,
@@ -52,32 +118,362 @@ a {
     text-decoration: none;
     border: 0;
     cursor: pointer;
+    background: $green;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
 
     &:focus {
         outline: none;
     }
 
-    &.center {
-        @include centerX;
+    &:hover {
+        background: $green-shade;
+    }
+    
+    &:active {
+        background: $green-active;
     }
 
-    &.mobile {
-        @include r(767) {
-            padding-left: 0;
-            padding-right: 0;
-            width: 100%;
-            transform: none;
-            left: initial;
-            text-align: center;
-        }
+    &.center {
+        @include centerX;
     }
 }
 
 .container {
-    @include r(1139) {
+    @include r(1200) {
         padding: 0 15px;
     }
 
     margin: 0 auto;
-    max-width: 1109px;
+    max-width: 1170px;
+}
+
+.location {
+    padding: 6px 0;
+
+    .container {
+        @include fcsb;
+    }
+
+    &__left {
+        @include fcn;
+    }
+
+    &__city {
+        @include fcn;
+        color: #000;
+        margin-right: 35px;
+        font-family: $roboto;
+
+        svg {
+            margin-right: 14px;
+            
+            path {
+                fill: $green;
+            }
+        }
+    }
+
+    .btn {
+        margin-right: 20px;
+        font-size: 14px;
+    }
+
+    &__change {
+        color: #000;
+        text-decoration: underline;
+        font-size: 14px;
+        transition: $trans;
+        font-family: $roboto;
+
+        &:hover {
+            text-decoration: none;
+            color: $light-gray;
+        }
+    }
+
+    &__close {
+        cursor: pointer;
+        
+        &:hover .icon {
+            fill: $light-gray;
+        }
+        
+        .icon {
+            transition: $trans;
+        }
+    }
+}
+
+.header {
+    background: $gray;
+    color: #fff;
+    padding: 5px 0;
+    
+    .container {
+        @include fcsb;
+    }
+
+    &__menu {
+        @include fcn;
+
+        a {
+            margin-right: 25px;
+            @include fcn;
+            font-family: $roboto;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            img {
+                margin-right: 12px;
+            }
+        }
+    }
+
+    &__controls {
+        @include fcn;
+
+        a {
+            @include fcn;
+            padding: 10px;
+            position: relative;
+            overflow: hidden;
+
+            &:hover::before {
+                transform: translateY(0);
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: linear-gradient(4.31deg, rgba(92, 199, 115, 0.2) 3.24%, rgba(92, 199, 115, 0.036) 93.47%);
+                border-radius: 5px;
+                transform: translateY(100%);
+                transition: $trans;
+            }
+
+            img {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.menu {
+    background: $light-gray;
+    color: #fff;
+    padding: 17px 0;
+    
+    .container {
+        @include fcsb;
+    }
+
+    &__list {
+        width: 100%;
+        @include fcsb;
+        margin-left: 22px;
+
+        a {
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 10px;
+            position: relative;
+            transition: $trans;
+
+            &:hover {
+                color: $green;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: -11px;
+                width: 2px;
+                height: 22px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: $green;
+            }
+
+            &:first-child {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.search {
+    @include fcn;
+    position: relative;
+    width: 377px;
+
+    button {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        svg {
+            path {
+                fill: #535257;
+                transition: $trans;
+            }
+        }
+    }
+
+    input {
+        padding-left: 40px;
+    }
+}
+
+.select {
+    position: relative;
+    width: 236px;
+
+    &__current {
+        @include fcn;
+        padding: 14px;
+        border: 1px solid $process;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: $trans;
+        cursor: pointer;
+
+        &:hover {
+            border-color: $light-gray;
+            color: #000;
+        }
+
+        &.active {
+            border-color: $green;
+            color: #000;
+        }
+
+        img {
+            margin-right: 10px;
+        }
+    }
+
+    &__dropdown {
+        position: absolute;
+        bottom: -30px;
+        transform: translateY(100%);
+        padding: 15px 20px;
+        border: 1px solid $process-shade;
+        box-shadow: 0px 10px 15px rgba(28, 42, 64, 0.16);
+        border-radius: 5px;
+        width: 100%;
+        transition: $trans;
+        pointer-events: none;
+        user-select: none;
+        opacity: 0;
+
+        &.active {
+            bottom: -15px;
+            pointer-events: all;
+            user-select: initial;
+            opacity: 1;
+        }
+
+        div {
+            margin-bottom: 15px;
+            font-weight: bold;
+            transition: $trans;
+            cursor: pointer;
+
+            &:hover {
+                color: $gray;
+            }
+
+            &.current {
+                color: $green;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }    
+}
+
+.cart {
+    @include fcn;
+    margin-left: 49px;
+
+    &__info {
+        padding-right: 15px;
+    }
+
+    &__price {
+        color: $green;
+    }
+
+    &__icon {
+        width: 52px;
+        height: 52px;
+        @include fcc;
+        border-radius: 5px;
+        border: 1px solid $green;
+        cursor: pointer;
+        transition: $trans;
+
+        svg {
+            position: relative;
+            left: -2px;
+
+            path {
+                transition: $trans;
+            }
+        }
+
+        &:hover {
+            background: $green;
+
+            path {
+                fill: #fff;
+            }
+        }
+    }
+}
+
+.top {
+    padding: 30px 0;
+
+    .container {
+        @include fcsb;
+    }
+
+    &__right {
+        @include fcn;
+    }
+
+    &__phone {
+        @include fcn;
+        font-weight: bold;
+        color: $gray;
+        transition: $trans;
+        margin-right: 40px;
+
+        &:hover {
+            color: $green;
+        }
+
+        img {
+            margin-right: 10px;
+        }
+    }
 }
