@@ -4,25 +4,21 @@
 <section class="top">
     <div class="container">
         <form class="search">
-            <input type="text" placeholder="Я ищу...">
+            <input type="text" placeholder="Я ищу..." />
             <button type="submit">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M10 18C11.775 17.9996 13.4988 17.4054 14.897 16.312L19.293 20.708L20.707 19.294L16.311 14.898C17.405 13.4997 17.9996 11.7754 18 10C18 5.589 14.411 2 10 2C5.589 2 2 5.589 2 10C2 14.411 5.589 18 10 18ZM10 4C13.309 4 16 6.691 16 10C16 13.309 13.309 16 10 16C6.691 16 4 13.309 4 10C4 6.691 6.691 4 10 4Z"
-                        fill="#5CC773" />
-                    <path
-                        d="M11.4138 8.58609C11.7928 8.96609 12.0018 9.46809 12.0018 10.0001H14.0018C14.0027 9.47451 13.8994 8.95398 13.6979 8.46857C13.4963 7.98316 13.2006 7.54251 12.8278 7.17209C11.3138 5.66009 8.68878 5.66009 7.17578 7.17209L8.58778 8.58809C9.34778 7.83009 10.6578 7.83209 11.4138 8.58609Z"
-                        fill="#5CC773" />
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-search"></use>
                 </svg>
             </button>
         </form>
 
         <div class="top__right">
-            <a href="tel:+12345678-00" class="top__phone"><img src="img/icons/phone.svg" alt=""> +1 (234) 567-89-00</a>
+            <a href="tel:+12345678-00" class="top__phone"><img src="img/icons/phone.svg" alt="" /> +1 (234)
+                567-89-00</a>
 
             <div class="select">
                 <div class="select__current">
-                    <img src="img/icons/point.svg" alt="">
+                    <img src="img/icons/point.svg" alt="" />
                     Санкт-Петербург
                 </div>
 
@@ -39,13 +35,654 @@
                     <div class="cart__price"><span>0</span> ₽</div>
                 </div>
                 <div class="cart__icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M2.92632 3.00004C2.41684 3.00004 2 3.40504 2 3.90003C2 4.39503 2.41684 4.80003 2.92632 4.80003H4.98181L7.41339 14.25C7.61903 15.051 8.35823 15.6 9.20766 15.6H19.8316C20.6671 15.6 21.3767 15.0618 21.5971 14.2779L24 5.70003H8.48421L8.94737 7.50003H21.5971L19.8316 13.8H9.20766L6.77608 4.35003C6.6759 3.96241 6.44471 3.61868 6.11955 3.3739C5.79438 3.12913 5.39407 2.99747 4.98274 3.00004H2.92632ZM18.6737 15.6C17.1499 15.6 15.8947 16.8195 15.8947 18.3C15.8947 19.7805 17.1499 21 18.6737 21C20.1975 21 21.4526 19.7805 21.4526 18.3C21.4526 16.8195 20.1975 15.6 18.6737 15.6ZM10.3368 15.6C8.81305 15.6 7.55789 16.8195 7.55789 18.3C7.55789 19.7805 8.81305 21 10.3368 21C11.8606 21 13.1158 19.7805 13.1158 18.3C13.1158 16.8195 11.8606 15.6 10.3368 15.6ZM10.3368 17.4C10.8584 17.4 11.2632 17.7942 11.2632 18.3C11.2632 18.8067 10.8574 19.2 10.3368 19.2C9.81533 19.2 9.41053 18.8058 9.41053 18.3C9.41053 17.7933 9.81625 17.4 10.3368 17.4ZM18.6737 17.4C19.1952 17.4 19.6 17.7942 19.6 18.3C19.6 18.8067 19.1943 19.2 18.6737 19.2C18.1522 19.2 17.7474 18.8058 17.7474 18.3C17.7474 17.7933 18.1531 17.4 18.6737 17.4Z"
-                            fill="#535257" />
+                    <svg class="icon">
+                        <use xlink:href="img/symbol-defs.svg#icon-cart"></use>
                     </svg>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="order">
+    <div class="container">
+        <div class="order__left">
+            <h3><img src="img/icons/question.svg" alt="" /> Нужен фибросайдинг?</h3>
+            <div class="order__text">Наш менеджер свяжется с Вами в ближайшее время!</div>
+            <a href="javascript:void(0)" class="btn"><img src="img/icons/phone-white.svg" alt="" /> Оставить заявку</a>
+        </div>
+        <div class="order__right">
+            <div class="order__title">ФИБРОФАСАДЫ <span class="green">NICHIA</span></div>
+            <div class="order__desc">Официальный дистрибьютер <span>Z-FASAD</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="slider">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: url('img/slide.png')">
+                <div class="slider__title"><span>ЛЕТНЯЯ РАСПРОДАЖА</span></div>
+                <h2>
+                    <span><span class="green">СКИДКА</span> НА ФИБРОСАЙДИНГ <span class="green">50%</span></span>
+                    <a href="javascript:void(0)" class="btn btn-outline btn-arrow">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+                        </svg>
+                    </a>
+                </h2>
+            </div>
+            <div class="swiper-slide" style="background-image: url('img/slide.png')">
+                <div class="slider__title"><span>ЛЕТНЯЯ РАСПРОДАЖА</span></div>
+                <h2>
+                    <span><span class="green">СКИДКА</span> НА ФИБРОСАЙДИНГ <span class="green">50%</span></span>
+                    <a href="javascript:void(0)" class="btn btn-outline btn-arrow">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+                        </svg>
+                    </a>
+                </h2>
+            </div>
+            <div class="swiper-slide" style="background-image: url('img/slide.png')">
+                <div class="slider__title"><span>ЛЕТНЯЯ РАСПРОДАЖА</span></div>
+                <h2>
+                    <span><span class="green">СКИДКА</span> НА ФИБРОСАЙДИНГ <span class="green">50%</span></span>
+                    <a href="javascript:void(0)" class="btn btn-outline btn-arrow">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+                        </svg>
+                    </a>
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="slider__controls">
+        <div class="swiper-button-prev">
+            <svg class="icon">
+                <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+            </svg>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next">
+            <svg class="icon">
+                <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<section class="cards">
+    <div class="container">
+        <img src="img/title.svg" alt="" class="line" />
+        <div class="flex">
+            <a href="javascript:void(0)" class="cards__item">
+                <img src="img/card.png" alt="" />
+                <div class="cards__info">
+                    <div class="cards__icon">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-bricks"></use>
+                        </svg>
+                    </div>
+                    <div class="cards__name">
+                        <h3>ПОД КИРПИЧ</h3>
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="cards__item">
+                <img src="img/card.png" alt="" />
+                <div class="cards__info">
+                    <div class="cards__icon">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-wall"></use>
+                        </svg>
+                    </div>
+                    <div class="cards__name">
+                        <h3>ПОД ШТУКАТУРКУ</h3>
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="cards__item">
+                <img src="img/card.png" alt="" />
+                <div class="cards__info">
+                    <div class="cards__icon">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-wood"></use>
+                        </svg>
+                    </div>
+                    <div class="cards__name">
+                        <h3>ПОД ДЕРЕВО</h3>
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="cards__item">
+                <img src="img/card.png" alt="" />
+                <div class="cards__info">
+                    <div class="cards__icon">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-rocks"></use>
+                        </svg>
+                    </div>
+                    <div class="cards__name">
+                        <h3>ПОД КАМЕНЬ</h3>
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<h2 class="title center">
+    Почему стоит выбрать <br />
+    фиброцементный сайдинг <span class="green">NICHIA?</span>
+</h2>
+
+<section class="features">
+    <div class="container">
+        <img src="img/features.svg" alt="" class="text" />
+        <div class="features__list">
+            <div class="features__item">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-heart"></use>
+                </svg>
+                <h3 class="features__title">Безопасный</h3>
+                <div class="features__text">
+                    <span class="green">Экологичный, <br />
+                        негорючий
+                    </span>
+                    материал, <br />
+                    имеет <span class="green">малый вес</span>
+                </div>
+            </div>
+            <div class="features__item">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-settings"></use>
+                </svg>
+                <h3 class="features__title">Износостойкий</h3>
+                <div class="features__text">
+                    Высокие показатели <br />
+                    <span class="green">гидроизоляции, теплоизоляции,</span> <br />
+                    а так же <span class="green">морозостойкости</span>
+                </div>
+            </div>
+            <div class="features__item">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-star"></use>
+                </svg>
+                <h3 class="features__title">Качественный</h3>
+                <div class="features__text">
+                    <span class="green">Не выгорает</span> на солнце, <br />
+                    обладает <span class="green">функцией</span> <br />
+                    <span class="green">самоочистки.</span> <strong>Сделано в Японии</strong>
+                </div>
+            </div>
+            <div class="features__item">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-line"></use>
+                </svg>
+                <h3 class="features__title">Удобный</h3>
+                <div class="features__text">
+                    <span class="green">Быстрая</span> и <span class="green">качественная</span> <br />
+                    Установка <span class="green">в любое время года,</span> <br />
+                    <span class="green">350+ вариантов</span> и фактур
+                </div>
+            </div>
+        </div>
+
+        <div class="features__info">
+            <img src="img/icons/scope.svg" alt="" class="features__img" />
+            <h3 class="features__name">Все преимущества<br />проверены в рамках<br />многочисленных<br />испытаний</h3>
+            <a href="javascript:void(0)" class="btn">Результаты испытаний <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+                </svg></a>
+            <a href="javascript:void(0)" class="btn btn-outline">Подробнее о фиброцементе <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+                </svg></a>
+        </div>
+
+        <img src="img/title.svg" alt="" class="line" />
+    </div>
+</section>
+
+<section class="crash">
+    <div class="container">
+        <div class="crash__info">
+            <div class="crash__icons">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-hammer"></use>
+                </svg>
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-fire"></use>
+                </svg>
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-drop"></use>
+                </svg>
+            </div>
+            <div class="crash__title">Проверьте сами!</div>
+            <div class="crash__text">
+                <span class="green">Запишитесь на краш-тест фибросайдинга,</span> <br />
+                <strong>ломайте, жгите, обливайте водой</strong> - количество и <br />
+                качество тестов ограничено только вашей фантазией
+            </div>
+            <a href="javascript:void(0)" class="btn">Записаться на краш-тест</a>
+        </div>
+        <div class="video" data-fancybox href="https://www.youtube.com/watch?v=K0uAIFbuPm8"
+            style="background-image: url('img/video.png')">
+            <img src="img/icons/play.svg" alt="" />
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <img src="img/comp.svg" alt="" class="text right" />
+        <div class="features__info">
+            <img src="img/logo.svg" alt="" class="features__img" />
+            <h2 class="features__name">
+                <span class="green">Компетенции</span> <br />
+                в цифрах
+            </h2>
+            <span>Нас выбирают. Нас советуют. <br />
+                Нам доверяют!</span>
+            <a href="javascript:void(0)" class="btn"><svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-phone"></use>
+                </svg>Связаться с нами</a>
+            <a href="javascript:void(0)" class="btn btn-outline"><svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-message"></use>
+                </svg>Задать вопрос</a>
+        </div>
+        <div class="features__map">
+            <div class="features__map-item">
+                <div>15<span class="green">+</span></div>
+                региональных офисов
+            </div>
+            <div class="features__map-item">
+                <div>9<span class="green">+</span></div>
+                городов покрытия
+            </div>
+            <div class="features__map-item">
+                <div>12<span class="green">+</span></div>
+                лет монтажного опыта
+            </div>
+            <div class="features__map-item">
+                <div><span class="green">1000</span>+</div>
+                выполненных проектов
+            </div>
+        </div>
+
+        <img src="img/title.svg" alt="" class="line left" />
+    </div>
+</section>
+
+<h2 class="title center gradient">
+    Выгода <br />
+    сотрудничества <span class="green">c нами</span>
+</h2>
+
+<section class="profit">
+    <div class="container">
+        <img src="img/title.svg" alt="" class="line" />
+        <div class="flex">
+            <div class="profit__item">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-tag"></use>
+                </svg>
+                <h3>Лучшая цена <br>
+                    на качественный материал</h3>
+                <div class="profit__text">Мы&nbsp;являемся официальным дистрибьютором японской компании KMEW.
+                    Вы&nbsp;получаете оригинальную продукцию по&nbsp;справедливой цене.</div>
+            </div>
+            <div class="profit__item">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-shield"></use>
+                </svg>
+                <h3>Гарантия <br>
+                    на монтаж и панели</h3>
+                <div class="profit__text">Мы&nbsp;уверены как в&nbsp;качестве материала NICHIA, так
+                    и&nbsp;в&nbsp;знаниях наших мастеров. Поэтому гарантия распространяется и&nbsp;на&nbsp;сам
+                    сайдинг, и&nbsp;на&nbsp;монтаж</div>
+            </div>
+            <div class="profit__item">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-building"></use>
+                </svg>
+                <h3>Самый большой <br>
+                    склад</h3>
+                <div class="profit__text">Забудьте о&nbsp;томительном ожидании доставки из&nbsp;Японии. Большая
+                    часть продукции из&nbsp;каталога NICHIA
+                    уже у&nbsp;нас на&nbsp;складе!</div>
+            </div>
+            <div class="profit__item">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-timer"></use>
+                </svg>
+                <h3>Оперативный <br>
+                    результат</h3>
+                <div class="profit__text">Установка фибросайдинга производится в&nbsp;адекватные, согласованные
+                    сроки.
+                    Монтаж без задержек&nbsp;&mdash; это реальность.</div>
+            </div>
+            <div class="profit__item">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-circle"></use>
+                </svg>
+                <h3>Обучение сотрудников <br>
+                    провдится в Японии</h3>
+                <div class="profit__text">Мы&nbsp;работаем на&nbsp;результат и&nbsp;строго в&nbsp;соответствии
+                    с&nbsp;технологией, рекомендованной производителем. Вы&nbsp;получаете первоклассный монтаж.
+                </div>
+            </div>
+            <div class="profit__item">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-build"></use>
+                </svg>
+                <h3>Надёжный поставщик - <br>
+                    12 лет на рынке</h3>
+                <div class="profit__text">Мы&nbsp;уже более 12&nbsp;лет на&nbsp;рынке и&nbsp;уверенно движемся
+                    вперед. Качество продукции и&nbsp;сервиса проверено временем и&nbsp;благодарными клиентами</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<h2 class="title center gray">
+    Галерея <br>
+    выполненных <span class="green">проектов</span>
+</h2>
+
+<section class="gallery">
+    <img src="img/grid.svg" class="grid" alt="">
+
+    <div class="container">
+        <img src="img/title-green.svg" alt="" class="line" />
+        <img src="img/projects.svg" alt="" class="text" />
+
+        <div class="flex">
+            <a href="javascript:void(0)" class="gallery__item" style="background-image: url('img/p1.png');">
+                <div class="gallery__info">
+                    <h3 class="gallery__title">
+                        <div class="gallery__icon">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-house"></use>
+                            </svg>
+                        </div>
+
+                        ДОМ В ЕСЕНТУКАХ
+                    </h3>
+
+                    <div class="gallery__features">
+                        <div class="gallery__features-item">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-area"></use>
+                            </svg>
+                            Площадь фасада: <strong>70м2</strong>
+                        </div>
+                        <div class="gallery__features-item">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-photo"></use>
+                            </svg>
+                            6 фото
+                        </div>
+
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <a href="javascript:void(0)" class="gallery__item" style="background-image: url('img/p2.png');">
+                <div class="gallery__info">
+                    <h3 class="gallery__title">
+                        <div class="gallery__icon">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-house"></use>
+                            </svg>
+                        </div>
+
+                        ДОМ В ИВАНОВО
+                    </h3>
+
+                    <div class="gallery__features">
+                        <div class="gallery__features-item">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-area"></use>
+                            </svg>
+                            Площадь фасада: <strong>70м2</strong>
+                        </div>
+                        <div class="gallery__features-item">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-photo"></use>
+                            </svg>
+                            6 фото
+                        </div>
+
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <a href="javascript:void(0)" class="gallery__item" style="background-image: url('img/p3.png');">
+                <div class="gallery__info">
+                    <h3 class="gallery__title">
+                        <div class="gallery__icon">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-house"></use>
+                            </svg>
+                        </div>
+
+                        ДОМ НА ИСЛА-ДЕ-МУЭРТО
+                    </h3>
+
+                    <div class="gallery__features">
+                        <div class="gallery__features-item">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-area"></use>
+                            </svg>
+                            Площадь фасада: <strong>70м2</strong>
+                        </div>
+                        <div class="gallery__features-item">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-photo"></use>
+                            </svg>
+                            6 фото
+                        </div>
+
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <a href="javascript:void(0)" class="gallery__item" style="background-image: url('img/p4.png');">
+                <div class="gallery__info">
+                    <h3 class="gallery__title">
+                        <div class="gallery__icon">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-house"></use>
+                            </svg>
+                        </div>
+
+                        КОВОРКИНГ В МОСКВЕ
+                    </h3>
+
+                    <div class="gallery__features">
+                        <div class="gallery__features-item">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-area"></use>
+                            </svg>
+                            Площадь фасада: <strong>70м2</strong>
+                        </div>
+                        <div class="gallery__features-item">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-photo"></use>
+                            </svg>
+                            6 фото
+                        </div>
+
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="gallery__bottom">
+            <a href="javascript:void(0)" class="btn btn-gray">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-tools"></use>
+                </svg>
+                Все реализованные проекты
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="reviews">
+    <div class="container">
+        <img src="img/reviews.svg" alt="" class="text" />
+        <img src="img/title.svg" alt="" class="line" />
+        <h2 class="center">Отзывы <span class="green">клиентов</span></h2>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <svg class="icon">
+                        <use xlink:href="img/symbol-defs.svg#icon-quote"></use>
+                    </svg>
+
+                    <div class="reviews__text">Я&nbsp;купил уже старый дом в&nbsp;пригороде, с&nbsp;цоколем, отделанным
+                        натуральным камнем. Но&nbsp;стены подгуляли, поэтому я&nbsp;нашел наиболее экономичное
+                        и&nbsp;рациональное решение, заказав отделку фиброцементными панелями от&nbsp;М-Фасад. Над
+                        дизайном не&nbsp;заморачивался, выбрал самый бюджетный вариант. Оплатил в&nbsp;рассрочку. Ничего
+                        сверхъестественного не&nbsp;вижу&nbsp;&mdash; фасад, как фасад, только мыть
+                        не&nbsp;надо&nbsp;&mdash; дождем очищается. Всем доволен, всем советую!</div>
+
+                    <div class="reviews__bottom">
+                        <div class="reviews__name">Игорь Сергеев</div>
+                        <div class="reviews__info">
+                            <div class="reviews__task">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-tools"></use>
+                                </svg>
+                                Задача: Облицовка фасада
+                            </div>
+                            <div class="reviews__date">12.04.2021</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <svg class="icon">
+                        <use xlink:href="img/symbol-defs.svg#icon-quote"></use>
+                    </svg>
+
+                    <div class="reviews__text">Я&nbsp;купил уже старый дом в&nbsp;пригороде, с&nbsp;цоколем, отделанным
+                        натуральным камнем. Но&nbsp;стены подгуляли, поэтому я&nbsp;нашел наиболее экономичное
+                        и&nbsp;рациональное решение, заказав отделку фиброцементными панелями от&nbsp;М-Фасад. Над
+                        дизайном не&nbsp;заморачивался, выбрал самый бюджетный вариант. Оплатил в&nbsp;рассрочку. Ничего
+                        сверхъестественного не&nbsp;вижу&nbsp;&mdash; фасад, как фасад, только мыть
+                        не&nbsp;надо&nbsp;&mdash; дождем очищается. Всем доволен, всем советую!</div>
+
+                    <div class="reviews__bottom">
+                        <div class="reviews__name">Игорь Сергеев</div>
+                        <div class="reviews__info">
+                            <div class="reviews__task">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-tools"></use>
+                                </svg>
+                                Задача: Облицовка фасада
+                            </div>
+                            <div class="reviews__date">12.04.2021</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <svg class="icon">
+                        <use xlink:href="img/symbol-defs.svg#icon-quote"></use>
+                    </svg>
+
+                    <div class="reviews__text">Я&nbsp;купил уже старый дом в&nbsp;пригороде, с&nbsp;цоколем, отделанным
+                        натуральным камнем. Но&nbsp;стены подгуляли, поэтому я&nbsp;нашел наиболее экономичное
+                        и&nbsp;рациональное решение, заказав отделку фиброцементными панелями от&nbsp;М-Фасад. Над
+                        дизайном не&nbsp;заморачивался, выбрал самый бюджетный вариант. Оплатил в&nbsp;рассрочку. Ничего
+                        сверхъестественного не&nbsp;вижу&nbsp;&mdash; фасад, как фасад, только мыть
+                        не&nbsp;надо&nbsp;&mdash; дождем очищается. Всем доволен, всем советую!</div>
+
+                    <div class="reviews__bottom">
+                        <div class="reviews__name">Игорь Сергеев</div>
+                        <div class="reviews__info">
+                            <div class="reviews__task">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-tools"></use>
+                                </svg>
+                                Задача: Облицовка фасада
+                            </div>
+                            <div class="reviews__date">12.04.2021</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <svg class="icon">
+                        <use xlink:href="img/symbol-defs.svg#icon-quote"></use>
+                    </svg>
+
+                    <div class="reviews__text">Я&nbsp;купил уже старый дом в&nbsp;пригороде, с&nbsp;цоколем, отделанным
+                        натуральным камнем. Но&nbsp;стены подгуляли, поэтому я&nbsp;нашел наиболее экономичное
+                        и&nbsp;рациональное решение, заказав отделку фиброцементными панелями от&nbsp;М-Фасад. Над
+                        дизайном не&nbsp;заморачивался, выбрал самый бюджетный вариант. Оплатил в&nbsp;рассрочку. Ничего
+                        сверхъестественного не&nbsp;вижу&nbsp;&mdash; фасад, как фасад, только мыть
+                        не&nbsp;надо&nbsp;&mdash; дождем очищается. Всем доволен, всем советую!</div>
+
+                    <div class="reviews__bottom">
+                        <div class="reviews__name">Игорь Сергеев</div>
+                        <div class="reviews__info">
+                            <div class="reviews__task">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-tools"></use>
+                                </svg>
+                                Задача: Облицовка фасада
+                            </div>
+                            <div class="reviews__date">12.04.2021</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reviews__controls">
+            <div class="slider__controls">
+                <div class="swiper-button-prev">
+                    <svg class="icon">
+                        <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+                    </svg>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next">
+                    <svg class="icon">
+                        <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+                    </svg>
+                </div>
+            </div>
+
+            <a href="javascript:void(0)" class="btn">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-eye"></use>
+                </svg>
+                Смотреть все отзывы <span>(17)</span>
+            </a>
         </div>
     </div>
 </section>
