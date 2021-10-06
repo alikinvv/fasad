@@ -48,11 +48,15 @@
             <div class="container">
                 <div class="header__menu">
                     <a href="javascript:void(0)">
-                        <img src="img/icons/arrow-down.svg" alt="" />
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use>
+                        </svg>
                         О фиброцементе
                     </a>
                     <a href="javascript:void(0)">
-                        <img src="img/icons/arrow-down.svg" alt="" />
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use>
+                        </svg>
                         О нас
                     </a>
                     <a href="javascript:void(0)">Наши работы</a>
@@ -85,6 +89,47 @@
                     <a href="javascript:void(0)">ПОД ДЕРЕВО</a>
                     <a href="javascript:void(0)">УСТАНОВКА</a>
                     <a href="javascript:void(0)">СОВЕТЫ</a>
+                </div>
+            </div>
+        </section>
+        <section class="top">
+            <div class="container">
+                <form class="search">
+                    <input type="text" placeholder="Я ищу..." />
+                    <button type="submit">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-search"></use>
+                        </svg>
+                    </button>
+                </form>
+
+                <div class="top__right">
+                    <a href="tel:+12345678-00" class="top__phone"><img src="img/icons/phone.svg" alt="" /> +1 (234) 567-89-00</a>
+
+                    <div class="select">
+                        <div class="select__current">
+                            <img src="img/icons/point.svg" alt="" />
+                            Санкт-Петербург
+                        </div>
+
+                        <div class="select__dropdown">
+                            <div class="current">Санкт-Петербург</div>
+                            <div>Ростов</div>
+                            <div>Москва</div>
+                        </div>
+                    </div>
+
+                    <div class="cart">
+                        <div class="cart__info">
+                            <div class="cart__count"><span>0</span> товаров</div>
+                            <div class="cart__price"><span>0</span> ₽</div>
+                        </div>
+                        <div class="cart__icon">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-cart"></use>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

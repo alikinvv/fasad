@@ -42,6 +42,16 @@ body {
     text-align: center;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
 h1,
 h2,
 h3,
@@ -95,6 +105,35 @@ input {
     }
 }
 
+input[type='checkbox'] {
+    display: none;
+
+    & + label {
+        color: $gray;
+        font-family: $roboto;
+        font-size: 14px;
+        padding-left: 24px;
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+
+        &::before {
+            content: '';
+            @include centerYa;
+            left: 0;
+            background: $green;
+            border-radius: 2px;
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &:checked + label::before {
+        background: url('../img/icons/check.svg') no-repeat center $green;
+        background-size: 12px;
+    }
+}
+
 .btn,
 input,
 textarea,
@@ -143,12 +182,13 @@ a {
 
     svg {
         fill: #fff;
+        transition: $trans;
     }
 
     &-outline {
         background: transparent;
         border: 1px solid $green;
-        color: $light-gray;
+        color: $gray;
 
         &:hover {
             background: $green;
@@ -164,7 +204,35 @@ a {
         }
 
         svg {
-            fill: $light-gray;
+            fill: $green;
+        }
+
+        &.gray {
+            border-color: $process;
+            color: $light-gray;
+
+            svg {
+                fill: $gray;
+                font-size: 10px;
+            }
+
+            span.green {
+                margin: 0 3px;
+                transition: $trans;
+            }
+
+            &:hover {
+                color: #fff;
+                border-color: $green;
+
+                svg {
+                    fill: #fff;
+                }
+
+                span.green {
+                    color: #fff;
+                }
+            }
         }
     }
 
@@ -190,6 +258,26 @@ a {
         &:hover {
             svg {
                 fill: #fff;
+            }
+        }
+    }
+
+    &-white {
+        border: 1px solid transparent;
+        background: $light-gray;
+        color: #fff;
+
+        svg {
+            fill: #fff;
+        }
+
+        &.btn-outline {
+            border-color: #fff;
+            background: transparent;
+
+            &:hover {
+                background: $green;
+                border-color: $green;
             }
         }
     }
@@ -345,6 +433,7 @@ a {
         transition: $trans;
         cursor: pointer;
         position: relative;
+        user-select: none;
 
         &:hover {
             border-color: $light-gray;
@@ -354,9 +443,9 @@ a {
         &::before {
             content: '';
             position: absolute;
-            top: 26px;
+            top: 24px;
             right: 17px;
-            width: 10px;
+            width: 8px;
             height: 2px;
             background: $gray;
             border-radius: 150px;
@@ -369,9 +458,9 @@ a {
         &::after {
             content: '';
             position: absolute;
-            top: 26px;
-            right: 23px;
-            width: 10px;
+            top: 24px;
+            right: 22px;
+            width: 8px;
             height: 2px;
             background: $gray;
             border-radius: 150px;
@@ -427,6 +516,7 @@ a {
             font-weight: bold;
             transition: $trans;
             cursor: pointer;
+            user-select: none;
 
             &:hover {
                 color: $gray;
@@ -438,6 +528,141 @@ a {
 
             &:last-child {
                 margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.pages {
+    padding: 100px 0;
+
+    a {
+        transition: $trans;
+        display: block;
+        margin-bottom: 10px;
+
+        &:hover {
+            color: $green;
+        }
+    }
+}
+
+.tip-parent {
+    position: relative;
+
+    &:hover {
+        .tip {
+            opacity: 1;
+            bottom: -10px;
+            pointer-events: all;
+            user-select: initial;
+        }
+    }
+}
+
+.tip {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateY(100%) translateX(-50%);
+    padding: 10px;
+    font-family: $roboto;
+    font-size: 14px;
+    background: #fff;
+    z-index: 5;
+    box-shadow: 0px 10px 15px rgba(28, 42, 64, 0.16);
+    border-radius: 3px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: $trans;
+    pointer-events: none;
+    user-select: none;
+}
+
+.input {
+    border-bottom: 2px solid #bdbdbd;
+    position: relative;
+    margin-top: 9px;
+
+    input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        &.fill,
+        &:focus {
+            & + .input__label {
+                opacity: 0;
+            }
+        }
+    }
+
+    &__label {
+        position: relative;
+        z-index: 2;
+        margin-bottom: 20px;
+        color: #bdbdbd;
+        font-weight: 700;
+        pointer-events: none;
+        user-select: none;
+    }
+}
+
+.counter {
+    @include fcn;
+    border: 1px solid $process;
+    border-radius: 5px;
+    user-select: none;
+
+    input {
+        width: 57px;
+        text-align: center;
+        color: $green;
+        font-weight: 800;
+        font-size: 20px;
+        background: transparent;
+    }
+
+    &__control {
+        width: 39px;
+        height: 39px;
+        border: 1px solid $process;
+        @include fcc;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: -1px;
+        margin-top: -1px;
+        transition: $trans;
+
+        svg {
+            fill: $process;
+            transition: $trans;
+        }
+
+        &:hover {
+            background: $green;
+            border-color: $green;
+
+            svg {
+                fill: #fff;
+            }
+        }
+
+        &.minus {
+            margin-left: -1px;
+        }
+
+        &.plus {
+            margin-right: -1px;
+            background: $process;
+
+            &:hover {
+                background: $green;
+            }
+
+            svg {
+                fill: #fff;
             }
         }
     }
@@ -495,6 +720,12 @@ a {
     &.gray {
         background: url('../img/title-gray.svg') no-repeat center;
         background-size: contain;
+    }
+
+    &.outline {
+        background: url('../img/title.svg') no-repeat center;
+        background-size: contain;
+        padding: 39px 0;
     }
 }
 
@@ -620,8 +851,9 @@ a {
                 margin-right: 0;
             }
 
-            img {
+            svg {
                 margin-right: 12px;
+                fill: #fff;
             }
         }
     }
@@ -740,8 +972,57 @@ a {
 .order {
     padding: 45px 0;
 
+    & + .title {
+        margin: 28px 0 5px;
+    }
+
     .container {
         @include fcsb;
+    }
+
+    &.shadow {
+        .container {
+            display: block;
+            border-bottom: 1px solid $process;
+        }
+
+        .order__text {
+            margin-bottom: 0;
+            font-weight: 700;
+            color: #bdbdbd;
+            line-height: 22 / 16 * 100%;
+        }
+
+        .order__left {
+            border: 0;
+            padding-left: 0;
+        }
+    }
+
+    .wrap {
+        @include fcsb;
+        background: #ffffff;
+        box-shadow: 0px 20px 54px rgba(28, 42, 64, 0.25);
+        border-radius: 5px;
+        padding: 40px;
+        margin-bottom: 47px;
+    }
+
+    &__controls {
+        @include fcn;
+
+        .btn-outline {
+            margin-left: 23px;
+        }
+
+        .btn {
+            padding: 16px 34px;
+
+            svg {
+                margin-right: 10px;
+                font-size: 23px;
+            }
+        }
     }
 
     &__left {
@@ -1449,7 +1730,11 @@ a {
 }
 
 .reviews {
-    padding: 118px 0;
+    padding: 118px 0 86px;
+
+    & + .title {
+        margin: 0;
+    }
 
     .container {
         position: relative;
@@ -1582,5 +1867,895 @@ a {
                 font-size: 20px;
             }
         }
+    }
+}
+
+.consultation {
+    padding: 62px 0;
+    margin-bottom: -236px;
+    position: relative;
+    z-index: 2;
+
+    .container {
+        padding: 40px 20px;
+        background: #ffffff;
+        box-shadow: 0px 20px 54px rgba(28, 42, 64, 0.25);
+        @include fcsb;
+
+        & > div {
+            width: 50%;
+        }
+    }
+
+    &__left {
+        text-align: center;
+        padding: 0 35px;
+        border-right: 1px solid $green;
+
+        & > svg {
+            fill: $green;
+            margin-bottom: 6px;
+            margin-top: 13px;
+            font-size: 20px;
+        }
+    }
+
+    &__right {
+        padding: 0 136px;
+
+        a {
+            color: $gray;
+            font-weight: 700;
+            @include fcn;
+            margin-top: 25px;
+            transition: $trans;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &:hover {
+                color: $green;
+
+                svg {
+                    fill: $green;
+                }
+            }
+
+            svg {
+                fill: $process;
+                margin-right: 12px;
+                font-size: 20px;
+                transition: $trans;
+            }
+        }
+    }
+
+    h2 {
+        margin-bottom: 9px;
+    }
+
+    &__text {
+        font-family: $roboto;
+        line-height: 18.75 / 16 * 100%;
+        margin-bottom: 28px;
+    }
+
+    &__controls {
+        @include fcsb;
+
+        .btn {
+            padding: 17px 0;
+            width: 220px;
+            margin: 0 12px;
+
+            svg {
+                font-size: 20px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__person {
+        @include fcn;
+        border-bottom: 1px solid $green;
+        padding-bottom: 35px;
+        margin-bottom: 45px;
+
+        img {
+            border: 2px solid $green;
+            border-radius: 50%;
+            width: 76px;
+            margin-right: 24px;
+        }
+    }
+
+    &__name {
+        color: #000;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    &__work {
+        font-family: $roboto;
+    }
+
+    &__phone {
+        @include fcn;
+
+        a {
+            margin-right: 10px;
+            margin-top: 0;
+        }
+    }
+
+    &__social {
+        margin: 0 !important;
+        transition: $trans;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}
+
+.footer {
+    background: #28272d;
+    padding: 240px 0 37px;
+    color: #fff;
+
+    .container {
+        position: relative;
+    }
+
+    &__row {
+        @include fssb;
+        position: relative;
+        z-index: 2;
+
+        &:last-child {
+            margin-top: 80px;
+        }
+    }
+
+    &__col {
+        width: 50%;
+
+        &:last-child {
+            text-align: right;
+        }
+    }
+
+    img {
+        margin-bottom: 7px;
+    }
+
+    &__rights {
+        font-family: $roboto;
+        font-size: 14px;
+        color: $process;
+        margin-bottom: 48px;
+    }
+
+    &__menu {
+        @include fssb;
+
+        & > div {
+            width: 48%;
+        }
+
+        a {
+            display: block;
+            color: $process;
+            font-family: $roboto;
+            font-size: 14px;
+            margin-bottom: 15px;
+            transition: $trans;
+
+            &:hover {
+                color: #fff;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__title {
+        font-family: $roboto;
+        font-weight: bold;
+        font-size: 18px;
+        color: $green;
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+        border-bottom: 1px solid $process;
+    }
+
+    &__controls {
+        @include fce;
+
+        .btn {
+            padding: 17px 36px;
+        }
+
+        .btn-outline {
+            margin-left: 22px;
+        }
+
+        svg {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+    }
+
+    &__mail {
+        @include fcn;
+        border-top: 1px solid $process;
+        padding-top: 25px;
+
+        span {
+            margin-right: 69px;
+            color: $process;
+            font-family: $roboto;
+            font-size: 14px;
+        }
+
+        a {
+            @include fcc;
+            color: $green;
+            transition: $trans;
+            font-family: $roboto;
+            font-weight: 700;
+            font-size: 14px;
+
+            &:hover {
+                color: $green-active;
+
+                svg {
+                    fill: $green-active;
+                }
+            }
+
+            svg {
+                fill: $green;
+                font-size: 23px;
+                margin-right: 10px;
+                transition: $trans;
+            }
+        }
+    }
+
+    &__social {
+        @include fce;
+
+        span {
+            color: $green;
+            font-weight: bold;
+            font-family: $roboto;
+            font-size: 14px;
+            margin-right: 15px;
+        }
+
+        a {
+            margin: 0 5px;
+            transition: $trans;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+
+    .line.top {
+        position: absolute;
+        top: 19%;
+        left: -21%;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .line.bottom {
+        position: absolute;
+        bottom: -43px;
+        right: 0;
+        pointer-events: none;
+        user-select: none;
+    }
+}
+
+.breadcrumbs {
+    padding-bottom: 10px;
+    margin-top: 6px;
+
+    &__list {
+        display: inline-flex;
+        align-items: center;
+        padding-bottom: 23px;
+        border-bottom: 1px solid $process;
+
+        a {
+            font-family: $roboto;
+            font-size: 14px;
+            color: $process;
+            transition: $trans;
+            margin-right: 26px;
+            position: relative;
+
+            &:hover {
+                color: $green;
+            }
+
+            &::after {
+                content: '';
+                @include centerYa;
+                right: -16px;
+                width: 5px;
+                height: 9px;
+                background: url('../img/icons/arrow-right.svg') no-repeat center;
+                background-size: contain;
+            }
+
+            &.active {
+                color: $green;
+                font-weight: 700;
+                margin-right: 0;
+
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin: 0 -7px -13px;
+    width: 230px;
+
+    .tag {
+        border: 1px solid $process;
+        padding: 10px 20px;
+        margin: 0 7px 13px;
+        font-weight: 700;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+}
+
+.types {
+    @include fcn;
+
+    span {
+        margin-right: 24px;
+        font-family: $roboto;
+    }
+}
+
+.type {
+    width: 62px;
+    height: 62px;
+    @include fcc;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: $trans;
+    cursor: pointer;
+    margin-right: -1px;
+
+    &:hover,
+    &.active {
+        border-color: $green;
+
+        .type__icon {
+            background: $green;
+
+            svg {
+                fill: #fff;
+            }
+        }
+    }
+
+    &__icon {
+        border-radius: 5px;
+        width: 42px;
+        height: 42px;
+        @include fcc;
+        background: $process-shade;
+        transition: $trans;
+
+        svg {
+            font-size: 20px;
+            transition: $trans;
+            fill: $light-gray;
+        }
+    }
+}
+
+.head {
+    padding: 25px 0;
+
+    &.pd {
+        padding: 40px 0;
+    }
+
+    h2 {
+        margin-bottom: 0;
+
+        span:not(.green) {
+            color: $light-gray;
+        }
+    }
+
+    .code {
+        color: $process;
+    }
+
+    &__title {
+        font-size: 46px;
+        color: $gray;
+
+        &.line {
+            background: url('../img/title.svg') no-repeat 3% center;
+            background-size: contain;
+        }
+
+        span:not(.green) {
+            font-size: 32px;
+        }
+    }
+
+    .container {
+        @include fcsb;
+    }
+}
+
+.filter {
+    margin-bottom: 15px;
+    margin-top: 26px;
+
+    .container {
+        @include fcsb;
+        padding-bottom: 35px;
+        border-bottom: 1px solid $process;
+    }
+
+    .select {
+        width: 178px;
+    }
+
+    .input {
+        width: 128px;
+    }
+
+    .btn {
+        padding: 16px 46px;
+    }
+}
+
+.sort {
+    .container {
+        @include fcsb;
+    }
+
+    &__list {
+        @include fcn;
+
+        span {
+            color: $process;
+            font-family: $roboto;
+            margin-right: 22px;
+        }
+    }
+
+    &__item {
+        @include fcn;
+        color: $green;
+        font-family: $roboto;
+        font-weight: bold;
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &-close {
+            width: 24px;
+            height: 24px;
+            @include fcc;
+            margin-right: 12px;
+            cursor: pointer;
+
+            &:hover svg {
+                fill: $green;
+            }
+
+            svg {
+                font-size: 10px;
+                transition: $trans;
+            }
+        }
+    }
+
+    .btn {
+        color: $light-gray;
+        font-size: 14px;
+        padding: 10px 27px;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+.item {
+    @include r(767) {
+        width: 100%;
+        margin: 0 0 60px;
+    }
+
+    @include flexitem(25%, 10px, 25px);
+    box-shadow: 0px 20px 30px rgba(28, 42, 64, 0.16);
+    border-radius: 5px;
+
+    &:hover {
+        .item__text {
+            display: none;
+        }
+
+        .counter {
+            display: flex;
+        }
+    }
+
+    .counter {
+        display: none;
+    }
+
+    &__img {
+        pointer-events: none;
+        user-select: none;
+        width: 100%;
+        border-radius: 5px 5px 0px 0px;
+    }
+
+    &__list {
+        @include r(767) {
+            display: block;
+            margin: 0;
+        }
+
+        @include flexlist(10px);
+        margin-top: 40px;
+        position: relative;
+    }
+
+    &__info {
+        padding: 30px 20px;
+    }
+
+    &__top {
+        @include fcsb;
+        margin-bottom: 18px;
+    }
+
+    &__main {
+        @include fesb;
+        margin-bottom: 14px;
+    }
+
+    &__bottom {
+        @include fesb;
+
+        &.active {
+            .item__text {
+                display: none;
+            }
+
+            .counter {
+                display: flex;
+            }
+        }
+    }
+
+    .type {
+        padding: 0;
+        border: 0 !important;
+        cursor: default;
+        width: 42px;
+        height: 42px;
+    }
+
+    &__code {
+        color: $process-shade;
+        font-size: 28px;
+        font-weight: 800;
+    }
+
+    &__price {
+        font-weight: 800;
+        font-size: 28px;
+        color: $gray;
+    }
+
+    &__square {
+        color: $process;
+        font-weight: 800;
+        font-size: 20px;
+    }
+
+    &__text {
+        font-family: $roboto;
+        font-size: 14px;
+        line-height: 16.41 / 14 * 100%;
+        margin-right: 18px;
+    }
+
+    &__cart {
+        width: 39px;
+        height: 39px;
+        @include fcc;
+        border: 1px solid $green;
+        border-radius: 5px;
+        flex-shrink: 0;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: $trans;
+
+        &:hover {
+            border-color: transparent;
+
+            &::before {
+                transform: translateY(0);
+            }
+        }
+
+        &.active {
+            border-color: transparent;
+
+            &::before {
+                transform: translateY(0);
+                background: $green;
+            }
+
+            svg {
+                fill: #fff;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(4.31deg, rgba(92, 199, 115, 0.2) 3.24%, rgba(92, 199, 115, 0.036) 93.47%);
+            border-radius: 5px;
+            transition: $trans;
+            transform: translateY(100%);
+        }
+
+        svg {
+            position: relative;
+            left: -1px;
+            top: 1px;
+        }
+    }
+}
+
+.catalog {
+    padding: 28px 0;
+
+    .container {
+        position: relative;
+    }
+
+    .text {
+        position: absolute;
+        left: -7%;
+        top: 50%;
+        transform: translateX(-100%) translateY(-50%);
+        opacity: 0.3;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .btn-outline {
+        margin-right: 10px;
+        margin-top: 48px;
+        padding: 15px 23px;
+
+        svg {
+            margin-right: 20px;
+        }
+    }
+
+    &__desc {
+        text-align: center;
+        margin-top: 55px;
+
+        .btn {
+            padding: 17px 22px;
+
+            svg {
+                margin-right: 14px;
+            }
+        }
+    }
+
+    &__text {
+        font-family: $roboto;
+        font-size: 14px;
+        line-height: 16.41 / 14 * 100%;
+        margin-bottom: 25px;
+
+        a {
+            text-decoration: underline;
+            font-weight: bold;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.product {
+    padding: 31px 0 20p[x];
+
+    &__body {
+        @include fssb;
+    }
+
+    &__img {
+        width: 375px;
+        margin-right: 119px;
+        flex-shrink: 0;
+
+        img {
+            display: block;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 43px;
+        }
+
+        .btn {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            padding: 16px 20px;
+
+            svg {
+                margin-right: 14px;
+            }
+        }
+    }
+
+    &__info {
+        width: 100%;
+        padding-top: 9px;
+    }
+
+    &__header {
+        @include fssb;
+        margin-bottom: 14px;
+
+        h3 {
+            width: 100%;
+            color: $green;
+            text-transform: uppercase;
+            padding-bottom: 10px;
+            border-bottom: 2px solid $process;
+        }
+    }
+
+    &__code {
+        font-family: $roboto;
+        color: $process;
+        flex-shrink: 0;
+        margin-left: 41px;
+        margin-top: 5px;
+    }
+
+    &__desc {
+        padding: 0;
+        margin: 0 0 17px;
+        list-style-type: none;
+        width: 376px;
+
+        li {
+            @include fcsb;
+            margin-bottom: 16px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            span {
+                text-align: left;
+                width: 48%;
+                color: $gray;
+                font-weight: 700;
+                font-family: $roboto;
+                font-size: 14px;
+
+                &:first-child {
+                    margin-right: 21px;
+                    color: $process;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+
+    &__controls {
+        border-top: 2px solid $process;
+        padding: 28px 0;
+
+        .counter {
+            &__control {
+                width: 54px;
+                height: 54px;
+
+                &.minus {
+                    svg {
+                        fill: $light-gray;
+                    }
+
+                    &:hover {
+                        svg {
+                            fill: #fff;
+                        }
+                    }
+                }
+            }
+
+            input {
+                color: $light-gray;
+            }
+        }
+
+        .wrap {
+            background: rgba(235, 235, 235, 0.2);
+            border-radius: 5px;
+            padding: 10px;
+            @include fcsb;
+        }
+
+        .btn {
+            margin-left: 20px;
+            padding: 15px 20px;
+
+            svg {
+                font-size: 23px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__cost {
+        @include fcn;
+    }
+
+    &__price {
+        font-weight: 800;
+        font-size: 46px;
+
+        sup {
+            font-size: 20px;
+            color: $process;
+            position: relative;
+            top: -22px;
+        }
+    }
+
+    &__text {
+        display: none;
+        line-height: 18.75 / 16 * 100%;
+        padding-top: 25px;
     }
 }

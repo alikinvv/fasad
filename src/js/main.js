@@ -1,6 +1,20 @@
-$('body').on('click', '.select__current', (e) => {
+$('body').on('click', '.select__current.active', (e) => {
+    $('.select__dropdown').removeClass('active');
     $(e.currentTarget).toggleClass('active');
-    $(e.currentTarget).parent().find('.select__dropdown').toggleClass('active');
+    $(e.currentTarget).parent().find('.select__dropdown').removeClass('active');
+});
+
+$('body').on('click', '.select__current:not(.active)', (e) => {
+    $('.select__dropdown').removeClass('active');
+    $('.select__current').removeClass('active');
+    $(e.currentTarget).toggleClass('active');
+    $(e.currentTarget).parent().find('.select__dropdown').addClass('active');
+});
+
+$('body').on('click', '.select__dropdown div', (e) => {
+    $('.select__dropdown div').removeClass('current');
+    $(e.currentTarget).addClass('current');
+    $(e.currentTarget).closest('.select').find('.select__current').text($(e.currentTarget).text());
 });
 
 $(document).on('click', function (e) {
@@ -68,4 +82,58 @@ var swiper = new Swiper('.reviews .swiper', {
         nextEl: '.reviews .swiper-button-next',
         prevEl: '.reviews .swiper-button-prev',
     },
+});
+
+$('body').on('click', '.type', (e) => {
+    $(e.currentTarget).toggleClass('active');
+});
+
+$('body').on('blur', '.input input', (e) => {
+    if ($(e.currentTarget).val() !== '') {
+        $(e.currentTarget).addClass('fill');
+    } else {
+        $(e.currentTarget).removeClass('fill');
+    }
+});
+
+$('body').on('click', '.item__cart', (e) => {
+    $(e.currentTarget).toggleClass('active');
+    $(e.currentTarget).closest('.item__bottom').toggleClass('active');
+});
+
+for (let i = 0; i < $('.item').length; i++) {
+    let $this = $('.item').eq(i);
+    $this.find('.item__bottom').css('height', $this.find('.item__bottom').outerHeight());
+}
+
+$('body').on('click', '.counter__control.plus', (e) => {
+    $(e.currentTarget)
+        .parent()
+        .find('input')
+        .val(parseInt($(e.currentTarget).parent().find('input').val()) + 1);
+});
+
+$('body').on('click', '.counter__control.minus', (e) => {
+    if ($(e.currentTarget).parent().find('input').val() > 1) {
+        $(e.currentTarget)
+            .parent()
+            .find('input')
+            .val(parseInt($(e.currentTarget).parent().find('input').val()) - 1);
+    }
+});
+
+$('body').on('click', '.product__img .btn:not(.active)', (e) => {
+    $(e.currentTarget)
+        .removeClass('btn-outline')
+        .addClass('active')
+        .html('<svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use></svg> Скрыть подробное описание');
+    $('.product__text').slideToggle(200);
+});
+
+$('body').on('click', '.product__img .btn.active', (e) => {
+    $(e.currentTarget)
+        .addClass('btn-outline')
+        .removeClass('active')
+        .html('<svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-list"></use></svg> Подробное описание');
+    $('.product__text').slideToggle(200);
 });
