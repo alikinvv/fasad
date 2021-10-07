@@ -134,6 +134,78 @@ input[type='checkbox'] {
     }
 }
 
+input[type='radio'] {
+    display: none;
+
+    & + label {
+        color: $gray;
+        font-size: 14px;
+        padding: 10px 20px;
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+        border: 1px solid $process;
+        border-radius: 5px;
+        @include fcc;
+        transition: $trans;
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            bottom: -1px;
+            left: -1px;
+            right: -1px;
+            background: linear-gradient(4.31deg, rgba(92, 199, 115, 0.2) 3.24%, rgba(92, 199, 115, 0.036) 93.47%);
+            transform: translateY(100%);
+            transition: $trans;
+        }
+
+        &:hover {
+            border-color: transparent;
+            background: transparent;
+
+            &::before {
+                transform: translateY(0);
+            }
+        }
+
+        &:active {
+            background: $green-active;
+            color: #fff;
+
+            svg {
+                fill: #fff;
+            }
+        }
+
+        svg {
+            margin: 6px 10px 6px 0;
+            font-size: 16px;
+            fill: $gray;
+            transition: $trans;
+        }
+    }
+
+    &:checked + label {
+        background: $green;
+        color: #fff;
+        border-color: $green;
+
+        &:hover {
+            &::before {
+                opacity: 0;
+            }
+        }
+
+        svg {
+            fill: #fff;
+        }
+    }
+}
+
 .btn,
 input,
 textarea,
@@ -189,18 +261,37 @@ a {
         background: transparent;
         border: 1px solid $green;
         color: $gray;
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            bottom: -1px;
+            left: -1px;
+            right: -1px;
+            background: linear-gradient(4.31deg, rgba(92, 199, 115, 0.2) 3.24%, rgba(92, 199, 115, 0.036) 93.47%);
+            transform: translateY(100%);
+            transition: $trans;
+        }
 
         &:hover {
-            background: $green;
-            color: #fff;
+            border-color: transparent;
+            background: transparent;
 
-            svg {
-                fill: #fff;
+            &::before {
+                transform: translateY(0);
             }
         }
 
         &:active {
             background: $green-active;
+            color: #fff;
+
+            svg {
+                fill: #fff;
+            }
         }
 
         svg {
@@ -276,8 +367,21 @@ a {
             background: transparent;
 
             &:hover {
-                background: $green;
-                border-color: $green;
+                border-color: transparent;
+                background: transparent;
+
+                &::before {
+                    transform: translateY(0);
+                }
+            }
+
+            &:active {
+                background: $green-active;
+                color: #fff;
+
+                svg {
+                    fill: #fff;
+                }
             }
         }
     }
@@ -342,6 +446,71 @@ a {
 
     &-next {
         margin-left: 10px;
+    }
+}
+
+.radio-group {
+    @include fsn;
+
+    .radio {
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.form-group {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $light-gray-shade;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $green;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+        &::before {
+            width: 100%;
+        }
+    }
+
+    &.focus {
+        &::after {
+            width: 100%;
+        }
+    }
+
+    input {
+        width: 100%;
+        border-bottom: 2px solid #bdbdbd;
+        padding: 20px 0;
+
+        &:focus {
+            border-color: $green;
+            color: $gray;
+
+            & + button svg {
+                fill: $green !important;
+            }
+        }
     }
 }
 
@@ -668,7 +837,95 @@ a {
     }
 }
 
-.cart {
+.progress {
+    width: 675px;
+    flex-shrink: 0;
+    @include fcsb;
+    position: relative;
+
+    &__bar {
+        position: absolute;
+        bottom: 10px;
+        left: 3px;
+        right: 3px;
+        height: 3px;
+        background: $process-shade;
+
+        .line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            background: $gray;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 2;
+        font-weight: 700;
+        color: #bdbdbd;
+
+        &:nth-child(2) {
+            align-items: center;
+        }
+
+        &:nth-child(3) {
+            align-items: flex-end;
+        }
+
+        &.active {
+            color: $green;
+
+            svg {
+                box-shadow: 0px 10px 15px rgba(28, 42, 64, 0.16);
+
+                circle {
+                    fill: $green;
+                }
+
+                path {
+                    stroke: #fff;
+                }
+            }
+        }
+
+        svg {
+            margin-top: 19px;
+            border-radius: 50%;
+
+            circle,
+            path {
+                transition: $trans;
+            }
+        }
+    }
+}
+
+.simplebar {
+    &-track {
+        background: linear-gradient(4.31deg, rgba(92, 199, 115, 0.2) 3.24%, rgba(92, 199, 115, 0.036) 93.47%);
+        border-radius: 10px;
+        width: 10px;
+    }
+
+    &-vertical {
+        right: -23px;
+    }
+
+    &-scrollbar {
+        &::before {
+            opacity: 1 !important;
+            background: $green;
+        }
+    }
+}
+
+.mcart {
     @include fcn;
     margin-left: 49px;
 
@@ -688,20 +945,44 @@ a {
         border: 1px solid $green;
         cursor: pointer;
         transition: $trans;
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            bottom: -1px;
+            left: -1px;
+            right: -1px;
+            background: linear-gradient(4.31deg, rgba(92, 199, 115, 0.2) 3.24%, rgba(92, 199, 115, 0.036) 93.47%);
+            transform: translateY(100%);
+            transition: $trans;
+        }
+
+        &:hover {
+            border-color: transparent;
+            background: transparent;
+
+            &::before {
+                transform: translateY(0);
+            }
+        }
+
+        &:active {
+            background: $green-active;
+            color: #fff;
+
+            svg {
+                fill: #fff;
+            }
+        }
 
         svg {
             position: relative;
             left: -2px;
             transition: $trans;
             font-size: 22px;
-        }
-
-        &:hover {
-            background: $green;
-
-            svg {
-                fill: #fff;
-            }
         }
     }
 }
@@ -867,6 +1148,7 @@ a {
             position: relative;
             overflow: hidden;
             margin-right: 22px;
+            border-radius: 5px;
 
             &:last-child {
                 margin-right: 0;
@@ -879,10 +1161,10 @@ a {
             &::before {
                 content: '';
                 position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
+                top: -1px;
+                right: -1px;
+                bottom: -1px;
+                left: -1px;
                 background: linear-gradient(4.31deg, rgba(92, 199, 115, 0.2) 3.24%, rgba(92, 199, 115, 0.036) 93.47%);
                 border-radius: 5px;
                 transform: translateY(100%);
@@ -981,6 +1263,18 @@ a {
     }
 
     &.shadow {
+        &.bdTop {
+            .container {
+                border-bottom: 0;
+                border-top: 1px solid $process;
+            }
+
+            .wrap {
+                margin-bottom: 0;
+                margin-top: 47px;
+            }
+        }
+
         .container {
             display: block;
             border-bottom: 1px solid $process;
@@ -1290,10 +1584,10 @@ a {
         &::before {
             content: '';
             position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
+            top: -1px;
+            bottom: -1px;
+            right: -1px;
+            left: -1px;
             background: linear-gradient(4.31deg, rgba(92, 199, 115, 0.2) 3.24%, rgba(92, 199, 115, 0.036) 93.47%);
             border-radius: 5px;
             transform: translateY(100%);
@@ -1324,6 +1618,30 @@ a {
         padding-left: 93px;
         background: url('../img/map.svg') no-repeat center;
         background-size: contain;
+
+        &.bg {
+            background: transparent;
+            display: block;
+            padding-right: 0;
+            padding-left: 0;
+            margin: 0;
+
+            .wrap {
+                @include r(767) {
+                    display: block;
+                    margin: 0;
+                }
+
+                background: url('../img/map.svg') no-repeat center;
+                background-size: contain;
+                @include flexlist(1px);
+                padding: 163px 0;
+
+                .features__map-item {
+                    @include flexitem(25%, 1px, 20px);
+                }
+            }
+        }
 
         &-item {
             @include r(767) {
@@ -1526,6 +1844,36 @@ a {
         position: relative;
         z-index: 2;
         background: #fff;
+        transform: rotate(0deg);
+        transform-origin: 100% 0;
+        transition: all 0.6s cubic-bezier(0.06, 1.4, 0.29, 2.02);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translateX(50%) translateY(-50%);
+            width: 168px;
+            height: 168px;
+            border-radius: 50%;
+            background: radial-gradient(50% 50% at 50% 50%, #5cc773 0%, rgba(255, 255, 255, 0) 100%);
+            z-index: 3;
+            opacity: 0;
+            transition: $trans;
+        }
+
+        &:hover {
+            animation-name: wobble-bottom;
+            animation-duration: 1.2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 1;
+            z-index: 3;
+
+            &::before {
+                opacity: 1;
+            }
+        }
 
         svg {
             margin-bottom: 25px;
@@ -1549,6 +1897,32 @@ a {
     &__text {
         font-family: $roboto;
         line-height: 18.75 / 16 * 100%;
+    }
+}
+
+@keyframes wobble-bottom {
+    16.65% {
+        transform: rotate(-8deg);
+    }
+
+    33.3% {
+        transform: rotate(6deg);
+    }
+
+    49.95% {
+        transform: rotate(-4deg);
+    }
+
+    66.6% {
+        transform: rotate(2deg);
+    }
+
+    83.25% {
+        transform: rotate(-1deg);
+    }
+
+    100% {
+        transform: rotate(0);
     }
 }
 
@@ -1581,6 +1955,13 @@ a {
         opacity: 0.3;
         pointer-events: none;
         user-select: none;
+
+        &.right {
+            left: initial;
+            right: -7%;
+            top: 65%;
+            transform: translateX(100%) translateY(-50%);
+        }
     }
 
     .container {
@@ -1589,6 +1970,16 @@ a {
 
     .flex {
         @include flexlist(10px);
+
+        &.three {
+            .gallery__item {
+                @include flexitem(33.33%, 10px, 18px);
+            }
+
+            .gallery__features-item {
+                margin-right: 10px;
+            }
+        }
     }
 
     &__item {
@@ -1638,8 +2029,7 @@ a {
             border-radius: 5px;
         }
 
-        &:nth-child(1),
-        &:nth-child(4) {
+        &.wide {
             width: calc(59% - 10px);
         }
     }
@@ -2168,11 +2558,14 @@ a {
     padding-bottom: 10px;
     margin-top: 6px;
 
+    .container {
+        border-bottom: 1px solid $process;
+    }
+
     &__list {
         display: inline-flex;
         align-items: center;
         padding-bottom: 23px;
-        border-bottom: 1px solid $process;
 
         a {
             font-family: $roboto;
@@ -2529,10 +2922,10 @@ a {
         &::before {
             content: '';
             position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            left: -1px;
             background: linear-gradient(4.31deg, rgba(92, 199, 115, 0.2) 3.24%, rgba(92, 199, 115, 0.036) 93.47%);
             border-radius: 5px;
             transition: $trans;
@@ -2757,5 +3150,537 @@ a {
         display: none;
         line-height: 18.75 / 16 * 100%;
         padding-top: 25px;
+    }
+}
+
+.services {
+    padding: 30px 0;
+
+    & + .gallery {
+        padding: 32px 0;
+    }
+
+    .container {
+        @include fesb;
+        background: url('../img/icons/ruler.svg') no-repeat 0 -5px;
+        background-size: contain;
+        position: relative;
+        padding-bottom: 24px;
+    }
+
+    &.bg {
+        .container {
+            background: transparent;
+            padding-bottom: 0;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    &__title {
+        font-weight: 800;
+        font-size: 32px;
+        color: $green;
+        padding-right: 10px;
+        padding-left: 30px;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__right {
+        text-align: right;
+        background: url('../img/title-gradient.svg') no-repeat right 0;
+        background-size: contain;
+    }
+
+    &__text {
+        font-weight: 700;
+        line-height: 21.86 / 16 * 100%;
+        margin-bottom: 20px;
+
+        span {
+            font-family: $roboto;
+            font-weight: 400;
+            color: $process;
+        }
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 11px;
+
+        svg {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+    }
+}
+
+.note {
+    margin-bottom: 61px;
+
+    .container {
+        background: rgba(235, 235, 235, 0.2);
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    &__wrap {
+        padding: 19px 29px;
+        border: 1px solid $process;
+        border-radius: 5px;
+    }
+
+    h3 {
+        color: $green;
+    }
+
+    ul {
+        @include fssb;
+        padding-left: 15px;
+        margin: 0;
+
+        &.w100 {
+            li {
+                width: 100%;
+            }
+        }
+
+        li {
+            width: 48%;
+            font-family: $roboto;
+            font-size: 14px;
+            line-height: 16.41 / 14 * 100%;
+        }
+    }
+}
+
+.prices {
+    .container {
+        position: relative;
+    }
+
+    .text {
+        position: absolute;
+        right: -7%;
+        top: 27%;
+        transform: translateX(100%) translateY(-50%);
+        opacity: 0.3;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    &__list {
+        @include r(767) {
+            display: block;
+            margin: 0;
+        }
+
+        @include flexlist(10px);
+    }
+
+    &__item {
+        @include r(767) {
+            width: 100%;
+            margin: 0 0 60px;
+        }
+
+        @include flexitem(33.33%, 10px, 35px);
+        padding: 35px;
+        background: #ffffff;
+        box-shadow: 0px 10px 15px rgba(28, 42, 64, 0.16);
+        border-radius: 5px;
+    }
+
+    &__header {
+        @include fcsb;
+        margin-bottom: 15px;
+
+        svg {
+            font-size: 38px;
+            fill: $green;
+        }
+    }
+
+    h3 {
+        color: $gray;
+        margin-bottom: 0;
+    }
+
+    &__price {
+        font-size: 28px;
+        font-weight: 800;
+        color: $gray;
+        margin-bottom: 32px;
+
+        .from {
+            color: $light-gray;
+        }
+
+        sub {
+            color: #bdbdbd;
+            font-size: 16px;
+        }
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}
+
+.cart {
+    padding: 48px 0;
+
+    .services__title {
+        padding-left: 0;
+    }
+
+    &__header {
+        position: relative;
+        @include fcsb;
+        margin-top: 60px;
+    }
+
+    &__icon {
+        position: absolute;
+        left: 8px;
+        bottom: -13px;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    &__step {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &__body {
+        background: #fff;
+        box-shadow: 0px 20px 54px rgba(28, 42, 64, 0.25);
+        padding: 34px 40px;
+        color: #000;
+        margin-top: 68px;
+    }
+
+    &__row {
+        @include fcsb;
+        border-bottom: 2px solid $process-shade;
+        padding-bottom: 12px;
+
+        .cart__right {
+            background: transparent;
+        }
+    }
+
+    &__item {
+        @include fcsb;
+        padding: 20px 0;
+        margin-top: 10px;
+        border-bottom: 1px solid $process-shade;
+        position: relative;
+    }
+
+    &__left {
+        @include fcn;
+        padding-right: 25px;
+    }
+
+    &__right {
+        background: rgba(235, 235, 235, 0.2);
+        border-radius: 5px;
+        @include fcsb;
+        width: 436px;
+        padding: 10px;
+        padding-right: 59px;
+    }
+
+    &__img {
+        width: 137px;
+        margin-right: 25px;
+        border-radius: 5px;
+    }
+
+    &__price {
+        font-size: 28px;
+        color: $light-gray;
+        font-weight: 800;
+    }
+
+    &__close {
+        width: 39px;
+        height: 39px;
+        @include fcc;
+        @include centerYa;
+        right: 0;
+        cursor: pointer;
+
+        &:hover {
+            svg {
+                fill: $green;
+            }
+        }
+
+        svg {
+            font-size: 10px;
+            fill: $process;
+            transition: $trans;
+        }
+    }
+
+    &__footer {
+        @include fcsb;
+        padding-top: 60px;
+        margin-top: 60px;
+        border-top: 1px solid $green;
+    }
+
+    &__text {
+        flex-shrink: 0;
+        margin-right: 30px;
+        padding-left: 20px;
+        font-family: $roboto;
+        font-size: 12px;
+        color: $process;
+    }
+
+    &__total {
+        background: rgba(235, 235, 235, 0.2);
+        border-radius: 5px;
+        width: 100%;
+        padding: 10px;
+        @include fce;
+
+        .cart__price {
+            font-size: 46px;
+        }
+
+        .btn {
+            margin-left: 33px;
+            padding: 16px 22px;
+
+            svg {
+                font-size: 23px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__flex {
+        @include fssb;
+        margin-top: 40px;
+    }
+
+    &__form {
+        width: 397px;
+        margin-right: 100px;
+        background: #ffffff;
+        box-shadow: 0px 20px 30px rgba(28, 42, 64, 0.16);
+        border-radius: 5px;
+        padding: 38px;
+        flex-shrink: 0;
+
+        h3 {
+            margin-bottom: 16px;
+        }
+
+        span {
+            display: block;
+            font-family: $roboto;
+            font-size: 14px;
+            line-height: 16.41 / 14 * 100%;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__order {
+        border-radius: 5px;
+        border: 1px solid $process;
+        padding: 40px;
+        width: 100%;
+        height: 443px;
+        margin-right: 23px;
+
+        &-header {
+            @include fcsb;
+            padding-bottom: 11px;
+            border-bottom: 1px solid $process;
+
+            svg {
+                font-size: 23px;
+                fill: $process;
+            }
+        }
+
+        &-count {
+            font-weight: 800;
+            font-size: 20px;
+
+            span {
+                font-weight: 700;
+                font-size: 16px;
+            }
+        }
+
+        &-item {
+            padding: 36px 0;
+            border-bottom: 1px solid $process;
+            @include fcsb;
+        }
+
+        &-name {
+            color: #000;
+        }
+    }
+}
+
+.calculator {
+    padding: 42px 0;
+
+    .container {
+        @include fssb;
+        background: #ffffff;
+        box-shadow: 0px 20px 54px rgba(28, 42, 64, 0.25);
+        padding: 52px 40px;
+        position: relative;
+
+        & > div {
+            width: 50%;
+
+            & > h3 {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .text {
+        position: absolute;
+        right: -7%;
+        top: 50%;
+        transform: translateX(100%) translateY(-50%);
+        opacity: 0.3;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .form-group {
+        width: 170px;
+        margin-bottom: 40px;
+    }
+
+    &__item {
+        margin-bottom: 40px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__info {
+        background: rgba(235, 235, 235, 0.2);
+        padding: 11px;
+        margin-bottom: 42px;
+
+        & > h3 {
+            margin-top: 20px;
+            padding-left: 23px;
+        }
+
+        ul {
+            padding-left: 39px;
+            margin-bottom: 30px;
+
+            li {
+                font-family: $roboto;
+                line-height: 18.75 / 16 * 100%;
+            }
+        }
+    }
+
+    &__price {
+        padding-left: 23px;
+        @include fcn;
+        margin-bottom: 67px;
+
+        & > div {
+            width: 50%;
+
+            & > span {
+                color: $process;
+                font-weight: 800;
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+
+        &-total {
+            font-weight: 800;
+            font-size: 20px;
+        }
+    }
+
+    .note {
+        margin: 0;
+
+        ul {
+            margin-bottom: 0;
+            padding-left: 0;
+        }
+    }
+
+    &__total {
+        text-align: right;
+
+        h3 {
+            justify-content: flex-end;
+        }
+
+        &-price {
+            padding-bottom: 23px;
+            font-weight: 800;
+            font-size: 46px;
+            border-bottom: 1px solid $green;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__text {
+        font-family: $roboto;
+        font-size: 12px;
+        line-height: 14.06 / 12 * 100%;
+        margin-bottom: 44px;
+        color: $process;
+    }
+
+    .btn {
+        padding: 13px 33px;
+
+        svg {
+            margin-right: 10px;
+            font-size: 26px;
+        }
+    }
+}
+
+.logo {
+    margin: 98px 0 0;
+
+    .container {
+        text-align: center;
+        background: url('../img/logo-gray.svg') no-repeat center;
+        background-size: contain;
+        font-weight: 700;
+        line-height: 21.86 / 16 * 100%;
+        padding: 80px 0;
     }
 }

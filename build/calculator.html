@@ -138,148 +138,147 @@
 </html>
 <!-- START CONTENT  -->
 
-<section class="breadcrumbs">
+<section class="services bg">
     <div class="container">
-        <div class="breadcrumbs__list">
-            <a href="javascript:void(0)">Главная</a>
-            <a href="javascript:void(0)">Каталог</a>
-            <a href="javascript:void(0)" class="active">Фасадные панели NICHIA под камень</a>
+        <img src="img/icons/calc2.svg" alt="" class="services__icon" />
+        <div class="services__title">КАЛЬКУЛЯТОР РАСЧЁТА</div>
+        <div class="services__right">
+            <div class="services__text"><span>Есть вопросы?</span><br />Менеджер ответит Вам в течении ближайшего
+                времени!</div>
+            <a href="javascript:void(0)" class="btn btn-outline">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-phone"></use>
+                </svg>
+                Заказать обратный звонок
+            </a>
         </div>
     </div>
 </section>
 
-<section class="head pd">
+<section class="calculator">
     <div class="container">
-        <div class="head__title line">
-            ФАСАДНЫЕ ПАНЕЛИ <span class="green">NICHIA</span> <br />
-            <span>ПОД КИРПИЧ</span> <span class="code">CW12011 14ММ</span>
-        </div>
+        <img src="img/calc.svg" alt="" class="text" />
+        <div>
+            <h3>Площадь, за вычетом окон и дверей<span class="green">*</span></h3>
 
-        <div class="tags">
-            <div class="tag">Гидрофиль</div>
-            <div class="tag">14 мм</div>
-            <div class="tag">Фотокерамика</div>
-        </div>
-    </div>
-</section>
-
-<div class="product">
-    <div class="container">
-        <div class="product__body">
-            <div class="product__img">
-                <img src="img/product.png" alt="">
-                <a href="javascript:void(0)" class="btn btn-outline">
-                    <svg class="icon">
-                        <use xlink:href="img/symbol-defs.svg#icon-list"></use>
-                    </svg>
-                    Подробное описание
-                </a>
+            <div class="form-group">
+                <input type="text" placeholder="Введите площадь, м2">
             </div>
-            <div class="product__info">
-                <div class="product__header">
-                    <h3>ХАРАКТЕРИСТИКИ</h3>
-                    <span class="product__code"> Артикул: cw12011</span>
-                </div>
-                <ul class="product__desc">
-                    <li>
-                        <span>Материал:</span>
-                        <span>Фиброцемент</span>
-                    </li>
-                    <li>
-                        <span>Тип фактуры:</span>
-                        <span>Под кирпич</span>
-                    </li>
-                    <li>
-                        <span>Цвет:</span>
-                        <span>Белый</span>
-                    </li>
-                    <li>
-                        <span>Тип покрытия:</span>
-                        <span>Гидрофиль</span>
-                    </li>
-                    <li>
-                        <span>Длина/Ширина:</span>
-                        <span>3030 х 455 мм</span>
-                    </li>
-                    <li>
-                        <span>Толщина:</span>
-                        <span>14 мм</span>
-                    </li>
-                    <li>
-                        <span>Площадь:</span>
-                        <span>1.38 м2</span>
-                    </li>
-                    <li>
-                        <span>Производитель:</span>
-                        <span>Япония</span>
-                    </li>
-                </ul>
 
-                <div class="product__controls">
-                    <div class="wrap">
-                        <div class="counter">
-                            <div class="counter__control minus">
-                                <svg class="icon">
-                                    <use xlink:href="img/symbol-defs.svg#icon-minus"></use>
-                                </svg>
-                            </div>
-                            <input type="number" value="1">
-                            <div class="counter__control plus">
-                                <svg class="icon">
-                                    <use xlink:href="img/symbol-defs.svg#icon-plus"></use>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="product__cost">
-                            <div class="product__price"><span class="green">₽</span> 0 <sup>м2</sup></div>
-                            <a href="javascript:void(0)" class="btn">
-                                <svg class="icon">
-                                    <use xlink:href="img/symbol-defs.svg#icon-cart"></use>
-                                </svg>
-                                В корзину
-                            </a>
-                        </div>
+            <div class="calculator__item">
+                <h3 class="calculator__title">Толщина панели</h3>
+                <div class="radio-group">
+                    <div class="radio">
+                        <input checked type="radio" id="r1" name="rad1">
+                        <label for="r1">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-list"></use>
+                            </svg>
+
+                            14 мм
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="r2" name="rad1">
+                        <label for="r2">16 мм</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="r3" name="rad1">
+                        <label for="r3">18 мм</label>
+                    </div>
+                </div>
+            </div>
+            <div class="calculator__item">
+                <h3 class="calculator__title">Теплоизоляция</h3>
+                <div class="radio-group">
+                    <div class="radio">
+                        <input checked type="radio" id="r4" name="rad2">
+                        <label for="r4">Да</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="r5" name="rad2">
+                        <label for="r5">Нет</label>
+                    </div>
+                </div>
+            </div>
+            <div class="calculator__item">
+                <h3 class="calculator__title">Толщина теплоизоляционного слоя</h3>
+                <div class="radio-group">
+                    <div class="radio">
+                        <input checked type="radio" id="r6" name="rad3">
+                        <label for="r6">50 мм</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="r7" name="rad3">
+                        <label for="r7">100 мм</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="r8" name="rad3">
+                        <label for="r8">150 мм</label>
+                    </div>
+                </div>
+            </div>
+            <div class="calculator__item">
+                <h3 class="calculator__title">Подсистема</h3>
+                <div class="radio-group">
+                    <div class="radio">
+                        <input checked type="radio" id="r9" name="rad4">
+                        <label for="r9">Деревянная</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="r10" name="rad4">
+                        <label for="r10">Металлическая</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="r11" name="rad4">
+                        <label for="r11">Комбинированные</label>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="product__text">
-            Все панели NICHIA на 95% состоят из цемента и прозрачного кварца. <br><br>
+        <div>
+            <div class="calculator__info">
+                <h3><span class="green">В комлпект поставки входит:</span></h3>
+                <ul>
+                    <li>Фибросайдинговые фасадные панели NICHIA, <strong>3030x455x14 мм</strong></li>
+                    <li><strong>Монтаж сквозной</strong> (саморез/гвоздь)</li>
+                    <li>Комплектующие: <strong>гвозди, соединительные планки, герметик, грунтовка, краска,
+                            шпатлевка.</strong></li>
+                </ul>
 
-            Именно эта составляющая наделяет панели NICHIA высочайшим уровнем пожаробезопасности. По итогам пожарных
-            испытаний панели NICHIA классифицируются по группе горючести как «Негорючий строительный материал
-            (НГ)».<br><br>
+                <div class="calculator__price">
+                    <div>
+                        <span>Стоимость утеплителя:</span>
+                        <div class="calculator__price-total"><span class="green">₽</span> 0</div>
+                    </div>
+                    <div>
+                        <span>Стоимость подсистемы:</span>
+                        <div class="calculator__price-total"><span class="green">₽</span> 0</div>
+                    </div>
+                </div>
 
-            7 сентября 2009 г. на полигоне ЦНИИСК им. Кучеренко в г. Златоуст были проведены огневые испытания навесной
-            алюминиевой фасадной системы U-Kon с облицовкой из панелей NICHIA разной толщины (14 и 16 мм) и структур
-            (Неорок и Серадиир). Также были испытаны два способа крепления панелей: открытый с применением заклепок и
-            скрытый с применением специальных скоб (кляммеров). Все испытанные фасадные панели NICHIA и способы их
-            крепления получили наилучший класс пожарной опасности "К0" по ГОСТ 31251-2003 и могут применяться без
-            ограничений на всех типах зданий.
-        </div>
-    </div>
-</div>
-
-<section class="order shadow">
-    <div class="container">
-        <div class="wrap">
-            <div class="order__left">
-                <h3><img src="img/icons/question.svg" alt="" /> Нужна помощь?</h3>
-                <div class="order__text">Не разобраться с количеством материала? <br>
-                    Нужна дополнительная информация? Мы поможем!</div>
+                <div class="note">
+                    <div class="note__wrap">
+                        <h3>Внимание!</h3>
+                        <ul class="w100">
+                            <li>Панели данной толщины монтируются только на деревенянную (комбинированную) подсистему
+                                (брусок строганный, антисептированный, естественной влажности).</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="order__controls">
+
+            <div class="calculator__total">
+                <h3>Итоговая стоимость</h3>
+                <div class="calculator__total-price"><span class="green">₽</span> 0</div>
+                <div class="calculator__text">* Количество и стоимость материала определяется только после замеров
+                    фасада,<br>утверждения 3D дизайна и разработки схемы раскладки панелей с учетом
+                    архитектурных<br>особенностей здания.</div>
                 <a href="javascript:void(0)" class="btn">
                     <svg class="icon">
-                        <use xlink:href="img/symbol-defs.svg#icon-phone"></use>
+                        <use xlink:href="img/symbol-defs.svg#icon-blank"></use>
                     </svg>
-                    Связаться с нами
-                </a>
-                <a href="javascript:void(0)" class="btn btn-outline">
-                    <svg class="icon">
-                        <use xlink:href="img/symbol-defs.svg#icon-message"></use>
-                    </svg>
-                    Задать вопрос
+                    Запрос на подробный расчёт
                 </a>
             </div>
         </div>
@@ -287,6 +286,109 @@
 </section>
 
 <h2 class="title center">
+    Почему стоит выбрать <br />
+    фиброцементный сайдинг <span class="green">NICHIA?</span>
+</h2>
+
+<section class="features">
+    <div class="container">
+        <img src="img/features.svg" alt="" class="text" />
+        <div class="features__list">
+            <div class="features__item">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-heart"></use>
+                </svg>
+                <h3 class="features__title">Безопасный</h3>
+                <div class="features__text">
+                    <span class="green">Экологичный, <br />
+                        негорючий
+                    </span>
+                    материал, <br />
+                    имеет <span class="green">малый вес</span>
+                </div>
+            </div>
+            <div class="features__item">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-settings"></use>
+                </svg>
+                <h3 class="features__title">Износостойкий</h3>
+                <div class="features__text">
+                    Высокие показатели <br />
+                    <span class="green">гидроизоляции, теплоизоляции,</span> <br />
+                    а так же <span class="green">морозостойкости</span>
+                </div>
+            </div>
+            <div class="features__item">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-star"></use>
+                </svg>
+                <h3 class="features__title">Качественный</h3>
+                <div class="features__text">
+                    <span class="green">Не выгорает</span> на солнце, <br />
+                    обладает <span class="green">функцией</span> <br />
+                    <span class="green">самоочистки.</span> <strong>Сделано в Японии</strong>
+                </div>
+            </div>
+            <div class="features__item">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-line"></use>
+                </svg>
+                <h3 class="features__title">Удобный</h3>
+                <div class="features__text">
+                    <span class="green">Быстрая</span> и <span class="green">качественная</span> <br />
+                    Установка <span class="green">в любое время года,</span> <br />
+                    <span class="green">350+ вариантов</span> и фактур
+                </div>
+            </div>
+        </div>
+
+        <div class="features__info">
+            <img src="img/icons/scope.svg" alt="" class="features__img" />
+            <h3 class="features__name">Все преимущества<br />проверены в рамках<br />многочисленных<br />испытаний</h3>
+            <a href="javascript:void(0)" class="btn">Результаты испытаний
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+                </svg></a>
+            <a href="javascript:void(0)" class="btn btn-outline">Подробнее о фиброцементе
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
+                </svg></a>
+        </div>
+
+        <img src="img/title.svg" alt="" class="line" />
+    </div>
+</section>
+
+<section class="crash">
+    <div class="container">
+        <div class="crash__info">
+            <div class="crash__icons">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-hammer"></use>
+                </svg>
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-fire"></use>
+                </svg>
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-drop"></use>
+                </svg>
+            </div>
+            <div class="crash__title">Проверьте сами!</div>
+            <div class="crash__text">
+                <span class="green">Запишитесь на краш-тест фибросайдинга,</span> <br />
+                <strong>ломайте, жгите, обливайте водой</strong> - количество и <br />
+                качество тестов ограничено только вашей фантазией
+            </div>
+            <a href="javascript:void(0)" class="btn">Записаться на краш-тест</a>
+        </div>
+        <div class="video" data-fancybox href="https://www.youtube.com/watch?v=K0uAIFbuPm8"
+            style="background-image: url('img/video.png')">
+            <img src="img/icons/play.svg" alt="" />
+        </div>
+    </div>
+</section>
+
+<h2 class="title center outline">
     Возможно Вас <br>
     так же заинтересует
 </h2>

@@ -37,6 +37,12 @@ $('body').on('focus', '.search input', function () {
 $('body').on('blur', '.search input', function () {
   $('.search').removeClass('focus');
 });
+$('body').on('focus', '.form-group input', function (e) {
+  $(e.currentTarget).parent().addClass('focus');
+});
+$('body').on('blur', '.form-group input', function (e) {
+  $(e.currentTarget).parent().removeClass('focus');
+});
 var swiper = new Swiper('.slider .swiper', {
   slidesPerView: 'auto',
   centeredSlides: true,
@@ -111,3 +117,33 @@ $('body').on('click', '.product__img .btn.active', function (e) {
   $(e.currentTarget).addClass('btn-outline').removeClass('active').html('<svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-list"></use></svg> Подробное описание');
   $('.product__text').slideToggle(200);
 });
+$('body').on('click', '.cart__close', function (e) {
+  $(e.currentTarget).closest('.cart__item').slideUp(200, function () {
+    $(this).remove();
+  });
+
+  if ($('.cart__item').length === 1) {
+    $(".cart__step").removeClass('active');
+    $(".cart__step[data-step=\"0\"]").addClass('active');
+    $('.cart__footer').fadeOut(100);
+  }
+});
+$('body').on('click', '.cart__footer .btn', function (e) {
+  var step = parseInt($(e.currentTarget).attr('data-step')) + 1;
+  $(e.currentTarget).html('<svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-delivery"></use></svg> Отправить заявку').attr('data-step', step);
+  $(".cart__step").removeClass('active');
+  $(".cart__step[data-step=\"".concat(step, "\"]")).addClass('active');
+  $(".progress__item[data-step=\"".concat(step, "\"]")).addClass('active');
+
+  if (step === 2) {
+    $('.progress .line').css('width', '47%');
+    $('.services__title').text('ОФОРМЛЕНИЕ ЗАКАЗА');
+  }
+
+  if (step === 3) {
+    $('.progress .line').css('width', '100%');
+    $('.services__title').text('ЗАВЕРШЕНИЕ ');
+    $('.cart__footer').fadeOut(100);
+  }
+});
+$('.count').counterUp();

@@ -1,0 +1,474 @@
+//= template/header.html
+<!-- START CONTENT  -->
+
+<section class="breadcrumbs">
+    <div class="container">
+        <div class="breadcrumbs__list">
+            <a href="javascript:void(0)">Главная</a>
+            <a href="javascript:void(0)" class="active">Корзина</a>
+        </div>
+    </div>
+</section>
+
+<section class="cart">
+    <div class="container">
+        <div class="cart__header">
+            <img src="img/icons/cart2.svg" alt="" class="cart__icon">
+            <div class="services__title">Корзина товаров</div>
+            <div class="progress">
+                <div class="progress__item active" data-step="1">
+                    Корзина
+
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12.5" r="12" fill="#EBEBEB" />
+                        <path d="M6 11.5L10.5 16L18 8.5" stroke="#c4c4c4" stroke-width="2" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="progress__item" data-step="2">
+                    Оформление
+
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12.5" r="12" fill="#EBEBEB" />
+                        <path d="M6 11.5L10.5 16L18 8.5" stroke="#c4c4c4" stroke-width="2" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="progress__item" data-step="3">
+                    Завершение
+
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12.5" r="12" fill="#EBEBEB" />
+                        <path d="M6 11.5L10.5 16L18 8.5" stroke="#c4c4c4" stroke-width="2" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="progress__bar">
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart__step" data-step="0">
+            <div class="order shadow bdTop">
+                <div class="wrap">
+                    <div class="order__left">
+                        <h3><img src="img/icons/cry.svg" alt=""> В вашей корзине нет товаров</h3>
+                        <div class="order__text">Ознакомьтесь с нашим каталогом, и выберите всё необходимое!
+                        </div>
+                    </div>
+                    <div class="order__controls">
+                        <a href="javascript:void(0)" class="btn btn-outline">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-list"></use>
+                            </svg>
+                            Вернутся в каталог
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart__step active" data-step="1">
+            <div class="cart__body">
+                <div class="cart__list">
+                    <div class="cart__row">
+                        <div class="cart__left">Выбранные товары</div>
+                        <div class="cart__right"><span>Количество</span> <span>Сумма</span></div>
+                    </div>
+                    <div class="cart__item">
+                        <div class="cart__left">
+                            <img src="img/c1.png" alt="" class="cart__img">
+                            Фиброцементные фасадные панели <br>
+                            под камень NICHIA cw2051 14 мм
+                        </div>
+                        <div class="cart__right">
+                            <div class="counter">
+                                <div class="counter__control minus">
+                                    <svg class="icon">
+                                        <use xlink:href="img/symbol-defs.svg#icon-minus"></use>
+                                    </svg>
+                                </div>
+                                <input type="number" value="1">
+                                <div class="counter__control plus">
+                                    <svg class="icon">
+                                        <use xlink:href="img/symbol-defs.svg#icon-plus"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="cart__price"><span class="green">₽</span> 1842</div>
+                        </div>
+                        <div class="cart__close">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-close"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="cart__item">
+                        <div class="cart__left">
+                            <img src="img/c2.png" alt="" class="cart__img">
+                            Фиброцементные фасадные панели <br>
+                            под камень NICHIA cw2051 14 мм
+                        </div>
+                        <div class="cart__right">
+                            <div class="counter">
+                                <div class="counter__control minus">
+                                    <svg class="icon">
+                                        <use xlink:href="img/symbol-defs.svg#icon-minus"></use>
+                                    </svg>
+                                </div>
+                                <input type="number" value="10">
+                                <div class="counter__control plus">
+                                    <svg class="icon">
+                                        <use xlink:href="img/symbol-defs.svg#icon-plus"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="cart__price"><span class="green">₽</span> 11450</div>
+                        </div>
+                        <div class="cart__close">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-close"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="cart__item">
+                        <div class="cart__left">
+                            <img src="img/c3.png" alt="" class="cart__img">
+                            Фиброцементные фасадные панели <br>
+                            под камень NICHIA cw2051 14 мм
+                        </div>
+                        <div class="cart__right">
+                            <div class="counter">
+                                <div class="counter__control minus">
+                                    <svg class="icon">
+                                        <use xlink:href="img/symbol-defs.svg#icon-minus"></use>
+                                    </svg>
+                                </div>
+                                <input type="number" value="100">
+                                <div class="counter__control plus">
+                                    <svg class="icon">
+                                        <use xlink:href="img/symbol-defs.svg#icon-plus"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="cart__price"><span class="green">₽</span> 1786340</div>
+                        </div>
+                        <div class="cart__close">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-close"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart__step" data-step="2">
+            <div class="cart__flex">
+                <form action="" class="cart__form">
+                    <h3>Введите контактные данные</h3>
+                    <span>Наши специалисты перезвонят Вам для <br> подтверждения заказа и уточнения всех <br>
+                        деталей.</span>
+
+                    <div class="form-group">
+                        <input type="text" placeholder="Имя *">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Фамилия *">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Телефон *">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="E-mail *">
+                    </div>
+                </form>
+                <div class="cart__order" data-simplebar>
+                    <div class="cart__order-header">
+                        <div class="cart__orer-count"><span class="green">Товаров в заказе:</span> 3</div>
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-blank"></use>
+                        </svg>
+                    </div>
+                    <div class="cart__order-item">
+                        <div class="cart__order-name">Фиброцементные фасадные панели <br>
+                            под камень NICHIA cw2051 14 мм</div>
+                        <div class="cart__price"><span class="green">₽</span> 1842</div>
+                    </div>
+                    <div class="cart__order-item">
+                        <div class="cart__order-name">Фиброцементные фасадные панели <br>
+                            под камень NICHIA cw2051 14 мм</div>
+                        <div class="cart__price"><span class="green">₽</span> 11450</div>
+                    </div>
+                    <div class="cart__order-item">
+                        <div class="cart__order-name">Фиброцементные фасадные панели <br>
+                            под камень NICHIA cw2051 14 мм</div>
+                        <div class="cart__price"><span class="green">₽</span> 1786340</div>
+                    </div>
+                    <div class="cart__order-item">
+                        <div class="cart__order-name">Фиброцементные фасадные панели <br>
+                            под камень NICHIA cw2051 14 мм</div>
+                        <div class="cart__price"><span class="green">₽</span> 1842</div>
+                    </div>
+                    <div class="cart__order-item">
+                        <div class="cart__order-name">Фиброцементные фасадные панели <br>
+                            под камень NICHIA cw2051 14 мм</div>
+                        <div class="cart__price"><span class="green">₽</span> 11450</div>
+                    </div>
+                    <div class="cart__order-item">
+                        <div class="cart__order-name">Фиброцементные фасадные панели <br>
+                            под камень NICHIA cw2051 14 мм</div>
+                        <div class="cart__price"><span class="green">₽</span> 1786340</div>
+                    </div>
+                    <div class="cart__order-item">
+                        <div class="cart__order-name">Фиброцементные фасадные панели <br>
+                            под камень NICHIA cw2051 14 мм</div>
+                        <div class="cart__price"><span class="green">₽</span> 1842</div>
+                    </div>
+                    <div class="cart__order-item">
+                        <div class="cart__order-name">Фиброцементные фасадные панели <br>
+                            под камень NICHIA cw2051 14 мм</div>
+                        <div class="cart__price"><span class="green">₽</span> 11450</div>
+                    </div>
+                    <div class="cart__order-item">
+                        <div class="cart__order-name">Фиброцементные фасадные панели <br>
+                            под камень NICHIA cw2051 14 мм</div>
+                        <div class="cart__price"><span class="green">₽</span> 1786340</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart__step" data-step="3">
+            <div class="order shadow bdTop">
+                <div class="wrap">
+                    <div class="order__left">
+                        <h3><img src="img/icons/like.svg" alt=""> Cпасибо за заявку!</h3>
+                        <div class="order__text">Ваша заявка принята. Наш менеджер свяжется с Вами в течении 15 минут.
+                        </div>
+                    </div>
+                    <div class="order__controls">
+                        <a href="javascript:void(0)" class="btn btn-outline">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-list"></use>
+                            </svg>
+                            Вернутся в каталог
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart__footer">
+            <div class="cart__text"><span class="green">*</span> Количество и стоимость материала определяется только
+                после замеров <br>
+                фасада, утверждения 3D дизайна и разработки схемы раскладки панелей с <br>
+                учетом архитектурных особенностей здания.</div>
+
+            <div class="cart__total">
+                <div class="cart__price"><span class="green">₽</span> 1799632</div>
+                <a href="javascript:void(0)" class="btn" data-step="1">
+                    <svg class="icon">
+                        <use xlink:href="img/symbol-defs.svg#icon-blank"></use>
+                    </svg>
+                    Оформить заказ
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<h2 class="title center">
+    Возможно Вас <br>
+    так же заинтересует
+</h2>
+
+<section class="catalog">
+    <div class="container">
+        <div class="item__list">
+            <img src="img/choice.svg" alt="" class="text" />
+
+            <div class="item">
+                <img src="img/c1.png" alt="" class="item__img">
+                <div class="item__info">
+                    <div class="item__top">
+                        <div class="type tip-parent">
+                            <div class="type__icon">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-bricks"></use>
+                                </svg>
+                            </div>
+                            <div class="tip">Под кирпич</div>
+                        </div>
+                        <div class="item__code">CW12011</div>
+                    </div>
+
+                    <div class="item__main">
+                        <div class="item__price"><span class="green">₽</span> 1805</div>
+                        <div class="item__square">м2</div>
+                    </div>
+                    <div class="item__bottom">
+                        <div class="item__text">Фиброцементные фасадные панели NICHIA под кирпич CW1965 16 мм</div>
+                        <div class="counter">
+                            <div class="counter__control minus">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-minus"></use>
+                                </svg>
+                            </div>
+                            <input type="number" value="1">
+                            <div class="counter__control plus">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-plus"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="item__cart">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-cart"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="img/c2.png" alt="" class="item__img">
+                <div class="item__info">
+                    <div class="item__top">
+                        <div class="type tip-parent">
+                            <div class="type__icon">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-bricks"></use>
+                                </svg>
+                            </div>
+                            <div class="tip">Под кирпич</div>
+                        </div>
+                        <div class="item__code">CW12011</div>
+                    </div>
+
+                    <div class="item__main">
+                        <div class="item__price"><span class="green">₽</span> 1805</div>
+                        <div class="item__square">м2</div>
+                    </div>
+                    <div class="item__bottom">
+                        <div class="item__text">Фиброцементные фасадные панели NICHIA под кирпич CW1965 16 мм</div>
+                        <div class="counter">
+                            <div class="counter__control minus">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-minus"></use>
+                                </svg>
+                            </div>
+                            <input type="number" value="1">
+                            <div class="counter__control plus">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-plus"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="item__cart">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-cart"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="img/c3.png" alt="" class="item__img">
+                <div class="item__info">
+                    <div class="item__top">
+                        <div class="type tip-parent">
+                            <div class="type__icon">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-bricks"></use>
+                                </svg>
+                            </div>
+                            <div class="tip">Под кирпич</div>
+                        </div>
+                        <div class="item__code">CW12011</div>
+                    </div>
+
+                    <div class="item__main">
+                        <div class="item__price"><span class="green">₽</span> 1805</div>
+                        <div class="item__square">м2</div>
+                    </div>
+                    <div class="item__bottom">
+                        <div class="item__text">Фиброцементные фасадные панели NICHIA под кирпич CW1965 16 мм</div>
+                        <div class="counter">
+                            <div class="counter__control minus">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-minus"></use>
+                                </svg>
+                            </div>
+                            <input type="number" value="1">
+                            <div class="counter__control plus">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-plus"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="item__cart">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-cart"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="img/c8.png" alt="" class="item__img">
+                <div class="item__info">
+                    <div class="item__top">
+                        <div class="type tip-parent">
+                            <div class="type__icon">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-bricks"></use>
+                                </svg>
+                            </div>
+                            <div class="tip">Под кирпич</div>
+                        </div>
+                        <div class="item__code">CW12011</div>
+                    </div>
+
+                    <div class="item__main">
+                        <div class="item__price"><span class="green">₽</span> 1805</div>
+                        <div class="item__square">м2</div>
+                    </div>
+                    <div class="item__bottom">
+                        <div class="item__text">Фиброцементные фасадные панели NICHIA под кирпич CW1965 16 мм</div>
+                        <div class="counter">
+                            <div class="counter__control minus">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-minus"></use>
+                                </svg>
+                            </div>
+                            <input type="number" value="1">
+                            <div class="counter__control plus">
+                                <svg class="icon">
+                                    <use xlink:href="img/symbol-defs.svg#icon-plus"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="item__cart">
+                            <svg class="icon">
+                                <use xlink:href="img/symbol-defs.svg#icon-cart"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="catalog__desc">
+            <div class="catalog__text">Со всем перечнем продукции Вы можете <br> <a
+                    href="javascript:void(0)">ознакомиться в нашем
+                    каталоге</a></div>
+            <a href="javascript:void(0)" class="btn">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-list"></use>
+                </svg>
+                Наш каталог
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- END CONTENT  -->
+//= template/footer.html
