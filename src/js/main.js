@@ -76,7 +76,7 @@ $('body').on('mouseenter', '.gallery__item', (e) => {
     zIndex++;
 });
 
-var swiper = new Swiper('.reviews .swiper', {
+var reviews = new Swiper('.reviews .swiper', {
     slidesPerView: 1.6,
     spaceBetween: 20,
     // autoplay: {
@@ -89,6 +89,26 @@ var swiper = new Swiper('.reviews .swiper', {
     navigation: {
         nextEl: '.reviews .swiper-button-next',
         prevEl: '.reviews .swiper-button-prev',
+    },
+});
+
+var projectNav = new Swiper('.project__slider-nav', {
+    spaceBetween: 10,
+    slidesPerView: 3,
+    watchSlidesProgress: true,
+    pagination: {
+        el: '.project .swiper-pagination',
+    },
+    navigation: {
+        nextEl: '.project .swiper-button-next',
+        prevEl: '.project .swiper-button-prev',
+    },
+});
+var projectMain = new Swiper('.project__slider-main', {
+    spaceBetween: 10,
+    effect: 'fade',
+    thumbs: {
+        swiper: projectNav,
     },
 });
 
