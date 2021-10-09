@@ -166,3 +166,12 @@ $('body').on('click', '.cart__footer .btn', function (e) {
   }
 });
 $('.count').counterUp();
+var highestTitle = 0;
+
+for (var _i = 0; _i < $('.cert__title').length; _i++) {
+  if ($('.cert__title').eq(_i).height() > highestTitle) {
+    highestTitle = $('.cert__title').eq(_i).height();
+  }
+}
+
+$('.cert__title').height(highestTitle);

@@ -201,3 +201,13 @@ $('body').on('click', '.cart__footer .btn', (e) => {
 });
 
 $('.count').counterUp();
+
+var highestTitle = 0;
+
+for (let i = 0; i < $('.cert__title').length; i++) {
+    if ($('.cert__title').eq(i).height() > highestTitle) {
+        highestTitle = $('.cert__title').eq(i).height(); 
+    } 
+}
+
+$('.cert__title').height(highestTitle);

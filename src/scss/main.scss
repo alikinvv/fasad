@@ -312,9 +312,11 @@ a {
                 transition: $trans;
             }
 
+            &.active,
             &:hover {
                 color: #fff;
                 border-color: $green;
+                background: $green;
 
                 svg {
                     fill: #fff;
@@ -323,6 +325,10 @@ a {
                 span.green {
                     color: #fff;
                 }
+            }
+
+            &.active::before {
+                display: none;
             }
         }
     }
@@ -1008,6 +1014,17 @@ a {
         background-size: contain;
         padding: 39px 0;
     }
+
+    & + .subtitle {
+        margin-top: -55px;
+    }
+}
+
+.subtitle {
+    font-family: $roboto;
+    font-weight: normal;
+    line-height: 18.75 / 16 * 100%;
+    margin-top: 35px;
 }
 
 .video {
@@ -1293,6 +1310,15 @@ a {
         }
     }
 
+    &.image {
+        .order__text {
+            font-family: $roboto;
+            font-weight: 400;
+            margin-top: 35px;
+            color: $light-gray;
+        }
+    }
+
     .wrap {
         @include fcsb;
         background: #ffffff;
@@ -1300,6 +1326,20 @@ a {
         border-radius: 5px;
         padding: 40px;
         margin-bottom: 47px;
+        position: relative;
+    }
+
+    &__img {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 476px;
+
+        img {
+            width: 100%;
+            pointer-events: none;
+            user-select: none;
+        }
     }
 
     &__controls {
@@ -1548,6 +1588,12 @@ a {
         @include flexlist(1px);
         padding-right: 59px;
         padding-left: 93px;
+
+        &.col2 {
+            .features__item {
+                @include flexitem(25%, 1px);
+            }
+        }
 
         & + .features__info {
             border-left: 1px solid $green;
@@ -3693,7 +3739,7 @@ a {
 
 .project {
     .container {
-        @include fcsb;
+        @include fssb;
 
         & > div {
             width: 50%;
@@ -3745,6 +3791,245 @@ a {
         &-controls {
             @include fcc;
             margin-top: 40px;
+        }
+    }
+
+    &__info {
+        padding-left: 65px;
+    }
+
+    &__features {
+        @include flexlist(12px);
+        padding-bottom: 35px;
+        border-bottom: 1px solid $process;
+        margin-bottom: 55px;
+
+        &-item {
+            @include flexitem(50%, 12px);
+            @include fsn;
+            font-weight: bold;
+            color: $gray;
+
+            svg {
+                fill: $green;
+                font-size: 23px;
+                margin-right: 16px;
+            }
+
+            span {
+                display: block;
+                color: #bdbdbd;
+            }
+        }
+    }
+
+    &__works {
+        span {
+            display: block;
+            color: #bdbdbd;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        &-item {
+            @include fcn;
+            color: $gray;
+            margin-bottom: 25px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            img {
+                margin-right: 15px;
+            }
+        }
+    }
+}
+
+.description {
+    padding: 65px 0;
+
+    h2 {
+        position: relative;
+        margin-bottom: 45px;
+
+        &::before {
+            content: '';
+            @include centerYa;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: $green;
+        }
+
+        span {
+            position: relative;
+            z-index: 2;
+            background: #fff;
+            padding-right: 16px;
+            display: inline-block;
+        }
+    }
+
+    &__text {
+        font-family: $roboto;
+        font-weight: normal;
+    }
+}
+
+.submenu {
+    .container {
+        @include fcn;
+        padding-bottom: 23px;
+        border-bottom: 1px solid $process;
+    }
+
+    a {
+        margin-right: 16px;
+        font-size: 14px;
+    }
+}
+
+.info {
+    font-family: $roboto;
+    line-height: 18.75 / 16 * 100%;
+
+    &.center {
+         text-align: center;
+    }
+
+    span {
+        font-weight: bold;
+    }
+
+    h3 {
+        color: $light-gray;
+        margin-bottom: 0;
+    }
+}
+
+.panels {
+    padding: 85px 0;
+
+    &__list {
+        @include flexlist(10px);
+    }
+
+    &__item {
+        @include flexitem(33.3%, 10px);
+        padding: 40px;
+        box-shadow: 0px 20px 30px rgba(28, 42, 64, 0.16);
+    }
+
+    &__img {
+        width: 258px;
+        margin-bottom: 25px;
+    }
+
+    h3 {
+        color: $green;
+        margin-bottom: 25px;
+    }
+
+    &__text {
+        font-family: $roboto;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 16.41 /14 * 100%;
+        margin-bottom: 25px;
+    }
+
+    &__flex {
+        &-item {
+            @include fcn;
+            margin-bottom: 25px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            img {
+                margin-right: 19px;
+            }
+        }
+    }
+}
+
+.videos {
+    &__list {
+        @include flexlist(10px);
+    }
+    
+    &__item {
+        @include flexitem(33.33%, 10px);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: $green;
+        border-radius: 5px;
+        height: 212px;
+        @include fcc;
+        cursor: pointer;
+
+        &:hover img {
+            transform: scale(1.2);
+        }
+
+        img {
+            width: 40px;
+            transition: $trans;
+        }
+    }
+}
+
+.cert {
+    padding: 65px;
+
+    &__list {
+        @include flexlist(11px);
+    }
+
+    &__item {
+        @include flexitem(33.33%, 11px);
+        padding: 40px;
+        box-shadow: 0px 20px 30px rgba(28, 42, 64, 0.16);
+        border-radius: 5px;
+    }
+
+    &__title {
+        font-weight: 700;
+        line-height: 21.86 / 16 * 100%;
+        margin-bottom: 20px;
+    }
+
+    &__img {
+        width: 198px;
+        padding: 10px;
+        border: 1px solid $process;
+        border-radius: 5px;
+        margin-bottom: 30px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__controls {
+        @include fcn;
+
+        .btn {
+            margin-right: 10px;
+
+            svg {
+                font-size: 20px;
+                margin-right: 10px;
+            }
+        }
+
+        span {
+            font-weight: 700;
+            color: $process;
         }
     }
 }
