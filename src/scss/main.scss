@@ -312,23 +312,31 @@ a {
                 transition: $trans;
             }
 
-            &.active,
             &:hover {
+                border-color: transparent;
+                background: transparent;
+
+                &::before {
+                    transform: translateY(0);
+                }
+            }
+
+            &.active,
+            &:active {
+                background: $green-active;
                 color: #fff;
-                border-color: $green;
-                background: $green;
 
                 svg {
                     fill: #fff;
                 }
-
-                span.green {
-                    color: #fff;
-                }
             }
 
-            &.active::before {
-                display: none;
+            &.active {
+                border-color: $green;
+
+                &:before {
+                    display: none;
+                }
             }
         }
     }
@@ -722,6 +730,39 @@ a {
     }
 }
 
+.iconslist {
+    .flex {
+        @include flexlist(1px);
+    }
+
+    .glyph {
+        border: 1px solid $process-shade;
+        @include fcc;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        width: 100px;
+        height: 100px;
+
+        div {
+            @include fcc;
+            flex-direction: column;
+
+            span {
+                font-size: 14px;
+            }
+        }
+    }
+
+    svg {
+        display: block;
+        font-size: 40px;
+        fill: $green;
+        margin-bottom: 10px;
+        margin-right: 0 !important;
+    }
+}
+
 .tip-parent {
     position: relative;
 
@@ -994,35 +1035,38 @@ a {
 }
 
 .title {
-    background: url('../img/title-green.svg') no-repeat center;
-    background-size: contain;
+    background-image: url('../img/title-green.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 170px;
     padding: 23px 0;
     margin: 55px 0;
 
     &.gradient {
-        background: url('../img/title-gradient.svg') no-repeat center;
-        background-size: contain;
+        background-image: url('../img/title-gradient.svg');
     }
 
     &.gray {
-        background: url('../img/title-gray.svg') no-repeat center;
-        background-size: contain;
+        background-image: url('../img/title-gray.svg');
     }
 
     &.outline {
-        background: url('../img/title.svg') no-repeat center;
-        background-size: contain;
+        background-image: url('../img/title.svg');
         padding: 39px 0;
     }
 
+    &.none {
+        background: none;
+    }
+
     & + .subtitle {
-        margin-top: -55px;
+        margin-top: -61px;
     }
 }
 
 .subtitle {
     font-family: $roboto;
-    font-weight: normal;
+    font-weight: bold;
     line-height: 18.75 / 16 * 100%;
     margin-top: 35px;
 }
@@ -1273,10 +1317,28 @@ a {
 
     & + .title {
         margin: 28px 0 5px;
+
+        & + .subtitle {
+            margin-top: -12px;
+        }
     }
 
     .container {
         @include fcsb;
+        position: relative;
+    }
+
+    .line {
+        position: absolute;
+        top: 65%;
+        left: -11%;
+        pointer-events: none;
+        user-select: none;
+
+        &.right {
+            left: initial;
+            right: -11%;
+        }
     }
 
     &.shadow {
@@ -1311,6 +1373,16 @@ a {
     }
 
     &.image {
+        padding: 107px 0;
+
+        .container {
+            border: 0;
+        }
+
+        .wrap {
+            margin-bottom: 0;
+        }
+
         .order__text {
             font-family: $roboto;
             font-weight: 400;
@@ -1574,6 +1646,24 @@ a {
         margin: 24px 0;
     }
 
+    &.col2 {
+        padding: 0;
+
+        .features__list {
+            padding: 0;
+            width: 100%;
+
+            .features__item {
+                @include flexitem(25%, 1px);
+            }
+        }
+
+        .line {
+            top: 83%;
+            right: -11%;
+        }
+    }
+
     .container {
         @include fcsb;
         position: relative;
@@ -1588,12 +1678,6 @@ a {
         @include flexlist(1px);
         padding-right: 59px;
         padding-left: 93px;
-
-        &.col2 {
-            .features__item {
-                @include flexitem(25%, 1px);
-            }
-        }
 
         & + .features__info {
             border-left: 1px solid $green;
@@ -1812,6 +1896,10 @@ a {
 
     & + .features {
         padding: 83px 0;
+    }
+
+    & + .step {
+        margin-top: 56px;
     }
 
     .container {
@@ -2274,6 +2362,7 @@ a {
         svg {
             margin-right: 10px;
             font-size: 27px;
+            fill: $process;
         }
     }
 
@@ -2603,6 +2692,10 @@ a {
 .breadcrumbs {
     padding-bottom: 10px;
     margin-top: 6px;
+
+    & + .services {
+        padding: 54px 0 35px;
+    }
 
     .container {
         border-bottom: 1px solid $process;
@@ -3206,6 +3299,10 @@ a {
         padding: 32px 0;
     }
 
+    & + .info.fw400 {
+        padding: 101px 0 35px;
+    }
+
     .container {
         @include fesb;
         background: url('../img/icons/ruler.svg') no-repeat 0 -5px;
@@ -3227,6 +3324,14 @@ a {
         }
     }
 
+    &.with-line {
+        .services__title {
+            background: url('../img/title-gradient.svg') no-repeat right 0;
+            background-size: contain;
+            width: 100%;
+        }
+    }
+
     &__icon {
         position: absolute;
         bottom: 0;
@@ -3242,6 +3347,15 @@ a {
         text-transform: uppercase;
         position: relative;
         z-index: 2;
+
+        &.h1 {
+            font-size: 46px;
+            line-height: 38.25 / 46 * 100%;
+        }
+
+        .small {
+            font-size: 28px;
+        }
     }
 
     &__right {
@@ -3738,6 +3852,8 @@ a {
 }
 
 .project {
+    padding: 30px 0;
+
     .container {
         @include fssb;
 
@@ -3755,7 +3871,7 @@ a {
             overflow: hidden;
             margin-bottom: 40px;
             padding: 60px;
-            margin: -60px -60px 0px;
+            margin: -60px -60px -40px;
 
             .swiper-slide-active {
                 img {
@@ -3790,7 +3906,7 @@ a {
 
         &-controls {
             @include fcc;
-            margin-top: 40px;
+            margin-top: 31px;
         }
     }
 
@@ -3800,25 +3916,27 @@ a {
 
     &__features {
         @include flexlist(12px);
-        padding-bottom: 35px;
+        padding-bottom: 9px;
         border-bottom: 1px solid $process;
         margin-bottom: 55px;
 
         &-item {
-            @include flexitem(50%, 12px);
+            @include flexitem(50%, 12px, 27px);
             @include fsn;
             font-weight: bold;
             color: $gray;
 
             svg {
                 fill: $green;
-                font-size: 23px;
+                font-size: 26px;
                 margin-right: 16px;
             }
 
             span {
                 display: block;
                 color: #bdbdbd;
+                margin-bottom: 11px;
+                line-height: 21.86 / 16 * 100%;
             }
         }
     }
@@ -3848,7 +3966,7 @@ a {
 }
 
 .description {
-    padding: 65px 0;
+    padding: 46px 0 0;
 
     h2 {
         position: relative;
@@ -3879,15 +3997,27 @@ a {
 }
 
 .submenu {
+    padding: 29px 0;
+
+    & + .title {
+        margin: 41px 0;
+
+        & + .subtitle {
+            margin-top: -26px;
+        }
+    }
+
     .container {
         @include fcn;
-        padding-bottom: 23px;
+        flex-wrap: wrap;
+        padding-bottom: 6px;
         border-bottom: 1px solid $process;
     }
 
     a {
         margin-right: 16px;
         font-size: 14px;
+        margin-bottom: 16px;
     }
 }
 
@@ -3895,8 +4025,21 @@ a {
     font-family: $roboto;
     line-height: 18.75 / 16 * 100%;
 
+    &.fw400 {
+        padding: 47px 0;
+
+        h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+    }
+
+    & + .step {
+        margin-top: 21px;
+    }
+
     &.center {
-         text-align: center;
+        text-align: center;
     }
 
     span {
@@ -3944,6 +4087,7 @@ a {
         &-item {
             @include fcn;
             margin-bottom: 25px;
+            line-height: 21.86 / 16 * 100%;
 
             &:last-child {
                 margin-bottom: 0;
@@ -3957,12 +4101,24 @@ a {
 }
 
 .videos {
+    .container {
+        position: relative;
+    }
+
+    .line {
+        position: absolute;
+        top: 44%;
+        right: -11%;
+        pointer-events: none;
+        user-select: none;
+    }
+
     &__list {
         @include flexlist(10px);
     }
-    
+
     &__item {
-        @include flexitem(33.33%, 10px);
+        @include flexitem(33.33%, 10px, 23px);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -3986,15 +4142,43 @@ a {
 .cert {
     padding: 65px;
 
+    .container {
+        position: relative;
+
+        .line {
+            position: absolute;
+            pointer-events: none;
+            user-select: none;
+
+            &.top {
+                top: -10%;
+                left: 43%;
+            }
+
+            &.bottom {
+                top: 92%;
+                left: -11%;
+            }
+
+            &.right {
+                top: 22%;
+                right: -12%;
+            }
+        }
+    }
+
     &__list {
         @include flexlist(11px);
+        position: relative;
+        z-index: 2;
     }
 
     &__item {
         @include flexitem(33.33%, 11px);
-        padding: 40px;
+        padding: 50px 40px;
         box-shadow: 0px 20px 30px rgba(28, 42, 64, 0.16);
         border-radius: 5px;
+        background: #fff;
     }
 
     &__title {
@@ -4004,7 +4188,6 @@ a {
     }
 
     &__img {
-        width: 198px;
         padding: 10px;
         border: 1px solid $process;
         border-radius: 5px;
@@ -4020,6 +4203,8 @@ a {
 
         .btn {
             margin-right: 10px;
+            font-size: 14px;
+            padding: 8px 11px;
 
             svg {
                 font-size: 20px;
@@ -4031,5 +4216,400 @@ a {
             font-weight: 700;
             color: $process;
         }
+    }
+}
+
+.step {
+    margin-bottom: 67px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__header {
+        position: relative;
+        @include fcn;
+        width: 100%;
+        margin-bottom: 35px;
+
+        &::before {
+            content: '';
+            @include centerYa;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: $green;
+        }
+
+        h2 {
+            background: #fff;
+            padding-right: 16px;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+            @include fcn;
+
+            svg {
+                font-size: 45px;
+                margin-right: 19px;
+                fill: $green;
+            }
+        }
+    }
+
+    &__body {
+        line-height: 21.86 / 16 * 100%;
+        font-weight: bold;
+        margin-bottom: 35px;
+    }
+
+    &__list {
+        @include flexlist(10px);
+
+        &.col2 {
+            .step__item {
+                @include flexitem(50%, 10px);
+            }
+        }
+    }
+
+    &__item {
+        @include flexitem(33.33%, 10px);
+        padding: 44px 40px;
+        background: #fff;
+        box-shadow: 0px 20px 30px rgba(28, 42, 64, 0.16);
+        border-radius: 5px;
+    }
+
+    &__top {
+        @include fcsb;
+        margin-bottom: 31px;
+    }
+
+    &__num {
+        font-weight: 800;
+        font-size: 28px;
+        color: #f3f3f3;
+    }
+
+    &__title {
+        font-weight: bold;
+        line-height: 21.86 / 16 * 100%;
+        margin-bottom: 25px;
+    }
+
+    &__text {
+        line-height: 18.75 / 16 * 100%;
+        margin-bottom: 29px;
+        font-family: $roboto;
+        font-weight: 400;
+    }
+
+    &__img {
+        padding: 10px;
+        border: 1px solid $light-gray;
+        border-radius: 5px;
+        display: inline-block;
+
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+.delivery {
+    padding: 104px 0 19px;
+
+    .container {
+        position: relative;
+    }
+
+    .text {
+        position: absolute;
+        right: -7%;
+        top: 50%;
+        transform: translateX(100%) translateY(-50%);
+        opacity: 0.3;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    &__list {
+        @include flexlist(10px);
+    }
+
+    &__item {
+        @include flexitem(33.33%, 10px);
+        text-align: center;
+
+        svg {
+            fill: $green;
+            font-size: 33px;
+            margin-bottom: 26px;
+        }
+    }
+
+    &__title {
+        text-transform: uppercase;
+        line-height: 21.4 / 20 * 100%;
+        margin-bottom: 31px;
+        display: block;
+    }
+
+    &__time {
+        font-size: 46px;
+        font-weight: 800;
+        margin-bottom: 30px;
+        color: $gray;
+    }
+
+    &__features {
+        position: relative;
+        padding-top: 35px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 40px;
+            right: 40px;
+            height: 1px;
+            background: $process;
+        }
+
+        div {
+            text-align: center;
+            padding: 10px;
+            padding-left: 39px;
+            font-weight: 700;
+            line-height: 21.86 / 16 * 100%;
+            margin-bottom: 29px;
+            color: $gray;
+            position: relative;
+
+            &::before {
+                content: '';
+                @include centerYa;
+                left: 0;
+                width: 24px;
+                height: 24px;
+                background: url('../img/icons/check-circle.svg') no-repeat center;
+                background-size: contain;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            img {
+                margin-right: 15px;
+            }
+        }
+    }
+}
+
+.payment {
+    padding: 108px 0 58px;
+
+    .container {
+        position: relative;
+    }
+
+    .text {
+        position: absolute;
+        left: -7%;
+        top: 50%;
+        transform: translateX(-100%) translateY(-50%);
+        opacity: 0.3;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    &__title {
+        position: relative;
+        margin-bottom: 28px;
+
+        span {
+            background: #fff;
+            position: relative;
+            z-index: 2;
+            padding-right: 30px;
+        }
+
+        &::before {
+            content: '';
+            @include centerYa;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: $process;
+        }
+    }
+
+    &__list {
+        @include flexlist(10px);
+
+        & + .payment__title {
+            margin-top: 65px;
+        }
+    }
+
+    &__item {
+        @include flexitem(50%, 10px);
+        background: #ffffff;
+        box-shadow: 0px 20px 30px rgba(28, 42, 64, 0.16);
+        border-radius: 5px;
+        padding: 40px;
+    }
+
+    &__header {
+        @include fcsb;
+        padding-bottom: 16px;
+        border-bottom: 1px solid $green;
+        margin-bottom: 25px;
+
+        svg {
+            fill: $green;
+            font-size: 36px;
+        }
+    }
+
+    &__percent {
+        font-weight: 800;
+        font-size: 28px;
+        color: #f3f3f3;
+    }
+
+    &__name {
+        margin-bottom: 25px;
+    }
+
+    &__text {
+        line-height: 18.75 / 16 * 100%;
+        font-family: $roboto;
+        font-weight: normal;
+    }
+}
+
+.advice {
+    padding: 33px 0;
+
+    &__title {
+        position: relative;
+        margin-bottom: 35px;
+
+        &::before {
+            content: '';
+            @include centerYa;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: $green;
+        }
+
+        & > span {
+            background: #fff;
+            padding-right: 16px;
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    &__list {
+        @include flexlist(10px);
+
+        & + .advice__title {
+            margin-top: 70px;
+        }
+    }
+
+    &__item {
+        @include flexitem(33.33%, 10px);
+        background: #ffffff;
+        box-shadow: 0px 20px 30px rgba(28, 42, 64, 0.16);
+        border-radius: 5px;
+        padding: 40px;
+    }
+
+    &__img {
+        border-radius: 5px;
+        width: 100%;
+        margin-bottom: 17px;
+    }
+
+    &__step {
+        @include fcsb;
+        margin-bottom: 29px;
+
+        svg {
+            fill: $green;
+            font-size: 20px;
+        }
+    }
+
+    &__num {
+        font-weight: 800;
+        font-size: 28px;
+        color: #f3f3f3;
+    }
+
+    &__text {
+        line-height: 21.86 / 16 * 100%;
+        font-weight: bold;
+        margin-bottom: 25px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 9px;
+
+        svg {
+            font-size: 23px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.article {
+    & + .catalog {
+        margin-top: -39px;
+    }
+
+    &__title {
+        position: relative;
+        margin-bottom: 45px;
+
+        &::before {
+            content: '';
+            @include centerYa;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: $green;
+        }
+
+        span {
+            background: #fff;
+            padding-right: 16px;
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    img.float {
+        float: left;
+        margin-right: 40px;
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-family: $roboto;
+        font-weight: normal;
+        line-height: 18.75 / 16 * 100%;
+    }
+
+    .order {
+        padding: 30px 0;
+        margin-bottom: 38px;
     }
 }

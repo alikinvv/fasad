@@ -175,3 +175,30 @@ for (var _i = 0; _i < $('.cert__title').length; _i++) {
 }
 
 $('.cert__title').height(highestTitle);
+
+for (var _i2 = 0; _i2 < $('.step').length; _i2++) {
+  var $step = $('.step').eq(_i2);
+  var stepHeight = 0;
+
+  for (var j = 0; j < $step.find('.step__title').length; j++) {
+    if ($step.find('.step__title').eq(j).height() > stepHeight) {
+      stepHeight = $step.find('.step__title').eq(j).height();
+    }
+  }
+
+  $step.find('.step__title').height(stepHeight);
+}
+
+for (var _i3 = 0; _i3 < $('.step').length; _i3++) {
+  var _$step = $('.step').eq(_i3);
+
+  var _stepHeight = 0;
+
+  for (var _j = 0; _j < _$step.find('.step__text').length; _j++) {
+    if (_$step.find('.step__text').eq(_j).height() > _stepHeight) {
+      _stepHeight = _$step.find('.step__text').eq(_j).height();
+    }
+  }
+
+  _$step.find('.step__text').height(_stepHeight);
+}
