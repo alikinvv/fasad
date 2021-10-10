@@ -1,0 +1,89 @@
+//= template/header.html
+<!-- START CONTENT  -->
+
+<section class="breadcrumbs">
+    <div class="container">
+        <div class="breadcrumbs__list">
+            <a href="javascript:void(0)">Главная</a>
+            <a href="javascript:void(0)" class="active">О ФИБРОЦЕМЕНТЕ</a>
+        </div>
+    </div>
+</section>
+
+<section class="services bg">
+    <div class="container">
+        <img src="img/icons/phone2.svg" alt="" class="services__icon" />
+        <div class="services__title">КОНТАКТЫ И РЕКВИЗИТЫ</div>
+        <div class="services__right">
+            <div class="services__text"><span class="green">Нужны реквизиты для платежа?</span><br />Нажмите на
+                “Скопировать реквизиты”, и вставьте в нужный документ</div>
+            <a href="javascript:void(0)" data-modal="contacts" class="btn btn-outline">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-blank"></use>
+                </svg>
+                Показать реквизиты
+            </a>
+            <a href="javascript:void(0)" data-modal="question" class="btn btn-gray">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-copy"></use>
+                </svg>
+                Задать вопрос
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="contacts">
+    <div class="container">
+        <div class="contacts__info">
+            <img src="img/logo.svg" width="152" alt="">
+            <div class="contacts__text">Главной ценностью для сотрудников М-Фасад являются заказчики. <br>
+                Каждый клиент – наш надежный партнер. Поэтому мы не ограничиваем <br>
+                географию предоставления услуг, осуществляя монтаж панелей <span class="green">NICHIA</span> во <br>
+                всех уголках России. Воплощайте свои мечты в реальность вместе с нами!</div>
+
+            <h2><span class="green">Контакты</span></h2>
+            <div class="contacts__list">
+                <a href="javascript:void(0)">
+                    <svg class="icon">
+                        <use xlink:href="img/symbol-defs.svg#icon-point"></use>
+                    </svg>
+                    Санкт-Петербург, 2-я Советская, 45/17
+                </a>
+                <a href="tel+12345678900">
+                    <svg class="icon">
+                        <use xlink:href="img/symbol-defs.svg#icon-phone"></use>
+                    </svg>
+                    +1 (234) 567-89-00
+                </a>
+                <a href="mailto:help@z-fasad.ru">
+                    <svg class="icon">
+                        <use xlink:href="img/symbol-defs.svg#icon-mail"></use>
+                    </svg>
+                    help@z-fasad.ru
+                </a>
+            </div>
+        </div>
+        <form action="" class="form">
+            <h3>Возникли вопросы?</h3>
+            <span>Оставьте свои контактные данные, и наш <br> специалист свяжется с Вами!</span>
+
+            <div class="form-group">
+                <input type="text" name="firstname" placeholder="Имя*">
+            </div>
+            <div class="form-group">
+                <input type="text" name="lastname" placeholder="Фамилия*">
+            </div>
+            <div class="form-group">
+                <input type="text" class="phone-mask" name="phone" placeholder="Телефон*">
+            </div>
+            <div class="form-group">
+                <input type="text" name="email" placeholder="E-mail*">
+            </div>
+            <button type="submit" class="btn">Оставить заявку</button>
+        </form>
+    </div>
+</section>
+
+<!-- END CONTENT  -->
+//= template/footer.html

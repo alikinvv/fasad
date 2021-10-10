@@ -153,7 +153,7 @@
         <div class="services__title">О ФИБРОЦЕМЕНТЕ</div>
         <div class="services__right">
             <div class="services__text"><span>Есть вопросы?</span><br />Менеджер ответит Вам в течении ближайшего времени!</div>
-            <a href="javascript:void(0)" class="btn btn-outline">
+            <a href="javascript:void(0)" data-modal="question" class="btn btn-outline">
                 <svg class="icon">
                     <use xlink:href="img/symbol-defs.svg#icon-phone"></use>
                 </svg>
@@ -309,7 +309,7 @@
     </div>
 </section>
 
-<footer class="footer">
+<footer class="footer pt">
     <div class="container">
         <img src="img/title.svg" alt="" class="line top" />
         <img src="img/title-gradient.svg" alt="" class="line bottom" />
@@ -387,10 +387,146 @@
     </div>
 </footer>
 
+<div class="backdrop">
+    <div class="modal" data-modal="contacts">
+        <div class="modal__content">
+            <div class="modal__body">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-copy"></use>
+                </svg>
+                <h3>Наши реквизиты</h3>
+
+                <div class="modal__border"> ООО «М-ФАСАД» <br>
+                    Юридический адрес: 115054, Российская Федерация, г.Москва, ул.Бахрушина, дом 16, строение 1, эт.1,
+                    пом. II, ком.1 <br> <br>
+                    Расчетный счет: 40702810138250011190 <br> <br>
+                    Банк: в Московском банке Сбербанка России ПАО, г.Москва <br> <br>
+                    Корреспондентский счет: 30101810400000000225 <br> <br>
+                    ИНН/КПП: 7705919004/770501001 <br> <br>
+                    ОГРН: 1107746437040 <br> <br>
+                    Генеральный директор ООО «М-ФАСАД» - Артищев В.А. </div>
+
+                <a href="javascript:void(0)" class="btn close">Закрыть</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" data-modal="request">
+        <div class="modal__content">
+            <div class="modal__body">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-phone"></use>
+                </svg>
+                <h3>Оставьте заявку </h3>
+
+                <div class="modal__text">Оставьте свои контактные данные, и наш специалист свяжется с Вами!</div>
+
+                <form action="" class="form">
+                    <div class="form-group">
+                        <input type="text" name="firstname" placeholder="Имя*">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="lastname" placeholder="Фамилия*">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="phone-mask" name="phone" placeholder="Телефон*">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="email" placeholder="E-mail*">
+                    </div>
+                    <button type="submit" class="btn" data-modal="thanks">Оставить заявку</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" data-modal="crash">
+        <div class="modal__content">
+            <div class="modal__body">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-hammer"></use>
+                </svg>
+                <h3>Запишитесь на краш-тест</h3>
+
+                <div class="modal__text">Оставьте свои контактные данные, и наш специалист свяжется с Вами!</div>
+
+                <form action="" class="form">
+                    <div class="form-group">
+                        <input type="text" name="firstname" placeholder="Имя*">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="lastname" placeholder="Фамилия*">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="phone-mask" name="phone" placeholder="Телефон*">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="email" placeholder="E-mail*">
+                    </div>
+                    <button type="submit" class="btn" data-modal="thanks">Записаться!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" data-modal="question">
+        <div class="modal__content">
+            <div class="modal__body">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-question"></use>
+                </svg>
+                <h3>Возникли вопросы?</h3>
+
+                <div class="modal__text">Есть вопросы? <br>
+                    Мы с радостью на них ответим!</div>
+
+                <form action="" class="form">
+                    <div class="form-group">
+                        <input type="text" name="firstname" placeholder="Имя*">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="phone-mask" name="phone" placeholder="Телефон*">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="email" placeholder="E-mail*">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="question" placeholder="Ваш вопрос"></textarea>
+                    </div>
+                    <a href="javascript:void(0)" class="btn btn-outline">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-file"></use>
+                        </svg>
+                        Прикрепить файлы
+                    </a>
+                    <button type="submit" class="btn" data-modal="thanks">Оставить заявку</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" data-modal="thanks">
+        <div class="modal__content">
+            <div class="modal__body">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-like"></use>
+                </svg>
+                <h3>Спасибо за заявку!</h3>
+
+                <div class="modal__text">Мы получили Вашу заявку, и свяжемся с Вами
+                    в ближайшее время!</div>
+
+                <a href="javascript:void(0)" class="btn close">Закрыть</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+<script src="https://unpkg.com/imask"></script>
 <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
 <script src="js/jquery.counterup.min.js"></script>

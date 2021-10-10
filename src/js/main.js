@@ -43,11 +43,11 @@ $('body').on('blur', '.search input', () => {
     $('.search').removeClass('focus');
 });
 
-$('body').on('focus', '.form-group input', (e) => {
+$('body').on('focus', '.form-group input, .form-group textarea', (e) => {
     $(e.currentTarget).parent().addClass('focus');
 });
 
-$('body').on('blur', '.form-group input', (e) => {
+$('body').on('blur', '.form-group input, .form-group textarea', (e) => {
     $(e.currentTarget).parent().removeClass('focus');
 });
 
@@ -237,3 +237,46 @@ for (let i = 0; i < $('.step').length; i++) {
 
     $step.find('.step__text').height(stepHeight);
 }
+
+let masks = document.querySelectorAll('.phone-mask');
+
+masks.forEach((el) => {
+    IMask(el, { mask: '+{7} (000) 000 00 00' });
+});
+
+// modals
+
+// show modal
+$('body').on('click', '[data-modal]:not(.modal)', (e) => {
+    if (!$('.backdrop').hasClass('active')) $('.backdrop').addClass('active');
+    $('.modal.active').removeClass('active');
+    $(`.modal[data-modal="${$(e.currentTarget).attr('data-modal')}"]`).addClass('active');
+
+    if ($(e.currentTarget).attr('data-modal') === 'thanks') {
+        setTimeout(() => {
+            $('.modal.active').find('svg').addClass('animate');
+        }, 100);
+    }
+});
+
+// close modal events
+let closeModal = () => {
+    $('.backdrop').removeClass('active');
+    $('.modal').removeClass('active');
+    $('.modal').find('svg').removeClass('animate');
+};
+
+$('body').on('click', '.modal__close, .modal .close', closeModal);
+
+$('body').on('click', '.backdrop', (e) => {
+    if ($(e.target)[0].className === 'backdrop active') closeModal();
+});
+
+// close modal on press ESC
+$(document).keyup((e) => {
+    if (e.keyCode === 27 && $('.backdrop').hasClass('active')) closeModal();
+});
+
+$('body').on('submit', 'form', (e) => {
+    e.preventDefault();
+});

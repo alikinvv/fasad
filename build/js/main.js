@@ -37,10 +37,10 @@ $('body').on('focus', '.search input', function () {
 $('body').on('blur', '.search input', function () {
   $('.search').removeClass('focus');
 });
-$('body').on('focus', '.form-group input', function (e) {
+$('body').on('focus', '.form-group input, .form-group textarea', function (e) {
   $(e.currentTarget).parent().addClass('focus');
 });
-$('body').on('blur', '.form-group input', function (e) {
+$('body').on('blur', '.form-group input, .form-group textarea', function (e) {
   $(e.currentTarget).parent().removeClass('focus');
 });
 var swiper = new Swiper('.slider .swiper', {
@@ -202,3 +202,41 @@ for (var _i3 = 0; _i3 < $('.step').length; _i3++) {
 
   _$step.find('.step__text').height(_stepHeight);
 }
+
+var masks = document.querySelectorAll('.phone-mask');
+masks.forEach(function (el) {
+  IMask(el, {
+    mask: '+{7} (000) 000 00 00'
+  });
+}); // modals
+// show modal
+
+$('body').on('click', '[data-modal]:not(.modal)', function (e) {
+  if (!$('.backdrop').hasClass('active')) $('.backdrop').addClass('active');
+  $('.modal.active').removeClass('active');
+  $(".modal[data-modal=\"".concat($(e.currentTarget).attr('data-modal'), "\"]")).addClass('active');
+
+  if ($(e.currentTarget).attr('data-modal') === 'thanks') {
+    setTimeout(function () {
+      $('.modal.active').find('svg').addClass('animate');
+    }, 100);
+  }
+}); // close modal events
+
+var closeModal = function closeModal() {
+  $('.backdrop').removeClass('active');
+  $('.modal').removeClass('active');
+  $('.modal').find('svg').removeClass('animate');
+};
+
+$('body').on('click', '.modal__close, .modal .close', closeModal);
+$('body').on('click', '.backdrop', function (e) {
+  if ($(e.target)[0].className === 'backdrop active') closeModal();
+}); // close modal on press ESC
+
+$(document).keyup(function (e) {
+  if (e.keyCode === 27 && $('.backdrop').hasClass('active')) closeModal();
+});
+$('body').on('submit', 'form', function (e) {
+  e.preventDefault();
+});

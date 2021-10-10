@@ -143,8 +143,7 @@
         <img src="img/icons/calc2.svg" alt="" class="services__icon" />
         <div class="services__title">КАЛЬКУЛЯТОР РАСЧЁТА</div>
         <div class="services__right">
-            <div class="services__text"><span>Есть вопросы?</span><br />Менеджер ответит Вам в течении ближайшего
-                времени!</div>
+            <div class="services__text"><span>Есть вопросы?</span><br />Менеджер ответит Вам в течении ближайшего времени!</div>
             <a href="javascript:void(0)" class="btn btn-outline">
                 <svg class="icon">
                     <use xlink:href="img/symbol-defs.svg#icon-phone"></use>
@@ -162,14 +161,14 @@
             <h3>Площадь, за вычетом окон и дверей<span class="green">*</span></h3>
 
             <div class="form-group">
-                <input type="text" placeholder="Введите площадь, м2">
+                <input type="text" name="area" placeholder="Введите площадь, м2" />
             </div>
 
             <div class="calculator__item">
                 <h3 class="calculator__title">Толщина панели</h3>
                 <div class="radio-group">
                     <div class="radio">
-                        <input checked type="radio" id="r1" name="rad1">
+                        <input checked type="radio" id="r1" name="rad1" />
                         <label for="r1">
                             <svg class="icon">
                                 <use xlink:href="img/symbol-defs.svg#icon-list"></use>
@@ -179,11 +178,11 @@
                         </label>
                     </div>
                     <div class="radio">
-                        <input type="radio" id="r2" name="rad1">
+                        <input type="radio" id="r2" name="rad1" />
                         <label for="r2">16 мм</label>
                     </div>
                     <div class="radio">
-                        <input type="radio" id="r3" name="rad1">
+                        <input type="radio" id="r3" name="rad1" />
                         <label for="r3">18 мм</label>
                     </div>
                 </div>
@@ -192,11 +191,11 @@
                 <h3 class="calculator__title">Теплоизоляция</h3>
                 <div class="radio-group">
                     <div class="radio">
-                        <input checked type="radio" id="r4" name="rad2">
+                        <input checked type="radio" id="r4" name="rad2" />
                         <label for="r4">Да</label>
                     </div>
                     <div class="radio">
-                        <input type="radio" id="r5" name="rad2">
+                        <input type="radio" id="r5" name="rad2" />
                         <label for="r5">Нет</label>
                     </div>
                 </div>
@@ -205,15 +204,15 @@
                 <h3 class="calculator__title">Толщина теплоизоляционного слоя</h3>
                 <div class="radio-group">
                     <div class="radio">
-                        <input checked type="radio" id="r6" name="rad3">
+                        <input checked type="radio" id="r6" name="rad3" />
                         <label for="r6">50 мм</label>
                     </div>
                     <div class="radio">
-                        <input type="radio" id="r7" name="rad3">
+                        <input type="radio" id="r7" name="rad3" />
                         <label for="r7">100 мм</label>
                     </div>
                     <div class="radio">
-                        <input type="radio" id="r8" name="rad3">
+                        <input type="radio" id="r8" name="rad3" />
                         <label for="r8">150 мм</label>
                     </div>
                 </div>
@@ -222,15 +221,15 @@
                 <h3 class="calculator__title">Подсистема</h3>
                 <div class="radio-group">
                     <div class="radio">
-                        <input checked type="radio" id="r9" name="rad4">
+                        <input checked type="radio" id="r9" name="rad4" />
                         <label for="r9">Деревянная</label>
                     </div>
                     <div class="radio">
-                        <input type="radio" id="r10" name="rad4">
+                        <input type="radio" id="r10" name="rad4" />
                         <label for="r10">Металлическая</label>
                     </div>
                     <div class="radio">
-                        <input type="radio" id="r11" name="rad4">
+                        <input type="radio" id="r11" name="rad4" />
                         <label for="r11">Комбинированные</label>
                     </div>
                 </div>
@@ -242,8 +241,7 @@
                 <ul>
                     <li>Фибросайдинговые фасадные панели NICHIA, <strong>3030x455x14 мм</strong></li>
                     <li><strong>Монтаж сквозной</strong> (саморез/гвоздь)</li>
-                    <li>Комплектующие: <strong>гвозди, соединительные планки, герметик, грунтовка, краска,
-                            шпатлевка.</strong></li>
+                    <li>Комплектующие: <strong>гвозди, соединительные планки, герметик, грунтовка, краска, шпатлевка.</strong></li>
                 </ul>
 
                 <div class="calculator__price">
@@ -261,8 +259,10 @@
                     <div class="note__wrap">
                         <h3>Внимание!</h3>
                         <ul class="w100">
-                            <li>Панели данной толщины монтируются только на деревенянную (комбинированную) подсистему
-                                (брусок строганный, антисептированный, естественной влажности).</li>
+                            <li>
+                                Панели данной толщины монтируются только на деревенянную (комбинированную) подсистему (брусок строганный, антисептированный,
+                                естественной влажности).
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -271,9 +271,10 @@
             <div class="calculator__total">
                 <h3>Итоговая стоимость</h3>
                 <div class="calculator__total-price"><span class="green">₽</span> 0</div>
-                <div class="calculator__text">* Количество и стоимость материала определяется только после замеров
-                    фасада,<br>утверждения 3D дизайна и разработки схемы раскладки панелей с учетом
-                    архитектурных<br>особенностей здания.</div>
+                <div class="calculator__text">
+                    * Количество и стоимость материала определяется только после замеров фасада,<br />утверждения 3D дизайна и разработки схемы раскладки
+                    панелей с учетом архитектурных<br />особенностей здания.
+                </div>
                 <a href="javascript:void(0)" class="btn">
                     <svg class="icon">
                         <use xlink:href="img/symbol-defs.svg#icon-blank"></use>
@@ -300,7 +301,8 @@
                 </svg>
                 <h3 class="features__title">Безопасный</h3>
                 <div class="features__text">
-                    <span class="green">Экологичный, <br />
+                    <span class="green"
+                        >Экологичный, <br />
                         негорючий
                     </span>
                     материал, <br />
@@ -345,14 +347,16 @@
         <div class="features__info">
             <img src="img/icons/scope.svg" alt="" class="features__img" />
             <h3 class="features__name">Все преимущества<br />проверены в рамках<br />многочисленных<br />испытаний</h3>
-            <a href="javascript:void(0)" class="btn">Результаты испытаний
+            <a href="javascript:void(0)" class="btn"
+                >Результаты испытаний
                 <svg class="icon">
-                    <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
-                </svg></a>
-            <a href="javascript:void(0)" class="btn btn-outline">Подробнее о фиброцементе
+                    <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use></svg
+            ></a>
+            <a href="javascript:void(0)" class="btn btn-outline"
+                >Подробнее о фиброцементе
                 <svg class="icon">
-                    <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use>
-                </svg></a>
+                    <use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use></svg
+            ></a>
         </div>
 
         <img src="img/title.svg" alt="" class="line" />
@@ -379,17 +383,16 @@
                 <strong>ломайте, жгите, обливайте водой</strong> - количество и <br />
                 качество тестов ограничено только вашей фантазией
             </div>
-            <a href="javascript:void(0)" class="btn">Записаться на краш-тест</a>
+            <a href="javascript:void(0)" data-modal="crash" class="btn">Записаться на краш-тест</a>
         </div>
-        <div class="video" data-fancybox href="https://www.youtube.com/watch?v=K0uAIFbuPm8"
-            style="background-image: url('img/video.png')">
+        <div class="video" data-fancybox href="https://www.youtube.com/watch?v=K0uAIFbuPm8" style="background-image: url('img/video.png')">
             <img src="img/icons/play.svg" alt="" />
         </div>
     </div>
 </section>
 
 <h2 class="title center outline">
-    Возможно Вас <br>
+    Возможно Вас <br />
     так же заинтересует
 </h2>
 
@@ -399,7 +402,7 @@
             <img src="img/panels.svg" alt="" class="text" />
 
             <div class="item">
-                <img src="img/c1.png" alt="" class="item__img">
+                <img src="img/c1.png" alt="" class="item__img" />
                 <div class="item__info">
                     <div class="item__top">
                         <div class="type tip-parent">
@@ -425,7 +428,7 @@
                                     <use xlink:href="img/symbol-defs.svg#icon-minus"></use>
                                 </svg>
                             </div>
-                            <input type="number" value="1">
+                            <input type="number" value="1" />
                             <div class="counter__control plus">
                                 <svg class="icon">
                                     <use xlink:href="img/symbol-defs.svg#icon-plus"></use>
@@ -441,7 +444,7 @@
                 </div>
             </div>
             <div class="item">
-                <img src="img/c2.png" alt="" class="item__img">
+                <img src="img/c2.png" alt="" class="item__img" />
                 <div class="item__info">
                     <div class="item__top">
                         <div class="type tip-parent">
@@ -467,7 +470,7 @@
                                     <use xlink:href="img/symbol-defs.svg#icon-minus"></use>
                                 </svg>
                             </div>
-                            <input type="number" value="1">
+                            <input type="number" value="1" />
                             <div class="counter__control plus">
                                 <svg class="icon">
                                     <use xlink:href="img/symbol-defs.svg#icon-plus"></use>
@@ -483,7 +486,7 @@
                 </div>
             </div>
             <div class="item">
-                <img src="img/c3.png" alt="" class="item__img">
+                <img src="img/c3.png" alt="" class="item__img" />
                 <div class="item__info">
                     <div class="item__top">
                         <div class="type tip-parent">
@@ -509,7 +512,7 @@
                                     <use xlink:href="img/symbol-defs.svg#icon-minus"></use>
                                 </svg>
                             </div>
-                            <input type="number" value="1">
+                            <input type="number" value="1" />
                             <div class="counter__control plus">
                                 <svg class="icon">
                                     <use xlink:href="img/symbol-defs.svg#icon-plus"></use>
@@ -525,7 +528,7 @@
                 </div>
             </div>
             <div class="item">
-                <img src="img/c8.png" alt="" class="item__img">
+                <img src="img/c8.png" alt="" class="item__img" />
                 <div class="item__info">
                     <div class="item__top">
                         <div class="type tip-parent">
@@ -551,7 +554,7 @@
                                     <use xlink:href="img/symbol-defs.svg#icon-minus"></use>
                                 </svg>
                             </div>
-                            <input type="number" value="1">
+                            <input type="number" value="1" />
                             <div class="counter__control plus">
                                 <svg class="icon">
                                     <use xlink:href="img/symbol-defs.svg#icon-plus"></use>
@@ -569,9 +572,10 @@
         </div>
 
         <div class="catalog__desc">
-            <div class="catalog__text">Со всем перечнем продукции Вы можете <br> <a
-                    href="javascript:void(0)">ознакомиться в нашем
-                    каталоге</a></div>
+            <div class="catalog__text">
+                Со всем перечнем продукции Вы можете <br />
+                <a href="javascript:void(0)">ознакомиться в нашем каталоге</a>
+            </div>
             <a href="javascript:void(0)" class="btn">
                 <svg class="icon">
                     <use xlink:href="img/symbol-defs.svg#icon-list"></use>
@@ -655,7 +659,7 @@
     </div>
 </section>
 
-<footer class="footer">
+<footer class="footer pt">
     <div class="container">
         <img src="img/title.svg" alt="" class="line top" />
         <img src="img/title-gradient.svg" alt="" class="line bottom" />
@@ -733,10 +737,146 @@
     </div>
 </footer>
 
+<div class="backdrop">
+    <div class="modal" data-modal="contacts">
+        <div class="modal__content">
+            <div class="modal__body">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-copy"></use>
+                </svg>
+                <h3>Наши реквизиты</h3>
+
+                <div class="modal__border"> ООО «М-ФАСАД» <br>
+                    Юридический адрес: 115054, Российская Федерация, г.Москва, ул.Бахрушина, дом 16, строение 1, эт.1,
+                    пом. II, ком.1 <br> <br>
+                    Расчетный счет: 40702810138250011190 <br> <br>
+                    Банк: в Московском банке Сбербанка России ПАО, г.Москва <br> <br>
+                    Корреспондентский счет: 30101810400000000225 <br> <br>
+                    ИНН/КПП: 7705919004/770501001 <br> <br>
+                    ОГРН: 1107746437040 <br> <br>
+                    Генеральный директор ООО «М-ФАСАД» - Артищев В.А. </div>
+
+                <a href="javascript:void(0)" class="btn close">Закрыть</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" data-modal="request">
+        <div class="modal__content">
+            <div class="modal__body">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-phone"></use>
+                </svg>
+                <h3>Оставьте заявку </h3>
+
+                <div class="modal__text">Оставьте свои контактные данные, и наш специалист свяжется с Вами!</div>
+
+                <form action="" class="form">
+                    <div class="form-group">
+                        <input type="text" name="firstname" placeholder="Имя*">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="lastname" placeholder="Фамилия*">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="phone-mask" name="phone" placeholder="Телефон*">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="email" placeholder="E-mail*">
+                    </div>
+                    <button type="submit" class="btn" data-modal="thanks">Оставить заявку</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" data-modal="crash">
+        <div class="modal__content">
+            <div class="modal__body">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-hammer"></use>
+                </svg>
+                <h3>Запишитесь на краш-тест</h3>
+
+                <div class="modal__text">Оставьте свои контактные данные, и наш специалист свяжется с Вами!</div>
+
+                <form action="" class="form">
+                    <div class="form-group">
+                        <input type="text" name="firstname" placeholder="Имя*">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="lastname" placeholder="Фамилия*">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="phone-mask" name="phone" placeholder="Телефон*">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="email" placeholder="E-mail*">
+                    </div>
+                    <button type="submit" class="btn" data-modal="thanks">Записаться!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" data-modal="question">
+        <div class="modal__content">
+            <div class="modal__body">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-question"></use>
+                </svg>
+                <h3>Возникли вопросы?</h3>
+
+                <div class="modal__text">Есть вопросы? <br>
+                    Мы с радостью на них ответим!</div>
+
+                <form action="" class="form">
+                    <div class="form-group">
+                        <input type="text" name="firstname" placeholder="Имя*">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="phone-mask" name="phone" placeholder="Телефон*">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="email" placeholder="E-mail*">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="question" placeholder="Ваш вопрос"></textarea>
+                    </div>
+                    <a href="javascript:void(0)" class="btn btn-outline">
+                        <svg class="icon">
+                            <use xlink:href="img/symbol-defs.svg#icon-file"></use>
+                        </svg>
+                        Прикрепить файлы
+                    </a>
+                    <button type="submit" class="btn" data-modal="thanks">Оставить заявку</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" data-modal="thanks">
+        <div class="modal__content">
+            <div class="modal__body">
+                <svg class="icon">
+                    <use xlink:href="img/symbol-defs.svg#icon-like"></use>
+                </svg>
+                <h3>Спасибо за заявку!</h3>
+
+                <div class="modal__text">Мы получили Вашу заявку, и свяжемся с Вами
+                    в ближайшее время!</div>
+
+                <a href="javascript:void(0)" class="btn close">Закрыть</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+<script src="https://unpkg.com/imask"></script>
 <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
 <script src="js/jquery.counterup.min.js"></script>
