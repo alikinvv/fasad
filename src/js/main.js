@@ -77,18 +77,23 @@ $('body').on('mouseenter', '.gallery__item', (e) => {
 });
 
 var reviews = new Swiper('.reviews .swiper', {
-    slidesPerView: 1.6,
+    slidesPerView: 1,
     spaceBetween: 20,
-    // autoplay: {
-    //     delay: 5000,
-    //     disableOnInteraction: false,
-    // },
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
     pagination: {
         el: '.reviews .swiper-pagination',
     },
     navigation: {
         nextEl: '.reviews .swiper-button-next',
         prevEl: '.reviews .swiper-button-prev',
+    },
+    breakpoints: {
+        769: {
+            slidesPerView: 1.6,
+        },
     },
 });
 
@@ -279,4 +284,20 @@ $(document).keyup((e) => {
 
 $('body').on('submit', 'form', (e) => {
     e.preventDefault();
+});
+
+// let mobileMenu = () => {
+//     if ($(window).width() <= 767) {
+//     } else if ($(window).width() >= 768) {
+//     }
+// };
+
+// mobileMenu();
+
+// $(window).on('resize', mobileMenu);
+
+$('body').on('click', '.hamburger', (e) => {
+    $(e.currentTarget).toggleClass('active');
+    $('.header').toggleClass('active');
+    $('html').toggleClass('overflow');
 });

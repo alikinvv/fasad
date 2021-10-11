@@ -17,7 +17,19 @@ $trans: all 0.2s ease-in-out;
     color: #fff;
 }
 
+html.overflow {
+    overflow: hidden;
+}
+
 body {
+    @include r(1279) {
+        font-size: 15px;
+    }
+
+    @include r(767) {
+        font-size: 14px;
+    }
+
     font-family: 'Manrope', sans-serif;
     font-size: 16px;
     color: $light-gray;
@@ -61,12 +73,36 @@ ul {
 }
 
 h1 {
+    @include r(1279) {
+        font-size: 43px;
+    }
+
+    @include r(1023) {
+        font-size: 40px;
+    }
+
+    @include r(767) {
+        font-size: 35px;
+    }
+
     font-weight: 800;
     font-size: 46px;
     color: #000;
 }
 
 h2 {
+    @include r(1279) {
+        font-size: 25px;
+    }
+
+    @include r(1023) {
+        font-size: 22px;
+    }
+
+    @include r(767) {
+        font-size: 20px;
+    }
+    
     font-weight: 800;
     font-size: 28px;
     color: #000;
@@ -74,6 +110,10 @@ h2 {
 }
 
 h3 {
+    @include r(1279) {
+        font-size: 18px;
+    }
+
     font-weight: 800;
     font-size: 20px;
     color: #000;
@@ -536,11 +576,19 @@ a {
 }
 
 .search {
+    @include r(1279) {
+        width: 275px;
+    }
+
     @include fcn;
     position: relative;
     width: 377px;
 
     &::before {
+        @include r(767) {
+            height: 1px;
+        }
+
         content: '';
         position: absolute;
         bottom: 0;
@@ -552,6 +600,10 @@ a {
     }
 
     &::after {
+        @include r(767) {
+            height: 1px;
+        }
+
         content: '';
         position: absolute;
         bottom: 0;
@@ -594,6 +646,11 @@ a {
     }
 
     input {
+        @include r(767) {
+            padding-bottom: 14px;
+            border-bottom: 1px solid #bdbdbd;
+        }
+
         padding-left: 40px;
         width: 100%;
         border-bottom: 2px solid #bdbdbd;
@@ -984,6 +1041,10 @@ a {
     margin-left: 49px;
 
     &__info {
+        @include r(767) {
+            display: none;
+        }
+
         padding-right: 15px;
     }
 
@@ -992,6 +1053,11 @@ a {
     }
 
     &__icon {
+        @include r(767) {
+            width: 44px;
+            height: 44px;
+        }
+
         width: 52px;
         height: 52px;
         @include fcc;
@@ -1033,6 +1099,10 @@ a {
         }
 
         svg {
+            @include r(767) {
+                font-size: 20px;
+            }
+
             position: relative;
             left: -2px;
             transition: $trans;
@@ -1042,6 +1112,10 @@ a {
 }
 
 .title {
+    @include r(767) {
+        margin: 35px 0;
+    }
+
     background-image: url('../img/title-green.svg');
     background-position: center;
     background-repeat: no-repeat;
@@ -1058,8 +1132,12 @@ a {
     }
 
     &.outline {
+        @include r(1023) {
+            padding: 43px 0;
+        }
+
         background-image: url('../img/title.svg');
-        padding: 39px 0;
+        padding: 40px 0;
     }
 
     &.none {
@@ -1079,6 +1157,19 @@ a {
 }
 
 .video {
+    @include r(1279) {
+        width: 465px;
+        height: 269px;
+    }
+
+    @include r(1023) {
+        width: 100%;
+    }
+
+    @include r(767) {
+        height: 169px;
+    }
+
     width: 554px;
     height: 332px;
     background-size: cover;
@@ -1107,6 +1198,10 @@ a {
     }
 
     img {
+        @include r(767) {
+            width: 60px;
+        }
+
         transition: $trans;
         position: relative;
         z-index: 2;
@@ -1141,11 +1236,19 @@ a {
     }
 
     .btn {
+        @include r(767) {
+            display: none;
+        }
+
         margin-right: 20px;
         font-size: 14px;
     }
 
     &__change {
+        @include r(767) {
+            display: none;
+        }
+
         color: #000;
         text-decoration: underline;
         font-size: 14px;
@@ -1175,18 +1278,58 @@ a {
 }
 
 .header {
+    @include r(767) {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.99);
+        width: 100%;
+        height: 100%;
+        z-index: 20;
+        display: none;
+        color: $gray;
+
+        &.active {
+            display: block;
+        }
+    }
+
     background: $gray;
     color: #fff;
     padding: 5px 0;
 
     .container {
+        @include r(767) {
+            flex-direction: column;
+            @include fcc;
+            height: 100%;
+        }
+
         @include fcsb;
     }
 
     &__menu {
+        @include r(767) {
+            @include fcc;
+            flex-direction: column;
+        }
+
         @include fcn;
 
         a {
+            @include r(1279) {
+                margin-right: 20px;
+            }
+
+            @include r(767) {
+                margin-right: 0;
+                font-size: 30px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
             margin-right: 38px;
             @include fcn;
             font-family: $roboto;
@@ -1201,6 +1344,10 @@ a {
             }
 
             svg {
+                @include r(767) {
+                    display: none;
+                }
+
                 margin-right: 12px;
                 fill: #fff;
             }
@@ -1208,9 +1355,23 @@ a {
     }
 
     &__controls {
+        @include r(767) {
+            display: none;
+        }
+
         @include fcn;
 
         a {
+            @include r(1279) {
+                font-size: 14px;
+                margin-right: 10px;
+            }
+
+            @include r(1023) {
+                color: transparent;
+                width: 34px;
+            }
+
             @include fcn;
             padding: 10px;
             position: relative;
@@ -1247,6 +1408,10 @@ a {
 }
 
 .menu {
+    @include r(767) {
+        padding: 14px 0;
+    }
+
     background: $light-gray;
     color: #fff;
     padding: 19px 0;
@@ -1255,12 +1420,39 @@ a {
         @include fcsb;
     }
 
+    &__logo {
+        img {
+            @include r(1023) {
+                width: 120px;
+            }
+        }
+    }
+
     &__list {
+        @include r(1023) {
+            margin-left: 10px;
+            margin-top: -3px;
+        }
+
+        @include r(767) {
+            display: none;
+        }
+
         width: 100%;
         @include fcsb;
         margin-left: 22px;
 
         a {
+            @include r(1279) {
+                font-size: 14px;
+                padding: 7px;
+            }
+
+            @include r(1023) {
+                font-size: 12px;
+                padding: 4px;
+            }
+
             text-transform: uppercase;
             font-weight: bold;
             padding: 10px;
@@ -1272,6 +1464,10 @@ a {
             }
 
             &::before {
+                @include r(1023) {
+                    display: none;
+                }
+
                 content: '';
                 position: absolute;
                 left: -11px;
@@ -1292,6 +1488,14 @@ a {
 }
 
 .top {
+    @include r(767) {
+        padding: 13px 0;
+
+        .select {
+            display: none;
+        }
+    }
+
     padding: 26px 0;
 
     .container {
@@ -1303,6 +1507,10 @@ a {
     }
 
     &__phone {
+        @include r(1023) {
+            display: none;
+        }
+
         @include fcn;
         font-weight: bold;
         color: $gray;
@@ -1331,6 +1539,11 @@ a {
     }
 
     .container {
+        @include r(767) {
+            flex-direction: column;
+            @include fsn;
+        }
+
         @include fcsb;
         position: relative;
     }
@@ -1439,11 +1652,31 @@ a {
     }
 
     &__left {
+        @include r(1023) {
+            border: 0;
+            padding-left: 0;
+        }
+
+        @include r(767) {
+            order: 2;
+        }
+
         border-left: 2px solid $green;
         padding-left: 40px;
     }
 
     &__right {
+        @include r(1023) {
+            margin-left: 20px;
+        }
+
+        @include r(767) {
+            text-align: left;
+            margin-left: 0;
+            margin-bottom: 30px;
+            background: none;
+        }
+
         text-align: right;
         background: url('../img/title-gradient.svg') no-repeat 96% center;
         background-size: contain;
@@ -1454,14 +1687,31 @@ a {
     }
 
     .btn {
+        @include r(1279) {
+            padding: 13px 20px;
+        }
+
         padding: 16px 20px;
     }
 
     &__text {
+        @include r(1279) {
+            margin-bottom: 20px;
+        }
+
         margin-bottom: 28px;
     }
 
     &__title {
+        @include r(1279) {
+            font-size: 39px;
+            margin-bottom: 13px;
+        }
+
+        @include r(1023) {
+            font-size: 26px;
+        }
+
         font-weight: 800;
         font-size: 46px;
         text-transform: uppercase;
@@ -1470,6 +1720,14 @@ a {
     }
 
     &__desc {
+        @include r(1279) {
+            font-size: 25px;
+        }
+
+        @include r(1023) {
+            font-size: 16px;
+        }
+
         font-weight: 800;
         font-size: 32px;
 
@@ -1481,10 +1739,24 @@ a {
 }
 
 .slider {
+    @include r(1279) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
     position: relative;
     padding: 20px 0;
 
     .swiper-slide {
+        @include r(1279) {
+            width: 100%;
+        }
+
+        @include r(767) {
+            padding: 20px 30px;
+            height: 180px;
+        }
+
         width: 1160px;
         padding: 25px 40px;
         height: 214px;
@@ -1513,6 +1785,14 @@ a {
     }
 
     &__title {
+        @include r(1279) {
+            font-size: 40px;
+        }
+
+        @include r(767) {
+            font-size: 20px;
+        }
+
         text-transform: uppercase;
         color: #fff;
         font-weight: 800;
@@ -1527,6 +1807,14 @@ a {
     }
 
     h2 {
+        @include r(767) {
+            font-size: 16px;
+
+            .btn {
+                display: none;
+            }
+        }
+
         text-transform: uppercase;
         color: #fff;
         margin-bottom: 0;
@@ -1556,6 +1844,10 @@ a {
     }
 
     .flex {
+        @include r(1023) {
+            padding: 0 10%;
+        }
+
         @include r(767) {
             display: block;
             margin: 0;
@@ -1567,9 +1859,13 @@ a {
     }
 
     &__item {
+        @include r(1023) {
+            @include flexitem(50%, 10px, 20px);
+        }
+
         @include r(767) {
             width: 100%;
-            margin: 0 0 60px;
+            margin: 0 0 30px;
         }
 
         @include flexitem(25%, 10px);
@@ -1647,6 +1943,14 @@ a {
 }
 
 .features {
+    @include r(1650) {
+        overflow: hidden;
+    }
+
+    @include r(1023) {
+        padding-top: 0;
+    }
+
     padding: 45px 0;
 
     & + .title {
@@ -1672,11 +1976,23 @@ a {
     }
 
     .container {
+        @include r(1023) {
+            display: block;
+        }
+
         @include fcsb;
         position: relative;
     }
 
     &__list {
+        @include r(1279) {
+            padding-left: 0;
+        }
+
+        @include r(1023) {
+            padding-right: 0;
+        }
+
         @include r(767) {
             display: block;
             margin: 0;
@@ -1687,6 +2003,13 @@ a {
         padding-left: 93px;
 
         & + .features__info {
+            @include r(1023) {
+                width: 100%;
+                border: 0;
+                padding-left: 0;
+                text-align: left;
+            }
+
             border-left: 1px solid $green;
             padding-left: 59px;
             border-right: 0;
@@ -1709,7 +2032,8 @@ a {
     &__item {
         @include r(767) {
             width: 100%;
-            margin: 0 0 60px;
+            margin: 0;
+            padding: 14px;
         }
 
         @include flexitem(50%, 1px, 20px);
@@ -1745,6 +2069,15 @@ a {
     }
 
     &__map {
+        @include r(1279) {
+            padding-right: 20px;
+            padding-left: 73px;
+        }
+
+        @include r(1023) {
+            margin-top: 40px;
+        }
+
         @include r(767) {
             display: block;
             margin: 0;
@@ -1818,19 +2151,53 @@ a {
     }
 
     &__info {
+        @include r(1023) {
+            width: 100%;
+            border: 0;
+            padding-left: 0;
+            margin-top: 30px;
+            @include fcc;
+            flex-wrap: wrap;
+            padding-right: 0;
+        }
+
         width: 374px;
         padding-right: 59px;
         border-right: 1px solid $green;
         flex-shrink: 0;
     }
 
+    &__wrap {
+        @include r(1023) {
+            @include fcsb;
+        }
+    }
+
     &__img {
+        @include r(1023) {
+            display: none;
+        }
+
         margin-bottom: 96px;
         pointer-events: none;
         user-select: none;
     }
 
     &__name {
+        @include r(1023) {
+            text-align: center;
+            width: 100%;
+            margin-bottom: 30px;
+
+            br {
+                display: none;
+            }
+        }
+
+        @include r(767) {
+            margin-bottom: 10px;
+        }
+
         color: $gray;
         display: block;
         margin-bottom: 50px;
@@ -1841,6 +2208,10 @@ a {
         margin-bottom: 25px;
 
         & + span {
+            @include r(1023) {
+                display: none;
+            }
+
             font-family: $roboto;
             display: block;
             margin-bottom: 40px;
@@ -1848,6 +2219,15 @@ a {
     }
 
     .btn {
+        @include r(1023) {
+            width: 300px;
+            margin: 0 10px;
+        }
+
+        @include r(767) {
+            margin: 10px 0;
+        }
+
         width: 100%;
         padding: 17px 0;
 
@@ -1858,6 +2238,10 @@ a {
         }
 
         &-outline {
+            @include r(1023) {
+                margin-top: 0;
+            }
+
             margin-top: 15px;
         }
 
@@ -1868,6 +2252,10 @@ a {
     }
 
     .line {
+        @include r(1023) {
+            display: none;
+        }
+
         position: absolute;
         top: 36%;
         right: -20%;
@@ -1882,6 +2270,10 @@ a {
     }
 
     .text {
+        @include r(1450) {
+            display: none;
+        }
+
         position: absolute;
         left: -7%;
         top: 50%;
@@ -1899,6 +2291,21 @@ a {
 }
 
 .crash {
+    @include r(1279) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    @include r(1023) {
+        padding: 0 9.5%;
+        margin-top: 60px;
+    }
+
+    @include r(767) {
+        padding: 0;
+        margin-top: 30px;
+    }
+
     padding: 54px 0;
 
     & + .features {
@@ -1910,12 +2317,25 @@ a {
     }
 
     .container {
+        @include r(1023) {
+            display: block;
+        }
+
+        @include r(767) {
+            padding: 0 15px;
+            box-shadow: none;
+        }
+
         padding: 50px 30px;
         @include fcsb;
         box-shadow: 0px 20px 54px rgba(28, 42, 64, 0.25);
     }
 
     &__info {
+        @include r(1023) {
+            margin-bottom: 30px;
+        }
+
         text-align: center;
         @include fcc;
         flex-direction: column;
@@ -1948,18 +2368,40 @@ a {
     }
 
     .btn {
+        @include r(767) {
+            padding-left: 0;
+            padding-right: 0;
+            width: 100%;
+        }
+
         padding: 17px 86px;
     }
 }
 
 .profit {
+    @include r(1450) {
+        overflow: hidden;
+    }
+
+    @include r(1023) {
+        padding-top: 35px;
+    }
+
     padding: 67px 0;
 
     & + .title {
+        @include r(1023) {
+            margin-top: 20px;
+        }
+
         margin: -10px 0 15px;
     }
 
     .container {
+        @include r(1450) {
+            padding-top: 20px;
+        }
+
         position: relative;
     }
 
@@ -1973,6 +2415,10 @@ a {
     }
 
     &__item {
+        @include r(1023) {
+            @include flexitem(50%, 10px, 20px);
+        }
+
         @include r(767) {
             width: 100%;
             margin: 0 0 60px;
@@ -2005,6 +2451,15 @@ a {
         }
 
         &:hover {
+            @include r(1023) {
+                animation: none;
+                z-index: 2;
+
+                &::before {
+                    display: none;
+                }
+            }
+
             animation-name: wobble-bottom;
             animation-duration: 1.2s;
             animation-timing-function: ease-in-out;
@@ -2068,6 +2523,10 @@ a {
 }
 
 .gallery {
+    @include r(1450) {
+        overflow: hidden;
+    }
+
     position: relative;
     padding: 80px 0;
 
@@ -2089,6 +2548,10 @@ a {
     }
 
     .text {
+        @include r(1450) {
+            display: none;
+        }
+
         position: absolute;
         left: -7%;
         top: 0;
@@ -2124,6 +2587,10 @@ a {
     }
 
     &__item {
+        @include r(1023) {
+            width: calc(50% - 10px);
+        }
+
         width: calc(41% - 10px);
         margin: 0 5px 18px;
         height: 358px;
@@ -2171,6 +2638,10 @@ a {
         }
 
         &.wide {
+            @include r(1023) {
+                width: calc(50% - 10px);
+            }
+            
             width: calc(59% - 10px);
         }
     }
@@ -2214,6 +2685,10 @@ a {
         @include fcn;
 
         & > svg {
+            @include r(1023) {
+                display: none;
+            }
+
             margin-left: auto;
             fill: $green;
             font-size: 12px;
@@ -2241,6 +2716,11 @@ a {
         position: relative;
 
         .btn {
+            @include r(1023) {
+                position: relative;
+                z-index: 2;
+            }
+
             padding: 17px 23px;
 
             svg {
@@ -2250,6 +2730,10 @@ a {
         }
 
         &::before {
+            @include r(1023) {
+                width: 55%;
+            }
+
             content: '';
             @include centerYa;
             left: 0;
@@ -2261,6 +2745,10 @@ a {
 }
 
 .reviews {
+    @include r(1023) {
+        padding-top: 60px;
+    }
+
     padding: 118px 0 86px;
 
     & + .title {
@@ -2268,10 +2756,18 @@ a {
     }
 
     .container {
+        @include r(1023) {
+            padding-right: 0;
+        }
+
         position: relative;
     }
 
     .text {
+        @include r(1450) {
+            display: none;
+        }
+
         position: absolute;
         right: -7%;
         top: 50%;
@@ -2304,6 +2800,10 @@ a {
         }
 
         &::before {
+            @include r(1023) {
+                display: none;
+            }
+
             content: '';
             position: absolute;
             top: 0;
@@ -2317,6 +2817,10 @@ a {
         }
 
         &::after {
+            @include r(1023) {
+                display: none;
+            }
+
             content: '';
             position: absolute;
             top: 80px;
@@ -2388,6 +2892,10 @@ a {
     }
 
     &__controls {
+        @include r(1023) {
+            padding-right: 15px;
+        }
+
         @include fcsb;
         position: relative;
         z-index: 13;
@@ -2411,23 +2919,41 @@ a {
 }
 
 .consultation {
+    @include r(1279) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
     padding: 62px 0;
     margin-bottom: -236px;
     position: relative;
     z-index: 2;
 
     .container {
+        @include r(1023) {
+            display: block;
+        }
+
         padding: 40px 20px;
         background: #ffffff;
         box-shadow: 0px 20px 54px rgba(28, 42, 64, 0.25);
         @include fcsb;
 
         & > div {
+            @include r(1023) {
+                width: 100%;
+            }
+
             width: 50%;
         }
     }
 
     &__left {
+        @include r(1023) {
+            border: 0;
+            margin-bottom: 40px;
+        }
+
         text-align: center;
         padding: 0 35px;
         border-right: 1px solid $green;
@@ -2441,9 +2967,22 @@ a {
     }
 
     &__right {
+        @include r(1279) {
+            padding: 0 65px;
+        }
+
+        @include r(1023) {
+            text-align: center;
+            @include fcsb;
+        }
+
         padding: 0 136px;
 
         a {
+            @include r(1023) {
+                margin-top: 10px;
+            }
+
             color: $gray;
             font-weight: 700;
             @include fcn;
@@ -2482,6 +3021,10 @@ a {
     }
 
     &__controls {
+        @include r(1023) {
+            @include fcc;
+        }
+
         @include fcsb;
 
         .btn {
@@ -2497,6 +3040,13 @@ a {
     }
 
     &__person {
+        @include r(1023) {
+            border: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            margin-right: 20px;
+        }
+
         @include fcn;
         border-bottom: 1px solid $green;
         padding-bottom: 35px;
@@ -2553,19 +3103,36 @@ a {
     }
 
     &__row {
+        @include r(1023) {
+            display: block;
+        }
+
         @include fssb;
         position: relative;
         z-index: 2;
 
         &:last-child {
+            @include r(1023) {
+                margin-top: 30px;
+            }
+
             margin-top: 80px;
         }
     }
 
     &__col {
+        @include r(1023) {
+            width: 100%;
+        }
+
         width: 50%;
 
         &:last-child {
+            @include r(1023) {
+                @include fcn;
+                margin-top: 30px;
+            }
+
             text-align: right;
         }
     }
@@ -2692,6 +3259,10 @@ a {
     }
 
     .line.top {
+        @include r(1023) {
+            display: none;
+        }
+
         position: absolute;
         top: 19%;
         left: -21%;
@@ -2700,6 +3271,10 @@ a {
     }
 
     .line.bottom {
+        @include r(1023) {
+            display: none;
+        }
+
         position: absolute;
         bottom: -43px;
         right: 0;
@@ -3106,6 +3681,10 @@ a {
     }
 
     .text {
+        @include r(1450) {
+            display: none;
+        }
+
         position: absolute;
         left: -7%;
         top: 50%;
@@ -3455,6 +4034,10 @@ a {
     }
 
     .text {
+        @include r(1450) {
+            display: none;
+        }
+
         position: absolute;
         right: -7%;
         top: 27%;
@@ -3519,6 +4102,90 @@ a {
 
     .btn {
         font-size: 14px;
+    }
+}
+
+.hamburger {
+    @include r(767) {
+        flex-shrink: 0;
+        width: 30px;
+        height: 25px;
+        display: block;
+    }
+
+    width: 38px;
+    height: 28px;
+    position: relative;
+    cursor: pointer;
+    display: none;
+    z-index: 21;
+
+    &.active,
+    &.active:hover {
+        span {
+            background: transparent;
+
+            &::before {
+                top: 0;
+                transform: rotate(45deg);
+                transition: top 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s;
+            }
+
+            &::after {
+                bottom: 0;
+                transform: rotate(-45deg);
+                transition: bottom 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s;
+            }
+        }
+    }
+
+    &:hover span {
+        &::before {
+            top: -10px;
+        }
+
+        &::after {
+            bottom: -10px;
+        }
+    }
+
+    span {
+        @include r(767) {
+            height: 3px;
+        }
+
+        width: 100%;
+        height: 5px;
+        background: $green;
+        position: absolute;
+        top: 12px;
+        transition: background 0.2s ease-in-out 0.1s;
+        pointer-events: none;
+        user-select: none;
+
+        &::before,
+        &::after {
+            @include r(767) {
+                height: 3px;
+            }
+
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background: $green;
+            left: 0;
+        }
+
+        &::before {
+            top: -10px;
+            transition: top 0.2s ease-in-out 0.2s, transform 0.2s ease-in-out;
+        }
+
+        &::after {
+            bottom: -10px;
+            transition: bottom 0.2s ease-in-out 0.2s, transform 0.2s ease-in-out;
+        }
     }
 }
 
@@ -4381,6 +5048,10 @@ a {
     }
 
     .text {
+        @include r(1450) {
+            display: none;
+        }
+
         position: absolute;
         right: -7%;
         top: 50%;
@@ -4472,6 +5143,10 @@ a {
     }
 
     .text {
+        @include r(1450) {
+            display: none;
+        }
+        
         position: absolute;
         left: -7%;
         top: 50%;
