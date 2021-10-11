@@ -102,7 +102,7 @@ h2 {
     @include r(767) {
         font-size: 20px;
     }
-    
+
     font-weight: 800;
     font-size: 28px;
     color: #000;
@@ -331,6 +331,7 @@ a {
             }
         }
 
+        &.active,
         &:active {
             background: $green-active;
             color: #fff;
@@ -841,6 +842,10 @@ a {
 }
 
 .tip {
+    @include r(767) {
+        display: none;
+    }
+
     position: absolute;
     bottom: -20px;
     left: 50%;
@@ -1220,6 +1225,10 @@ a {
     }
 
     &__city {
+        @include r(374) {
+            font-size: 12px;
+        }
+
         @include fcn;
         color: #000;
         margin-right: 35px;
@@ -1528,6 +1537,10 @@ a {
 }
 
 .order {
+    @include r(767) {
+        padding: 25px 0;
+    }
+
     padding: 45px 0;
 
     & + .title {
@@ -1728,6 +1741,10 @@ a {
             font-size: 16px;
         }
 
+        @include r(374) {
+            font-size: 14px;
+        }
+
         font-weight: 800;
         font-size: 32px;
 
@@ -1755,6 +1772,10 @@ a {
         @include r(767) {
             padding: 20px 30px;
             height: 180px;
+        }
+
+        @include r(374) {
+            padding: 15px 20px;
         }
 
         width: 1160px;
@@ -1815,6 +1836,10 @@ a {
             }
         }
 
+        @include r(374) {
+            font-size: 14px;
+        }
+
         text-transform: uppercase;
         color: #fff;
         margin-bottom: 0;
@@ -1853,6 +1878,10 @@ a {
             margin: 0;
         }
 
+        @include r(374) {
+            padding: 0;
+        }
+
         @include flexlist(10px);
         position: relative;
         z-index: 2;
@@ -1866,6 +1895,7 @@ a {
         @include r(767) {
             width: 100%;
             margin: 0 0 30px;
+            display: block;
         }
 
         @include flexitem(25%, 10px);
@@ -2079,8 +2109,8 @@ a {
         }
 
         @include r(767) {
-            display: block;
             margin: 0;
+            padding: 0;
         }
 
         @include flexlist(1px);
@@ -2114,9 +2144,8 @@ a {
         }
 
         &-item {
-            @include r(767) {
-                width: 100%;
-                margin: 0 0 60px;
+            @include r(374) {
+                font-size: 15px;
             }
 
             @include flexitem(50%, 1px, 20px);
@@ -2128,6 +2157,14 @@ a {
             color: $gray;
 
             div {
+                @include r(767) {
+                    font-size: 50px;
+                }
+
+                @include r(374) {
+                    font-size: 40px;
+                }
+
                 font-size: 80px;
             }
         }
@@ -2161,6 +2198,10 @@ a {
             padding-right: 0;
         }
 
+        @include r(767) {
+            flex-direction: column;
+        }
+
         width: 374px;
         padding-right: 59px;
         border-right: 1px solid $green;
@@ -2170,6 +2211,7 @@ a {
     &__wrap {
         @include r(1023) {
             @include fcsb;
+            width: 100%;
         }
     }
 
@@ -2309,6 +2351,22 @@ a {
     padding: 54px 0;
 
     & + .features {
+        @include r(767) {
+            position: relative;
+            padding-bottom: 120px;
+
+            .btn {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%) translateY(100%);
+                bottom: 0;
+            }
+
+            .btn-outline {
+                bottom: -60px;
+            }
+        }
+
         padding: 83px 0;
     }
 
@@ -2361,6 +2419,12 @@ a {
     }
 
     &__text {
+        @include r(374) {
+            br {
+                display: none;
+            }
+        }
+
         font-family: $roboto;
         line-height: 18.75 / 16 * 100%;
         margin-bottom: 30px;
@@ -2385,6 +2449,10 @@ a {
 
     @include r(1023) {
         padding-top: 35px;
+    }
+
+    @include r(767) {
+        padding-top: 0;
     }
 
     padding: 67px 0;
@@ -2421,7 +2489,7 @@ a {
 
         @include r(767) {
             width: 100%;
-            margin: 0 0 60px;
+            margin: 0 0 30px;
         }
 
         @include flexitem(33.33%, 10px, 60px);
@@ -2527,6 +2595,10 @@ a {
         overflow: hidden;
     }
 
+    @include r(767) {
+        padding: 30px 0;
+    }
+
     position: relative;
     padding: 80px 0;
 
@@ -2591,6 +2663,10 @@ a {
             width: calc(50% - 10px);
         }
 
+        @include r(767) {
+            width: calc(100% - 10px);
+        }
+
         width: calc(41% - 10px);
         margin: 0 5px 18px;
         height: 358px;
@@ -2641,12 +2717,20 @@ a {
             @include r(1023) {
                 width: calc(50% - 10px);
             }
-            
+
+            @include r(767) {
+                width: calc(100% - 10px);
+            }
+
             width: calc(59% - 10px);
         }
     }
 
     &__info {
+        @include r(374) {
+            padding: 20px 15px;
+        }
+
         z-index: 2;
         position: absolute;
         bottom: 0;
@@ -2695,10 +2779,14 @@ a {
         }
 
         &-item {
+            @include r(374) {
+                font-size: 12px;
+            }
+
             @include fcn;
             margin-right: 22px;
 
-            &:last-child {
+            &:nth-child(2) {
                 margin-right: 0;
             }
 
@@ -2711,6 +2799,10 @@ a {
     }
 
     &__bottom {
+        @include r(767) {
+            text-align: center;
+        }
+
         margin-top: 48px;
         text-align: right;
         position: relative;
@@ -2734,6 +2826,14 @@ a {
                 width: 55%;
             }
 
+            @include r(767) {
+                width: 100%;
+            }
+
+            @include r(374) {
+                display: none;
+            }
+
             content: '';
             @include centerYa;
             left: 0;
@@ -2747,6 +2847,10 @@ a {
 .reviews {
     @include r(1023) {
         padding-top: 60px;
+    }
+
+    @include r(767) {
+        overflow: hidden;
     }
 
     padding: 118px 0 86px;
@@ -2786,17 +2890,27 @@ a {
     }
 
     h2 {
+        @include r(767) {
+            margin-bottom: 40px;
+        }
+
         margin-bottom: 97px;
     }
 
     .swiper {
+        @include r(767) {
+            margin: -80px;
+            padding: 80px;
+            width: calc(100% + 145px);
+        }
+
         padding: 80px;
         margin: -80px 0 -80px -32%;
         padding-left: 32%;
         position: relative;
 
         .swiper-slide {
-            margin-top: 0;
+            margin-top: 0 !important;
         }
 
         &::before {
@@ -2872,6 +2986,10 @@ a {
     }
 
     &__info {
+        @include r(374) {
+            display: block;
+        }
+
         @include fcsb;
     }
 
@@ -2879,6 +2997,10 @@ a {
         @include fcn;
 
         svg {
+            @include r(767) {
+                display: none;
+            }
+
             margin-right: 10px;
             font-size: 27px;
             fill: $process;
@@ -2886,6 +3008,14 @@ a {
     }
 
     &__date {
+        @include r(767) {
+            font-size: 16px;
+        }
+
+        @include r(374) {
+            margin-top: 15px;
+        }
+
         font-weight: 800;
         font-size: 18px;
         color: #000;
@@ -2896,12 +3026,22 @@ a {
             padding-right: 15px;
         }
 
+        @include r(767) {
+            flex-direction: column;
+            @include fcc;
+        }
+
         @include fcsb;
         position: relative;
         z-index: 13;
         margin-top: 38px;
 
         .slider__controls {
+            @include r(767) {
+                @include fcc;
+                margin-bottom: 20px;
+            }
+
             @include fcs;
             margin-top: 0;
         }
@@ -2954,6 +3094,11 @@ a {
             margin-bottom: 40px;
         }
 
+        @include r(767) {
+            padding: 0;
+            margin: 0;
+        }
+
         text-align: center;
         padding: 0 35px;
         border-right: 1px solid $green;
@@ -2974,6 +3119,10 @@ a {
         @include r(1023) {
             text-align: center;
             @include fcsb;
+        }
+
+        @include r(767) {
+            display: none;
         }
 
         padding: 0 136px;
@@ -3015,6 +3164,12 @@ a {
     }
 
     &__text {
+        @include r(767) {
+            br {
+                display: none;
+            }
+        }
+
         font-family: $roboto;
         line-height: 18.75 / 16 * 100%;
         margin-bottom: 28px;
@@ -3023,6 +3178,10 @@ a {
     &__controls {
         @include r(1023) {
             @include fcc;
+        }
+
+        @include r(767) {
+            flex-direction: column;
         }
 
         @include fcsb;
@@ -3035,6 +3194,12 @@ a {
             svg {
                 font-size: 20px;
                 margin-right: 10px;
+            }
+        }
+
+        .btn-outline {
+            @include r(767) {
+                margin-top: 10px;
             }
         }
     }
@@ -3133,6 +3298,10 @@ a {
                 margin-top: 30px;
             }
 
+            @include r(767) {
+                text-align: left;
+            }
+
             text-align: right;
         }
     }
@@ -3149,9 +3318,18 @@ a {
     }
 
     &__menu {
+        @include r(767) {
+            display: block;
+        }
+
         @include fssb;
 
         & > div {
+            @include r(767) {
+                width: 100%;
+                margin-bottom: 40px;
+            }
+
             width: 48%;
         }
 
@@ -3184,13 +3362,26 @@ a {
     }
 
     &__controls {
+        @include r(767) {
+            display: block;
+        }
+
         @include fce;
 
         .btn {
+            @include r(767) {
+                width: 228px;
+            }
+
             padding: 17px 36px;
         }
 
         .btn-outline {
+            @include r(767) {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
             margin-left: 22px;
         }
 
@@ -3201,11 +3392,25 @@ a {
     }
 
     &__mail {
+        @include r(374) {
+            display: block;
+
+            a {
+                justify-content: flex-start !important;
+                margin-top: 10px;
+            }
+        }
+
         @include fcn;
         border-top: 1px solid $process;
         padding-top: 25px;
 
         span {
+            @include r(767) {
+                margin-right: 15px;
+                font-size: 12px;
+            }
+
             margin-right: 69px;
             color: $process;
             font-family: $roboto;
@@ -3284,6 +3489,10 @@ a {
 }
 
 .breadcrumbs {
+    @include r(767) {
+        display: none;
+    }
+
     padding-bottom: 10px;
     margin-top: 6px;
 
@@ -3401,6 +3610,10 @@ a {
 }
 
 .head {
+    @include r(767) {
+        padding-bottom: 0;
+    }
+
     padding: 25px 0;
 
     &.pd {
@@ -3408,6 +3621,10 @@ a {
     }
 
     h2 {
+        @include r(767) {
+            margin-bottom: 10px;
+        }
+
         margin-bottom: 0;
 
         span:not(.green) {
@@ -3434,35 +3651,114 @@ a {
     }
 
     .container {
+        @include r(767) {
+            display: block;
+        }
+
         @include fcsb;
     }
 }
 
+.show-filter {
+    @include r(767) {
+        display: block;
+
+        .container {
+            @include fcn;
+        }
+    }
+
+    .btn {
+        width: 100%;
+        @include fcc;
+        margin: 20px 0;
+    }
+
+    svg {
+        margin-left: 10px;
+        transition: $trans;
+    }
+
+    &.active {
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    display: none;
+}
+
 .filter {
+    @include r(767) {
+        margin-top: 6px;
+    }
+
     margin-bottom: 15px;
     margin-top: 26px;
+    display: none;
 
     .container {
+        @include r(1279) {
+            flex-wrap: wrap;
+        }
+
         @include fcsb;
         padding-bottom: 35px;
         border-bottom: 1px solid $process;
     }
 
     .select {
+        @include r(1023) {
+            width: 32%;
+            margin-bottom: 20px;
+        }
+
+        @include r(767) {
+            width: 100%;
+        }
+
         width: 178px;
     }
 
     .input {
+        @include r(1023) {
+            width: 40%;
+        }
+
+        @include r(767) {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
         width: 128px;
     }
 
     .btn {
+        @include r(1279) {
+            margin: 20px auto 0;
+            padding: 16px 146px;
+        }
+
+        @include r(1023) {
+            padding-left: 0;
+            padding-right: 0;
+            width: 100%;
+        }
+
         padding: 16px 46px;
     }
 }
 
 .sort {
+    @include r(767) {
+        padding-top: 30px;
+    }
+
     .container {
+        @include r(767) {
+            flex-wrap: wrap;
+        }
+
         @include fcsb;
     }
 
@@ -3506,6 +3802,11 @@ a {
     }
 
     .btn {
+        @include r(767) {
+            width: 100%;
+            margin-top: 10px;
+        }
+
         color: $light-gray;
         font-size: 14px;
         padding: 10px 27px;
@@ -3517,9 +3818,17 @@ a {
 }
 
 .item {
+    @include r(1279) {
+        @include flexitem(33.33%, 10px, 25px);
+    }
+
+    @include r(1023) {
+        @include flexitem(50%, 10px, 25px);
+    }
+
     @include r(767) {
         width: 100%;
-        margin: 0 0 60px;
+        margin: 0 0 30px;
     }
 
     @include flexitem(25%, 10px, 25px);
@@ -5146,7 +5455,7 @@ a {
         @include r(1450) {
             display: none;
         }
-        
+
         position: absolute;
         left: -7%;
         top: 50%;
@@ -5441,6 +5750,11 @@ a {
 }
 
 .modal {
+    @include r(767) {
+        width: 100%;
+        margin: 0 15px;
+    }
+
     display: none;
     opacity: 0;
     background: #fff;
@@ -5534,6 +5848,10 @@ a {
     }
 
     &__body {
+        @include r(767) {
+            padding: 25px;
+        }
+
         padding: 38px;
 
         & > svg {
@@ -5622,7 +5940,7 @@ a {
 
     &__item {
         @include flexitem(33.33%, 10px);
-        background: #FFFFFF;
+        background: #ffffff;
         box-shadow: 0px 10px 15px rgba(28, 42, 64, 0.16);
         border-radius: 5px;
         padding: 35px;

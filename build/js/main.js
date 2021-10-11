@@ -257,3 +257,7 @@ $('body').on('click', '.hamburger', function (e) {
   $('.header').toggleClass('active');
   $('html').toggleClass('overflow');
 });
+$('body').on('click', '.show-filter a', function (e) {
+  $(e.currentTarget).toggleClass('active');
+  $('.filter').slideToggle(200);
+});

@@ -301,3 +301,8 @@ $('body').on('click', '.hamburger', (e) => {
     $('.header').toggleClass('active');
     $('html').toggleClass('overflow');
 });
+
+$('body').on('click', '.show-filter a', (e) => {
+    $(e.currentTarget).toggleClass('active');
+    $('.filter').slideToggle(200);
+});
