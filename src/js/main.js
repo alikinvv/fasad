@@ -298,4 +298,4 @@ $('body').on('click', '.show-filter a', (e) => {
     $('.filter').slideToggle(200);
 });
 
-$('.count').counterUp();
+// $('.count').counterUp();
