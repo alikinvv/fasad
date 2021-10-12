@@ -256,4 +256,8 @@ $('body').on('click', '.hamburger', function (e) {
 $('body').on('click', '.show-filter a', function (e) {
   $(e.currentTarget).toggleClass('active');
   $('.filter').slideToggle(200);
-}); // $('.count').counterUp();
+});
+
+if ($(window).width() > 1024) {
+  $('.count').counterUp();
+}
