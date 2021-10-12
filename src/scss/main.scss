@@ -1198,6 +1198,12 @@ a {
 
         margin-top: -61px;
     }
+
+    & + .consultation {
+        @include r(767) {
+            margin-top: -100px;
+        }
+    }
 }
 
 .subtitle {
