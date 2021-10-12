@@ -1478,7 +1478,7 @@ a {
 
 .menu {
     @include r(767) {
-        padding: 14px 0;
+        padding: 0;
     }
 
     background: $light-gray;
@@ -4916,9 +4916,10 @@ a {
 .hamburger {
     @include r(767) {
         flex-shrink: 0;
-        width: 30px;
-        height: 25px;
+        width: 53px;
+        height: 53px;
         display: block;
+        @include fcc;
     }
 
     width: 38px;
@@ -4962,11 +4963,11 @@ a {
             height: 3px;
         }
 
-        width: 100%;
+        width: 30px;
         height: 5px;
         background: $green;
         position: absolute;
-        top: 12px;
+        top: 24px;
         transition: background 0.2s ease-in-out 0.1s;
         pointer-events: none;
         user-select: none;
@@ -4979,7 +4980,7 @@ a {
 
             content: '';
             position: absolute;
-            width: 100%;
+            width: 30px;
             height: 5px;
             background: $green;
             left: 0;
