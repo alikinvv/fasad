@@ -64,6 +64,14 @@ input[type='number'] {
     -moz-appearance: textfield;
 }
 
+input {
+    border-radius: 0;
+}
+
+input[type='search'] {
+    -webkit-appearance: none;
+}
+
 h1,
 h2,
 h3,
@@ -4401,11 +4409,11 @@ a {
 
     & + .reviews {
         @include r(1190) {
-         .container {
-             padding-right: 15px;
-         }   
+            .container {
+                padding-right: 15px;
+            }
         }
-        
+
         padding-top: 60px;
     }
 
