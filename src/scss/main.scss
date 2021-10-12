@@ -93,6 +93,10 @@ h1 {
         font-size: 35px;
     }
 
+    @include r(374) {
+        font-size: 32px;
+    }
+
     font-weight: 800;
     font-size: 46px;
     color: #000;
@@ -1593,6 +1597,20 @@ a {
             }
 
             margin-top: -12px;
+        }
+
+        & + .catalog {
+            @include r(1365) {
+                .item:nth-child(4) {
+                    display: none;
+                }
+            }
+
+            @include r(1023) {
+                .item:nth-child(4) {
+                    display: block;
+                }
+            }
         }
     }
 
@@ -3741,6 +3759,16 @@ a {
 }
 
 .tags {
+    @include r(1023) {
+        width: 260px;
+    }
+
+    @include r(767) {
+        width: 100%;
+        justify-content: flex-start;
+        margin: 0 -3px -13px;
+    }
+
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -3748,6 +3776,11 @@ a {
     width: 230px;
 
     .tag {
+        @include r(767) {
+            padding: 8px 12px;
+            margin: 0 3px 13px;
+        }
+
         border: 1px solid $process;
         padding: 10px 20px;
         margin: 0 7px 13px;
@@ -3833,15 +3866,30 @@ a {
     }
 
     &__title {
-        font-size: 46px;
+        @include r(767) {
+            font-size: 25px;
+        }
+
         color: $gray;
 
         &.line {
+            @include r(1023) {
+                background: transparent;
+            }
+
             background: url('../img/title.svg') no-repeat 3% center;
             background-size: contain;
         }
 
         span:not(.green) {
+            @include r(1023) {
+                font-size: 26px;
+            }
+
+            @include r(767) {
+                font-size: 18px;
+            }
+
             font-size: 32px;
         }
     }
@@ -4245,18 +4293,62 @@ a {
 }
 
 .product {
-    padding: 31px 0 20p[x];
+    @include r(767) {
+        padding-top: 0;
+        overflow: hidden;
+    }
+
+    padding: 31px 0 20px;
+
+    & + .order {
+        @include r(1023) {
+            .wrap {
+                display: block;
+            }
+
+            .order__controls {
+                margin-top: 20px;
+            }
+        }
+
+        @include r(767) {
+            .order__controls {
+                display: block;
+            }
+        }
+    }
 
     &__body {
+        @include r(767) {
+            display: block;
+        }
+
         @include fssb;
     }
 
     &__img {
+        @include r(1279) {
+            margin-right: 40px;
+        }
+
+        @include r(1023) {
+            width: 230px;
+        }
+
+        @include r(767) {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
         width: 375px;
         margin-right: 119px;
         flex-shrink: 0;
 
         img {
+            @include r(767) {
+                margin-bottom: 20px;
+            }
+
             display: block;
             width: 100%;
             border-radius: 5px;
@@ -4264,6 +4356,10 @@ a {
         }
 
         .btn {
+            @include r(1023) {
+                padding: 13px 16px;
+            }
+
             width: 100%;
             padding-left: 0;
             padding-right: 0;
@@ -4308,6 +4404,10 @@ a {
         width: 376px;
 
         li {
+            @include r(767) {
+                display: block;
+            }
+
             @include fcsb;
             margin-bottom: 16px;
 
@@ -4316,6 +4416,10 @@ a {
             }
 
             span {
+                @include r(767) {
+                    width: auto;
+                }
+
                 text-align: left;
                 width: 48%;
                 color: $gray;
@@ -4324,6 +4428,10 @@ a {
                 font-size: 14px;
 
                 &:first-child {
+                    @include r(767) {
+                     margin-right: 10px;   
+                    }
+                    
                     margin-right: 21px;
                     color: $process;
                     font-weight: normal;
@@ -4333,11 +4441,21 @@ a {
     }
 
     &__controls {
+        @include r(767) {
+            position: relative;
+            padding-bottom: 60px;
+        }
+
         border-top: 2px solid $process;
         padding: 28px 0;
 
         .counter {
             &__control {
+                @include r(767) {
+                    width: 44px;
+                    height: 44px;
+                }
+
                 width: 54px;
                 height: 54px;
 
@@ -4367,10 +4485,40 @@ a {
         }
 
         .btn {
+            @include r(1023) {
+                color: transparent;
+                padding-left: 0;
+                padding-right: 0;
+                width: 70px;
+                @include fcc;
+                text-align: center;
+            }
+
+            @include r(767) {
+                position: absolute;
+                bottom: 0;
+                left: 10px;
+                width: calc(100% - 20px);
+                color: #fff;
+                margin-left: 0;
+            }
+
             margin-left: 20px;
             padding: 15px 20px;
 
             svg {
+                @include r(1023) {
+                    flex-shrink: 0;
+                    margin-right: 0;
+                    position: relative;
+                    left: 29px;
+                }
+
+                @include r(767) {
+                    margin-right: 10px;
+                    position: static;
+                }
+
                 font-size: 23px;
                 margin-right: 10px;
             }
@@ -4382,10 +4530,22 @@ a {
     }
 
     &__price {
+        @include r(1023) {
+            font-size: 40px;
+        }
+
+        @include r(767) {
+            font-size: 30px;
+        }
+
         font-weight: 800;
         font-size: 46px;
 
         sup {
+            @include r(767) {
+                font-size: 14px;
+            }
+
             font-size: 20px;
             color: $process;
             position: relative;
