@@ -1074,7 +1074,7 @@ a {
             @include r(767) {
                 display: none;
             }
-            
+
             opacity: 1 !important;
             background: $green;
         }
@@ -4991,6 +4991,14 @@ a {
 
 .cart {
     padding: 48px 0;
+
+    &.empty {
+        @include r(767) {
+            padding-top: 0;
+            margin-bottom: -20px;
+            margin-top: -20px;
+        }
+    }
 
     .services__title {
         @include r(767) {
