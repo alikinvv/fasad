@@ -122,27 +122,29 @@ gulp.task('img:build', function () {
 });
 
 gulp.task('svg', function () {
-    return gulp
-        .src('src/img/**/*.svg')
-        .pipe(gulp.dest('build/img'))
-        .pipe(
-            gp.svgmin({
-                js2svg: {
-                    pretty: true,
-                },
-            })
-        )
-        .pipe(gp.replace('&gt;', '>'))
-        .pipe(
-            gp.svgSprite({
-                mode: {
-                    symbol: {
-                        sprite: '../sprite.svg',
+    return (
+        gulp
+            .src('src/img/**/*.svg')
+            .pipe(gulp.dest('build/img'))
+            .pipe(
+                gp.svgmin({
+                    js2svg: {
+                        pretty: true,
                     },
-                },
-            })
-        )
-        .pipe(gulp.dest('build/img'));
+                })
+            )
+            .pipe(gp.replace('&gt;', '>'))
+            // .pipe(
+            //     gp.svgSprite({
+            //         mode: {
+            //             symbol: {
+            //                 sprite: '../sprite.svg',
+            //             },
+            //         },
+            //     })
+            // )
+            .pipe(gulp.dest('build/img'))
+    );
 });
 
 gulp.task('fonts:build', function () {
