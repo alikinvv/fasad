@@ -89,6 +89,7 @@ var reviews = new Swiper('.reviews .swiper', {
 var projectNav = new Swiper('.project__slider-nav', {
   spaceBetween: 10,
   slidesPerView: 3,
+  slidesPerGroup: 3,
   watchSlidesProgress: true,
   pagination: {
     el: '.project .swiper-pagination'
@@ -171,41 +172,44 @@ $('body').on('click', '.cart__footer .btn', function (e) {
   }
 });
 $('.count').counterUp();
-var highestTitle = 0;
 
-for (var _i = 0; _i < $('.cert__title').length; _i++) {
-  if ($('.cert__title').eq(_i).height() > highestTitle) {
-    highestTitle = $('.cert__title').eq(_i).height();
-  }
-}
+if ($(window).width() >= 1024) {
+  var highestTitle = 0;
 
-$('.cert__title').height(highestTitle);
-
-for (var _i2 = 0; _i2 < $('.step').length; _i2++) {
-  var $step = $('.step').eq(_i2);
-  var stepHeight = 0;
-
-  for (var j = 0; j < $step.find('.step__title').length; j++) {
-    if ($step.find('.step__title').eq(j).height() > stepHeight) {
-      stepHeight = $step.find('.step__title').eq(j).height();
+  for (var _i = 0; _i < $('.cert__title').length; _i++) {
+    if ($('.cert__title').eq(_i).height() > highestTitle) {
+      highestTitle = $('.cert__title').eq(_i).height();
     }
   }
 
-  $step.find('.step__title').height(stepHeight);
-}
+  $('.cert__title').height(highestTitle);
 
-for (var _i3 = 0; _i3 < $('.step').length; _i3++) {
-  var _$step = $('.step').eq(_i3);
+  for (var _i2 = 0; _i2 < $('.step').length; _i2++) {
+    var $step = $('.step').eq(_i2);
+    var stepHeight = 0;
 
-  var _stepHeight = 0;
-
-  for (var _j = 0; _j < _$step.find('.step__text').length; _j++) {
-    if (_$step.find('.step__text').eq(_j).height() > _stepHeight) {
-      _stepHeight = _$step.find('.step__text').eq(_j).height();
+    for (var j = 0; j < $step.find('.step__title').length; j++) {
+      if ($step.find('.step__title').eq(j).height() > stepHeight) {
+        stepHeight = $step.find('.step__title').eq(j).height();
+      }
     }
+
+    $step.find('.step__title').height(stepHeight);
   }
 
-  _$step.find('.step__text').height(_stepHeight);
+  for (var _i3 = 0; _i3 < $('.step').length; _i3++) {
+    var _$step = $('.step').eq(_i3);
+
+    var _stepHeight = 0;
+
+    for (var _j = 0; _j < _$step.find('.step__text').length; _j++) {
+      if (_$step.find('.step__text').eq(_j).height() > _stepHeight) {
+        _stepHeight = _$step.find('.step__text').eq(_j).height();
+      }
+    }
+
+    _$step.find('.step__text').height(_stepHeight);
+  }
 }
 
 var masks = document.querySelectorAll('.phone-mask');

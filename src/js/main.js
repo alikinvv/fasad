@@ -100,6 +100,7 @@ var reviews = new Swiper('.reviews .swiper', {
 var projectNav = new Swiper('.project__slider-nav', {
     spaceBetween: 10,
     slidesPerView: 3,
+    slidesPerGroup: 3,
     watchSlidesProgress: true,
     pagination: {
         el: '.project .swiper-pagination',
@@ -207,40 +208,42 @@ $('body').on('click', '.cart__footer .btn', (e) => {
 
 $('.count').counterUp();
 
-let highestTitle = 0;
+if ($(window).width() >= 1024) {
+    let highestTitle = 0;
 
-for (let i = 0; i < $('.cert__title').length; i++) {
-    if ($('.cert__title').eq(i).height() > highestTitle) {
-        highestTitle = $('.cert__title').eq(i).height();
-    }
-}
-
-$('.cert__title').height(highestTitle);
-
-for (let i = 0; i < $('.step').length; i++) {
-    let $step = $('.step').eq(i);
-    let stepHeight = 0;
-
-    for (let j = 0; j < $step.find('.step__title').length; j++) {
-        if ($step.find('.step__title').eq(j).height() > stepHeight) {
-            stepHeight = $step.find('.step__title').eq(j).height();
+    for (let i = 0; i < $('.cert__title').length; i++) {
+        if ($('.cert__title').eq(i).height() > highestTitle) {
+            highestTitle = $('.cert__title').eq(i).height();
         }
     }
 
-    $step.find('.step__title').height(stepHeight);
-}
+    $('.cert__title').height(highestTitle);
 
-for (let i = 0; i < $('.step').length; i++) {
-    let $step = $('.step').eq(i);
-    let stepHeight = 0;
+    for (let i = 0; i < $('.step').length; i++) {
+        let $step = $('.step').eq(i);
+        let stepHeight = 0;
 
-    for (let j = 0; j < $step.find('.step__text').length; j++) {
-        if ($step.find('.step__text').eq(j).height() > stepHeight) {
-            stepHeight = $step.find('.step__text').eq(j).height();
+        for (let j = 0; j < $step.find('.step__title').length; j++) {
+            if ($step.find('.step__title').eq(j).height() > stepHeight) {
+                stepHeight = $step.find('.step__title').eq(j).height();
+            }
         }
+
+        $step.find('.step__title').height(stepHeight);
     }
 
-    $step.find('.step__text').height(stepHeight);
+    for (let i = 0; i < $('.step').length; i++) {
+        let $step = $('.step').eq(i);
+        let stepHeight = 0;
+
+        for (let j = 0; j < $step.find('.step__text').length; j++) {
+            if ($step.find('.step__text').eq(j).height() > stepHeight) {
+                stepHeight = $step.find('.step__text').eq(j).height();
+            }
+        }
+
+        $step.find('.step__text').height(stepHeight);
+    }
 }
 
 let masks = document.querySelectorAll('.phone-mask');
