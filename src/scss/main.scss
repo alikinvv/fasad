@@ -1156,6 +1156,7 @@ a {
     @include r(767) {
         margin: 35px 0;
         padding: 0 15px;
+        background: transparent !important;
     }
 
     background-image: url('../img/title-green.svg');
@@ -5515,7 +5516,7 @@ a {
     }
 
     .btn {
-        @include r(374) {
+        @include r(767) {
             padding-left: 0;
             padding-right: 0;
             width: 100%;
