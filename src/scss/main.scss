@@ -1051,6 +1051,10 @@ a {
 }
 
 .simplebar {
+    @include r(767) {
+        display: none;
+    }
+
     &-track {
         background: linear-gradient(4.31deg, rgba(92, 199, 115, 0.2) 3.24%, rgba(92, 199, 115, 0.036) 93.47%);
         border-radius: 10px;
@@ -4429,9 +4433,9 @@ a {
 
                 &:first-child {
                     @include r(767) {
-                     margin-right: 10px;   
+                        margin-right: 10px;
                     }
-                    
+
                     margin-right: 21px;
                     color: $process;
                     font-weight: normal;
