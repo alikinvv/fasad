@@ -316,7 +316,7 @@ a {
     }
 
     &-outline {
-        background: #fff;
+        background: transparent;
         border: 1px solid $green;
         color: $gray;
         overflow: hidden;
@@ -4746,6 +4746,20 @@ a {
         svg {
             margin-right: 10px;
             font-size: 20px;
+        }
+    }
+
+    .btn-outline {
+        background: #fff;
+
+        &.active,
+        &:active {
+            background: $green-active;
+            color: #fff;
+
+            svg {
+                fill: #fff;
+            }
         }
     }
 }
